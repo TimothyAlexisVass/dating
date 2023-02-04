@@ -3,4 +3,6 @@
 
 require_relative "config/application"
 
+Dir[File.join(Rails.root, "lib/tasks/**/*.rb")].each { |f| require f }
+
 Rails.application.load_tasks
