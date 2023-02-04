@@ -1,6 +1,8 @@
 namespace :db do
-  desc "Populate the congregation_responsibilities table with data"
+  description = "Populate the congregation_responsibilities table with data"
+  desc description
   task populate_congregation_responsibilities: :environment do
+    puts description
     congregation_responsibilities = ["preaching", "sabbath_school_teaching", "janitorial", "technical", "worship_host", "translating", "food", "music"]
 
     congregation_responsibilities.each do |congregation_responsibility|

@@ -1,6 +1,8 @@
 namespace :db do
-  desc "Populate the books table with data"
+  description = "Populate the books table with data"
+  desc description
   task populate_books: :environment do
+    puts description
     books = [{id: 1, title: "A Call to Medical Evangelism and Health Education"},
     {id: 2, title: "A Call To Stand Apart"},
     {id: 3, title: "A Sketch of the Christian Experience and Views of Ellen G. White"},
