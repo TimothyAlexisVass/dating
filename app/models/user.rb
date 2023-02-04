@@ -7,7 +7,8 @@ class User < ApplicationRecord
 
   has_many :like_others, class_name: "Like", foreign_key: "like_other_id", dependent: :destroy
   has_many :liked_by_others, class_name: "Like", foreign_key: "liked_by_other_id", dependent: :destroy
-  has_many :interests
+  has_many :user_interests
+  has_many :interests, through: :user_interests
   has_many :images
   has_many :search_settings
   has_many :languages
