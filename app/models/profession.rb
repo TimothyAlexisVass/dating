@@ -1,3 +1,4 @@
 class Profession < ApplicationRecord
-  belongs_to :user
+  has_many :user_professions
+  has_many :users, through: :user_professions
 end

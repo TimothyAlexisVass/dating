@@ -1,3 +1,4 @@
 class Calling < ApplicationRecord
-  belongs_to :user
+  has_many :user_callings
+  has_many :users, through: :user_callings
 end

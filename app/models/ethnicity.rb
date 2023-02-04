@@ -1,3 +1,4 @@
 class Ethnicity < ApplicationRecord
-  belongs_to :user
+  has_many :user_ethnicities
+  has_many :users, through: :user_ethnicities
 end
