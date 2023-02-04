@@ -7,9 +7,8 @@
 # Ignore bundler config.
 /.bundle
 
-# Ignore the default SQLite database.
-/db/*.sqlite3
-/db/*.sqlite3-*
+# Ignore database schema.
+/db/schema.rb
 
 # Ignore .env
 **/.env
