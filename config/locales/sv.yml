@@ -1,2 +1,5 @@
 sv:
-  welcome: "Välkommen"
+  app_name: Dejting App
+  sign_up_heading_h1: "Välkommen till %{app_name}"
+  sign_up_heading_text: Hitta din perfekta partner!
+  welcome: Välkommen

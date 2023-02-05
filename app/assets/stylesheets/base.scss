@@ -3,6 +3,11 @@ body {
   font-size: 16px;
   line-height: 1.5;
   background-color: #fafafa;
+  margin: 0;
+}
+
+main, header {
+  padding: 10px;
 }
 
 .alert {
@@ -34,22 +39,6 @@ body {
   justify-content: center;
 }
 
-.header {
-  text-align: center;
-  padding: 40px 0;
-
-  h1 {
-    font-size: 36px;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-
-  p {
-    font-size: 18px;
-    color: lightslategrey;
-  }
-}
-
 .password-field-icon {
   position: absolute;
   right: 10px;
@@ -59,11 +48,25 @@ body {
   color: lightslategrey;
 }
 
+.sign-up-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h1 {
+    color: purple;
+    font-size: 40px;
+    margin-bottom: 10px;
+  }
+  p {
+    margin: 10px 0 30px;
+  }
+}
+
 .sign-up-form {
   max-width: 500px;
   margin: 0 auto;
   padding: 20px 40px;
-  background-color: #3c0c47;
+  background-color: var(--deep-purple);
   color: white;
   border-radius: 10px;
 
@@ -107,6 +110,26 @@ body {
       border: 0;
       border-radius: 5px;
       cursor: pointer;
+    }
+  }
+}
+
+header.top-header {
+  background: var(--deep-purple);
+  overflow: auto;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  span {
+    font-size: 30px;
+  }
+
+  nav {
+    span {
+      font-size: 18px;
+      margin: 0 3px;
     }
   }
 }

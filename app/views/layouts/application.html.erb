@@ -12,6 +12,7 @@
   </head>
 
   <body>
+    <%= render 'layouts/header' %>
     <% flash.each do |key, value| %>
       <div class="alert alert-<%= key %>">
         <% if value.kind_of?(Array) %>
@@ -23,7 +24,8 @@
         <% end %>
       </div>
     <% end %>
-
-    <%= yield %>
+    <main>
+      <%= yield %>
+    </main>
   </body>
 </html>
