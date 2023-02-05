@@ -5,6 +5,108 @@ body {
   background-color: #fafafa;
 }
 
-.signup-field {
-  display: flex;
+.alert {
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+}
+.alert-success {
+  border: green;
+  background: greenyellow;
+  color: green;
+}
+.alert-danger {
+  border: red;
+  background: pink;
+  color: red;
+}
+
+.m-b-none {
+  margin-bottom: 0 !important;
+}
+
+.p-b-none {
+  padding-bottom: 0 !important;
+}
+
+.f-jc {
+  justify-content: center;
+}
+
+.header {
+  text-align: center;
+  padding: 40px 0;
+
+  h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 18px;
+    color: lightslategrey;
+  }
+}
+
+.password-field-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: lightslategrey;
+}
+
+.sign-up-form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px 40px;
+  background-color: #3c0c47;
+  color: white;
+  border-radius: 10px;
+
+  h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 30px;
+  }
+
+  .signup-field {
+    margin-bottom: 20px;
+    position: relative;
+    display: flex;
+
+    select {
+      background: whitesmoke;
+      max-width: min-content;
+    }
+    input, label, select {
+      width: 100%;
+      font-size: 18px;
+      margin: 0 2px;
+    }
+    label {
+      padding-left: 5px;
+    }
+    input, select {
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    input[type="date"] {
+      font-size: 16px;
+    }
+    input[type="submit"] {
+      width: 120px;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: 0;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  }
 }

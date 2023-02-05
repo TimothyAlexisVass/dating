@@ -15,13 +15,12 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    if @user.save
-      # Send confirmation email
-      UserMailer.with(user: @user).confirm_email.deliver_later
-      redirect_to @user, notice: 'User was successfully created.'
+    success = @user.save
+    if success
+      redirect_to @user, flash: { success: "Signup successful!" }
     else
-      render :new
-    end
+      redirect_to root_url, flash: { danger: ["Signup not successful!"].concat(@user.errors.full_messages) }
+    end    
   end
 
   def edit
@@ -29,7 +28,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      redirect_to @user, notice: 'User was successfully updated.'
+      redirect_to @user, flash: 'User was successfully updated.'
     else
       render :edit
     end
@@ -42,6 +41,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:username, :email, :gender, :birth_date, :first_name, :last_name, :rebirth_date)
+    params.require(:user).permit(:username, :email, :gender, :password_digest, :birth_date, :first_name, :last_name, :rebirth_date)
   end
 end

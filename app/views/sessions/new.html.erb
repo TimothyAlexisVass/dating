@@ -7,20 +7,30 @@
   <h2>Sign Up</h2>
   <%= form_for @user do |f| %>
     <div class="signup-field">
-      <%= f.label :username %>
-      <%= f.text_field :username %>
+      <%= f.text_field :username, placeholder: "Username", required: true %>
+      <%= f.text_field :email, placeholder: "your@email.here", required: true %>
+      <%= f.select :gender, User.gender_options %>
     </div>
     <div class="signup-field">
-      <%= f.label :email %>
-      <%= f.text_field :email %>
+      <%= f.password_field :password_digest, class: "password-field", placeholder: "Password", required: true %>
+      <div class="password-field-icon" title="Show password"><i class="fa fa-eye"></i></div>
     </div>
     <div class="signup-field">
-      <%= f.label :password %>
-      <%= f.password_field :password %>
+      <%= f.text_field :first_name, placeholder: "First Name", required: true %>
+      <%= f.text_field :last_name, placeholder: "Last Name", required: true %>
     </div>
-    <div class="actions">
+    <div class="signup-field m-b-none">
+      <%= f.label :birth_date %>
+      <%= f.label :rebirth_date, "Rebirth (Date of baptism)" %>
+    </div>
+    <div class="signup-field">
+      <%= f.date_field :birth_date, required: true %>
+      <%= f.date_field :rebirth_date, required: true %>
+    </div>
+    <div class="signup-field f-jc">
       <%= f.submit "Sign Up" %>
     </div>
-<% end %>
-
+  <% end %>
 </div>
+
+<%= javascript_include_tag "password_toggle" %>

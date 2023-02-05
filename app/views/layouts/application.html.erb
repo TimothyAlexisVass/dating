@@ -12,6 +12,18 @@
   </head>
 
   <body>
+    <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>">
+        <% if value.kind_of?(Array) %>
+          <% value.each do |message| %>
+            <%= message %><br>
+          <% end %>
+        <% else %>
+          <%= value %>
+        <% end %>
+      </div>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
