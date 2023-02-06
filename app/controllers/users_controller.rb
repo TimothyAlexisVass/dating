@@ -14,12 +14,13 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
-    success = @user.save
+    user = User.new(user_params)
+    success = user.save
     if success
-      redirect_to @user, flash: { success: "Signup successful!" }
+      session[:user_id] = user.id
+      redirect_to user, flash: { success: t(:sign_up_successful) }
     else
-      redirect_to root_url, flash: { danger: ["Signup not successful!"].concat(@user.errors.full_messages) }
+      redirect_to root_url, flash: { danger: user.errors.full_messages }
     end    
   end
 
