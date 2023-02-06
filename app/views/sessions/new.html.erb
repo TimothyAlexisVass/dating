@@ -4,6 +4,23 @@
 </div>
 
 <div class="user-form">
+  <h2><%= t(:sign_in) %></h2>
+  <%= form_for :session, url: signin_path, method: :post do |f| %>
+    <div class="user-form-field">
+      <%= f.text_field :username_or_email, placeholder: t(:username_or_email), required: true %>
+    </div>
+    <div class="user-form-field">
+      <%= f.password_field :password, id: "toggle_password", class: "password-field", placeholder: ct(:password), required: true %>
+      <div class="password-toggle-icon" title="Show password"><i class="fa fa-eye" aria-hidden="true"></i></div>
+    </div>
+    <div class="user-form-field f-jc">
+      <%= f.submit ct(:sign_in) %>
+    </div>
+  <% end %>
+</div>
+<br>
+
+<div class="user-form">
   <h2><%= t(:sign_up) %></h2>
   <%= form_for @user do |f| %>
     <div class="user-form-field">
@@ -28,7 +45,7 @@
       <%= f.date_field :rebirth_date, required: true %>
     </div>
     <div class="user-form-field f-jc">
-      <%= f.submit "Sign Up" %>
+      <%= f.submit ct(:sign_up) %>
     </div>
   <% end %>
   <div style="position: absolute; bottom: 20px; right: 20px">

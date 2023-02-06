@@ -10,7 +10,7 @@
       <%= f.text_field :username_or_email, placeholder: t(:username_or_email), required: true %>
     </div>
     <div class="user-form-field">
-      <%= f.password_field :password, class: "password-field", placeholder: t(:password), required: true %>
+      <%= f.password_field :password, id: "toggle_password", class: "password-field", placeholder: ct(:password), required: true %>
       <div class="password-toggle-icon" title="Show password"><i class="fa fa-eye" aria-hidden="true"></i></div>
     </div>
     <div class="user-form-field f-jc">
