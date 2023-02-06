@@ -1,36 +1,42 @@
-<div class="sign-up-heading">
+<div class="user-heading">
   <h1><%= t(:sign_up_heading_h1, app_name: t(:app_name)) %></h1>
   <p><%= t(:sign_up_heading_text) %></p>
 </div>
 
-<div class="sign-up-form">
-  <h2>Sign Up</h2>
+<div class="user-form">
+  <h2><%= t(:sign_up) %></h2>
   <%= form_for @user do |f| %>
-    <div class="signup-field">
-      <%= f.text_field :username, placeholder: "Username", required: true %>
-      <%= f.text_field :email, placeholder: "your@email.here", required: true %>
-      <%= f.select :gender, User.gender_options %>
+    <div class="user-form-field">
+      <%= f.text_field :username, placeholder: ct(:username), required: true %>
+      <%= f.text_field :email, placeholder: ct(:email_placeholder), required: true %>
+      <%= f.select :gender, ot(User.gender_options) %>
     </div>
-    <div class="signup-field">
-      <%= f.password_field :password_digest, class: "password-field", placeholder: "Password", required: true %>
-      <div class="password-field-icon" title="Show password"><i class="fa fa-eye"></i></div>
+    <div class="user-form-field">
+      <%= f.password_field :password, id: "toggle_password", class: "password-field", placeholder: ct(:password), required: true %>
+      <div class="password-toggle-icon" title="Show password"><i class="fa fa-eye" aria-hidden="true"></i></div>
     </div>
-    <div class="signup-field">
-      <%= f.text_field :first_name, placeholder: "First Name", required: true %>
-      <%= f.text_field :last_name, placeholder: "Last Name", required: true %>
+    <div class="user-form-field">
+      <%= f.text_field :first_name, placeholder: ct(:first_name), required: true %>
+      <%= f.text_field :last_name, placeholder: ct(:last_name), required: true %>
     </div>
-    <div class="signup-field m-b-none">
-      <%= f.label :birth_date %>
-      <%= f.label :rebirth_date, "Rebirth (Date of baptism)" %>
+    <div class="user-form-field m-b-none">
+      <%= f.label :birth_date, ct(:birth_date) %>
+      <%= f.label :rebirth_date,  ct(:rebirth_date) %>
     </div>
-    <div class="signup-field">
+    <div class="user-form-field">
       <%= f.date_field :birth_date, required: true %>
       <%= f.date_field :rebirth_date, required: true %>
     </div>
-    <div class="signup-field f-jc">
+    <div class="user-form-field f-jc">
       <%= f.submit "Sign Up" %>
     </div>
   <% end %>
+  <div style="position: absolute; bottom: 20px; right: 20px">
+    <%= link_to signin_path, method: :delete do %>
+      <i class="fa fa-sign-in" aria-hidden="true"></i>
+      <%= t(:sign_in) %>
+    <% end %>
+  </div>
 </div>
 
 <%= javascript_include_tag "password_toggle" %>
