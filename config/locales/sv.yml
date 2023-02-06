@@ -22,3 +22,13 @@ sv:
   language: språk
   male: man
   female: kvinna
+
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            username:
+              taken: ": Användarnamnet är upptaget"
+            email:
+              taken: ": E-postadressen är upptagen"

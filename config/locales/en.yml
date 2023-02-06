@@ -22,3 +22,12 @@ en:
   male: male
   female: female
 
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            username:
+              taken: ": Username is already taken"
+            email:
+              taken: ": Email is already taken"
