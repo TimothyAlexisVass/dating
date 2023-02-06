@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_04_210527) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_06_192906) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -134,7 +134,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_04_210527) do
     t.boolean "verified_rebirth", default: false
     t.boolean "is_active", default: false
     t.text "bio"
-    t.integer "age_range"
     t.float "distance_radius", default: 5.0
     t.boolean "limit_contact_to_age_range", default: false
     t.string "relationship_status"
@@ -168,6 +167,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_04_210527) do
     t.boolean "wants_pets"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "age_range_lower", default: 18
+    t.integer "age_range_upper", default: 99
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
   end
