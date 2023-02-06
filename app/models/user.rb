@@ -2,7 +2,6 @@ class User < ApplicationRecord
   before_save do
     email.downcase!
   end
-
   
   ##### Associations ####################################################
 
@@ -99,7 +98,7 @@ class User < ApplicationRecord
 
   validates :username, presence: true, uniqueness: true, length: { minimum: 2, maximum: 255 }
   validates :email, presence: true, uniqueness: { case_sensitive: false }, format: { with: URI::MailTo::EMAIL_REGEXP, message: "is not a valid email address" }, length: { maximum: 255 }
-  validates :password_digest, presence: true, length: { minimum: 6 }
+  validates :password, presence: true, length: { minimum: 6 }
   has_secure_password
   validates :first_name, presence: true
   validates :last_name, presence: true
@@ -166,4 +165,8 @@ class User < ApplicationRecord
   validates :wants_children, inclusion: { in: wants_children_options, allow_nil: true }
   validates :pets_status, inclusion: { in: boolean_options, allow_nil: true }
   validates :wants_pets, inclusion: { in: boolean_options, allow_nil: true }
+
+  def gender_text
+    User.gender_options[gender]
+  end
 end
