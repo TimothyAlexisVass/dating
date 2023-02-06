@@ -1,5 +1,7 @@
 class User < ApplicationRecord
-  before_save do
+  before_save :downcase_email
+
+  def downcase_email
     email.downcase!
   end
   
@@ -117,6 +119,8 @@ class User < ApplicationRecord
   validates :bio, length: { maximum: 5000 }
   validates :distance_radius, numericality: { greater_than_or_equal_to: 0 }
   validates :relationship_status, inclusion: { in: relationship_status_options, allow_nil: true }
+  validates :age_range_lower, numericality: { greater_than_or_equal_to: 18, allow_nil: true }
+  validates :age_range_upper, numericality: { less_than_or_equal_to: 99, allow_nil: true }
   validates :limit_contact_to_age_range, inclusion: { in: boolean_options, allow_nil: true }
 
 
@@ -168,5 +172,10 @@ class User < ApplicationRecord
 
   def gender_text
     User.gender_options[gender]
+  end
+
+  def age
+    now = Time.now.utc.to_date
+    now.year - birth_date.year - ((now.month > birth_date.month || (now.month == birth_date.month && now.day >= birth_date.day)) ? 0 : 1)
   end
 end
