@@ -2,4 +2,19 @@ sv:
   app_name: Dejting App
   sign_up_heading_h1: "Välkommen till %{app_name}"
   sign_up_heading_text: Hitta din perfekta partner!
-  welcome: Välkommen
+  sign_in_heading_h1: Välkommen tillbaka
+  sign_in_heading_text: Kärleken kommer först!
+  sign_up_successful: Registreringen lyckades!
+  welcome: välkommen
+  username: användarnamn
+  first_name: förnamn
+  last_name: efternamn
+  password: lösenord
+  birth_date: födelsedatum
+  rebirth_date: återfödelse (dopdag)
+  email_placeholder: din@epost.här
+  username_or_email: Användarnamn eller epost
+  sign_up: Registrera dig
+  sign_in: Logga in
+  male: man
+  female: kvinna

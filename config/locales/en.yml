@@ -2,4 +2,20 @@ en:
   app_name: Dating App
   sign_up_heading_h1: "Welcome to %{app_name}"
   sign_up_heading_text: Find your perfect spouse!
-  welcome: Welcome
+  sign_in_heading_h1: Welcome back
+  sign_in_heading_text: Love comes first!
+  sign_up_successful: Sign up successful!
+  welcome: welcome
+  username: username
+  first_name: first name
+  last_name: last name
+  password: password
+  birth_date: birth date
+  rebirth_date: Rebirth (Date of baptism)
+  email_placeholder: your@email.here
+  username_or_email: Username or email
+  sign_up: Sign up
+  sign_in: Sign in
+  male: male
+  female: female
+
