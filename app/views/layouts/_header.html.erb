@@ -1,5 +1,5 @@
 <header class="top-header">
-  <span><%= t(:app_name) %></span>
+  <span><%= link_to t(:app_name), root_path %></span>
   <nav>
     <% if @current_user.present? %>
       <%= link_to user_path(@current_user) do %>
@@ -8,11 +8,11 @@
       <% end %>
       <%= link_to users_path do %>
         <i class="fa fa-<%= "fe" if @current_user.gender === 0 %>male" aria-hidden="true"></i>
-        <%= t(:search) %>
+        <%= ct(:search) %>
       <% end %>
       <div class="dropdown">
         <span class="dropdown-toggle">
-          <i class="fa fa-cog" aria-hidden="true"></i><%= ct(:settings) %>
+          <i class="fa fa-cog" aria-hidden="true"></i> <%= ct(:settings) %>
         </span>
         <div class="dropdown-menu">
           <div class="dropdown-menu-item">

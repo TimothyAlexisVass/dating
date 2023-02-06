@@ -162,13 +162,13 @@ header.top-header {
 }
 
 header.top-header, .user-form {
-  a {
+  a, span {
     color: white;
     text-decoration: none;
     transition: all .5s;
   }
 
-  a:hover {
+  a:hover, span:hover {
     color: var(--light-purple);
     text-shadow: var(--shine-5px)
   }
