@@ -2,8 +2,14 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
   
   def index
-    gender = current_user.gender == 'male' ? 'female' : 'male'
-    @users = User.where(gender: gender).where('birth_date >= ?', current_user.age_range.begin).where('birth_date <= ?', current_user.age_range.end)
+    gender = @current_user.gender_text == :male ? 1 : 0
+    now = Time.now.utc.to_date
+
+    birth_date_lower = now.years_ago(@current_user.age_range_upper)
+    birth_date_upper = now.years_ago(@current_user.age_range_lower)
+    @users = User.all.where(gender: gender).where(
+      'birth_date >= ? and birth_date <= ?', birth_date_lower, birth_date_upper
+    )
   end
 
   def show
