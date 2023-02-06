@@ -3,4 +3,5 @@
 //= link_tree ../../javascript .js
 //= link_tree ../../../vendor/javascript .js
 //= link password_toggle.js
+//= link dropdown_menu.js
 //= link jquery.js

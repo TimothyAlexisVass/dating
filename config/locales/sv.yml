@@ -16,5 +16,9 @@ sv:
   username_or_email: Användarnamn eller epost
   sign_up: Registrera dig
   sign_in: Logga in
+  sign_out: Logga ut
+  profile: profil
+  settings: inställningar
+  language: språk
   male: man
   female: kvinna

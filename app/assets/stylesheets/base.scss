@@ -104,8 +104,9 @@ main, header {
       font-size: 16px;
     }
     input[type="submit"] {
-      width: 120px;
-      padding: 10px;
+      width: max-content;
+      padding: 10px 30px;
+      min-width: 200px;
       background-color: #4CAF50;
       color: #fff;
       border: 0;
@@ -117,7 +118,6 @@ main, header {
 
 header.top-header {
   background: var(--deep-purple);
-  overflow: auto;
   color: white;
   display: flex;
   justify-content: space-between;
@@ -126,19 +126,55 @@ header.top-header {
   span {
     font-size: 30px;
   }
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-toggle {
+    cursor: pointer;
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    display: none;
+    margin: 0;
+    padding: 10px;
+    list-style: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    color: black;
+  }
+
+  .dropdown-menu-item {
+    display: flex;
+  }
+
+  .dropdown-menu.show {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 header.top-header, .user-form {
   a {
     color: white;
     text-decoration: none;
-    :hover {
-      color: pink;
-    }
+    transition: all .5s;
+  }
+
+  a:hover {
+    color: var(--light-purple);
+    text-shadow: var(--shine-5px)
   }
 
   nav {
-    span {
+    span, a {
       font-size: 18px;
       margin: 0 3px;
     }
