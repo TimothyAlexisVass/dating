@@ -6,7 +6,10 @@
         <i class="fa fa-<%= "fe" if @current_user.gender === 1 %>male" aria-hidden="true"></i>
         <%= ct(:profile) %>
       <% end %>
-      <span><i class="fa fa-<%= "fe" if @current_user.gender === 0 %>male" aria-hidden="true"></i><%= t(:search) %></span>
+      <%= link_to users_path do %>
+        <i class="fa fa-<%= "fe" if @current_user.gender === 0 %>male" aria-hidden="true"></i>
+        <%= t(:search) %>
+      <% end %>
       <div class="dropdown">
         <span class="dropdown-toggle">
           <i class="fa fa-cog" aria-hidden="true"></i><%= ct(:settings) %>
