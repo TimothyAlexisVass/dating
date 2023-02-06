@@ -1,3 +1,6 @@
 * {
-  --deep-purple: #3c0c47
+  --deep-purple: #3c0c47;
+  --light-purple: #d07be3;
+
+  --shine-5px: 0 0 5px rgba(255, 255, 255, 0.4);
 }
