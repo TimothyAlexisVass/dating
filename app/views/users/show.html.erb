@@ -1,5 +1,6 @@
 <h1><%= "#{ct(:welcome)} " if @current_user == @user %><%= "#{@user.first_name} #{@user.last_name}" %></h1>
 
+<%= image_tag "#{@user.gender}.svg" %>
 <%= ct(:birth_date) %>
 <%= @user.birth_date %>
 <%= ct(:rebirth_date) %>
