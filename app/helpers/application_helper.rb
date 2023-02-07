@@ -3,7 +3,7 @@ module ApplicationHelper
     {
       sv: :Svenska,
       en: :English,
-      sp: :Español
+      es: :Español
     }
   end
 end

@@ -1,0 +1,64 @@
+es:
+  app_name: Aplicación de citas
+  sign_up_heading_h1: "Bienvenido a %{app_name}"
+  sign_up_heading_text: ¡Encuentra a tu pareja perfecta!
+  sign_in_heading_h1: Bienvenido de nuevo
+  sign_in_heading_text: ¡El amor es lo primero!
+  sign_up_successful: ¡Registro exitoso!
+  welcome: bienvenido
+  username: nombre de usuario
+  first_name: nombre
+  last_name: apellido
+  password: contraseña
+  birth_date: fecha de nacimiento
+  rebirth_date: Renacimiento (Fecha del bautismo)
+  baptized_since: bautizado desde
+  not_yet_baptized: aún no bautizado
+  presentation: presentación
+  account: cuenta
+  congregation: congregación
+  is_active: conectado
+  is_not_active: desconectado
+  verified: verificado
+  not_verified: no verificado
+  baptism: bautismo
+  has_no_bio: no ha ingresado ningún texto de presentación
+  email_placeholder: tu@email.aquí
+  username_or_email: Nombre de usuario o correo electrónico
+  sign_up: Regístrate
+  sign_in: Iniciar sesión
+  sign_out: Cerrar sesión
+  search: buscar
+  profile: perfil
+  details: detalles
+  language: idioma
+  searching_for: Buscando un %{gender} entre %{age_range_lower} y %{age_range_upper} años.
+  body_height: altura
+  body_type: tipo de cuerpo
+  weight: peso
+  eye_color: color de ojos
+  diet: dieta
+  not_specified: no especificado
+  marital_status: estado civil
+  male: masculino
+  female: femenino
+  age: edad
+  to: a
+
+  singular:
+    male: hombre
+    female: mujer
+  plural:
+    male: hombres
+    female: mujeres
+    age: edades
+
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            username:
+              taken: ": El nombre de usuario ya está en uso"
+            email:
+              taken: ": El correo electrónico ya está en uso"
