@@ -12,6 +12,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.find_by(username: params[:username])
   end
 
   def new
@@ -23,7 +24,7 @@ class UsersController < ApplicationController
     success = user.save
     if success
       session[:user_id] = user.id
-      redirect_to user, flash: { success: t(:sign_up_successful) }
+      redirect_to user_path(user.username), flash: { success: t(:sign_up_successful) }
     else
       redirect_to root_url, flash: { danger: user.errors.full_messages }
     end    
@@ -43,7 +44,7 @@ class UsersController < ApplicationController
   private
 
   def set_user
-    @user = User.find(params[:id])
+    @user = User.find(session[:user_id])
   end
 
   def user_params

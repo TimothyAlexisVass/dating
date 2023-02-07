@@ -8,5 +8,6 @@ Rails.application.routes.draw do
 
   put '/set_session_locale' => 'application#set_session_locale'
 
-  resources :users, only: [:index, :show, :new, :create, :edit, :update]
+  get '/user/:username', to: 'users#show', as: 'user'
+  resources :users, only: [:index, :new, :create, :edit, :update]
 end

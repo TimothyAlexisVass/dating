@@ -1,5 +1,5 @@
 <div class="user-profile">
-  <h2><%= user.first_name %> <%= user.last_name %> (<%= user.age %>)</h2>
+  <h2><%= link_to "#{user.first_name} #{user.last_name} (#{user.age})", user_path(user.username) %></h2>
   <%= image_tag "#{user.gender}.svg" %>
   <%= ct(:birth_date) %>
   <%= user.birth_date %>
