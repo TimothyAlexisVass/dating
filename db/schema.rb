@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_07_163208) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_07_174345) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -141,7 +141,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_07_163208) do
     t.string "body_type"
     t.integer "weight"
     t.string "eye_color"
-    t.string "tattoos", default: [], array: true
+    t.string "tattoos", default: "{}"
     t.string "education"
     t.integer "income_amount"
     t.string "income_currency"

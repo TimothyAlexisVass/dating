@@ -72,6 +72,9 @@ class User < ApplicationRecord
   def self.prayer_frequency_options
     @prayer_frequency_options ||= %w[never rarely occasionally regularly daily multiple_times_daily steadfast_in_prayer]
   end
+  def self.tattoos_options
+    @tattoos_options ||= %w[covered huge big medium small tiny none]
+  end
   def self.smoke_status_options
     @smoke_status_options ||= %w[always_been_free liberated trying]
   end
@@ -201,5 +204,5 @@ class User < ApplicationRecord
     feet = total_inches / 12
     inches = total_inches % 12
     "#{feet.floor}'#{inches.round}\""
-  end  
+  end
 end
