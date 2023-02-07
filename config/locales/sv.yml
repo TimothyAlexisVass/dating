@@ -23,6 +23,13 @@ sv:
   language: språk
   male: man
   female: kvinna
+  age: ålder
+  to: till
+
+  plural:
+    male: män
+    female: kvinnor
+    age: åldrar
 
   activerecord:
     errors:

@@ -1,2 +1,2 @@
-<h1>User index</h1>
-<%= render partial: 'user_profile', collection: @users, as: :user %>
+<h1><%= ct("plural.#{@search_gender}") %> <%= t("plural.age") %> <%= @current_user.age_range_lower %> <%= t(:to) %> <%= @current_user.age_range_upper %></h1>
+<%= render partial: 'index_user_profile', collection: @users, as: :user %>
