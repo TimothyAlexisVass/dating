@@ -39,8 +39,8 @@ class User < ApplicationRecord
   def self.gender_options
     @gender_options ||= [:male, :female]
   end
-  def self.relationship_status_options
-    @relationship_status_options ||= %w[single divorced widowed]
+  def self.marital_status_options
+    @marital_status_options ||= %w[single divorced widowed]
   end
   def self.body_type_options
     @body_type_options ||= %w[slim average athletic muscular curvy full_figured other]
@@ -102,12 +102,12 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: { case_sensitive: false }, format: { with: URI::MailTo::EMAIL_REGEXP, message: "is not a valid email address" }, length: { maximum: 255 }
   validates :password, presence: true, length: { minimum: 6 }
   has_secure_password
-  validates :first_name, presence: true
-  validates :last_name, presence: true
-  validates :birth_date, presence: true
-  validates :rebirth_date, presence: true
-  validates :gender, presence: true, :inclusion => 0..1
-  enum gender: gender_options
+  validates :first_name, presence: true   ######################
+  validates :last_name, presence: true    ######################
+  validates :birth_date, presence: true   ######################
+  validates :rebirth_date, presence: true ######################
+  validates :gender, presence: true, :inclusion => 0..1 ######################
+  enum gender: gender_options ######################
   validates :verified, inclusion: { in: boolean_options, allow_nil: true }
   validates :verified_congregation, inclusion: { in: boolean_options, allow_nil: true }
   validates :verified_rebirth, inclusion: { in: boolean_options, allow_nil: true }
@@ -119,7 +119,7 @@ class User < ApplicationRecord
 
   validates :bio, length: { maximum: 5000 }
   validates :distance_radius, numericality: { greater_than_or_equal_to: 0 }
-  validates :relationship_status, inclusion: { in: relationship_status_options, allow_nil: true }
+  validates :marital_status, inclusion: { in: marital_status_options, allow_nil: true }
   validates :age_range_lower, numericality: { greater_than_or_equal_to: 18, allow_nil: true }
   validates :age_range_upper, numericality: { less_than_or_equal_to: 99, allow_nil: true }
   validates :limit_contact_to_age_range, inclusion: { in: boolean_options, allow_nil: true }
@@ -171,12 +171,35 @@ class User < ApplicationRecord
   validates :pets_status, inclusion: { in: boolean_options, allow_nil: true }
   validates :wants_pets, inclusion: { in: boolean_options, allow_nil: true }
 
-  def gender_text
-    User.gender_options[gender]
-  end
-
   def age
     now = Time.now.utc.to_date
     now.year - birth_date.year - ((now.month > birth_date.month || (now.month == birth_date.month && now.day >= birth_date.day)) ? 0 : 1)
   end
+
+  def searching_for
+    gender == "male" ? :female : :male
+  end
+
+  def specified(field)
+    return :not_specified if self[field].blank?
+    self[field]
+  end
+
+  def body_height_string
+    return I18n.t(:not_specified) if height.blank?
+    "#{height} cm (#{cm_to_ft_in})"
+  end
+
+  def body_weight_string
+    return I18n.t(:not_specified) if weight.blank?
+    lb = (weight * 2.20462).floor
+    "#{weight} kg (#{lb} lbs)"
+  end
+
+  def cm_to_ft_in
+    total_inches = height.to_i / 2.54
+    feet = total_inches / 12
+    inches = total_inches % 12
+    "#{feet.floor}'#{inches.round}\""
+  end  
 end

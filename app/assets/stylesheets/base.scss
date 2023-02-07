@@ -27,22 +27,53 @@ main, header {
   color: red;
 }
 
+.m-t-none {
+  margin-top: 0 !important;
+}
 .m-b-none {
   margin-bottom: 0 !important;
+}
+
+.c-m-lr-5 > * {
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .p-b-none {
   padding-bottom: 0 !important;
 }
 
+.w-100 {
+  width: 100%;
+}
+
 .flex {
   display: flex;
+}
+.f-d-c {
+  flex-direction: column;
+}
+.f-g-1 {
+  flex-grow: 1;
 }
 .f-jc {
   justify-content: center;
 }
 .f-jsb {
   justify-content: space-between;
+}
+
+.details-table {
+  th {
+    width: 20%;
+    text-align: left;
+    padding-left: 8px;
+  }
+  td {
+    width: 30%;
+    text-align: right;
+    padding-right: 8px;
+  }
 }
 
 .password-toggle-icon {
@@ -82,6 +113,7 @@ main, header {
     font-size: 24px;
     margin-top: 0;
     margin-bottom: 30px;
+    padding-right: 10px;
   }
 
   .user-form-field {
@@ -189,7 +221,7 @@ header.top-header, .user-form {
 
 .user-profile {
   h2 {
-    padding: 5px;
+    padding: 5px 15px 5px 5px;
     color: white;
     margin-bottom: 0;
     background: var(--deep-purple);

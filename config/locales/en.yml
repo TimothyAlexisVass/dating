@@ -20,7 +20,7 @@ en:
   is_active: signed in
   is_not_active: signed out
   verified: verified
-  not_verified: not yet verified
+  not_verified: not verified
   baptism: baptism
   has_no_bio: hasn't entered any presentation text
   email_placeholder: your@email.here
@@ -30,12 +30,24 @@ en:
   sign_out: Sign out
   search: search
   profile: profile
+  details: details
   language: language
+  searching_for: Searching for a %{gender} between %{age_range_lower} and %{age_range_upper} years.
+  body_height: height
+  body_type: body type
+  weight: weight
+  eye_color: eye color
+  diet: diet
+  not_specified: not specified
+  marital_status: marital status
   male: male
   female: female
   age: age
   to: to
 
+  singular:
+    male: man
+    female: woman
   plural:
     male: men
     female: women

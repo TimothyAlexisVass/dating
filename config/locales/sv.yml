@@ -20,8 +20,8 @@ sv:
   baptism: dop
   is_active: inloggad
   is_not_active: utloggad
-  verified: verifierad
-  not_verified: ännu inte verifierad
+  verified: verifierat
+  not_verified: ej verifierat
   has_no_bio: har inte fyllt i sin presentationstext
   email_placeholder: din@epost.här
   username_or_email: Användarnamn eller epost
@@ -30,13 +30,25 @@ sv:
   sign_out: Logga ut
   search: sök
   profile: profil
+  details: detaljer
   settings: inställningar
   language: språk
+  searching_for: Söker en %{gender} mellan %{age_range_lower} och %{age_range_upper} år
+  body_height: längd
+  body_type: kroppstyp
+  eye_color: ögonfärg
+  diet: diet
+  weight: vikt
+  marital_status: civilstånd
+  not_specified: ej angett
   male: man
   female: kvinna
   age: ålder
   to: till
 
+  singular:
+    male: man
+    female: kvinna
   plural:
     male: män
     female: kvinnor

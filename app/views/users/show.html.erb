@@ -1,27 +1,97 @@
-<div class="user-profile">
-  <% if @current_user == @user %>
-    <h1><%= "#{ct(:welcome)} " %><%= @user.first_name %></h1>
-  <% else %>
-    <h1><%= "#{@user.first_name}, " %><span title='<%= t(:age) %>'><%= @user.age %></span></h1>
-  <% end %>
-  <%= image_tag "#{@user.gender}.svg" %><br>
-  <% if @user.rebirth_date.present? %>
-    <%= ct(:baptized_since) %>: <%= @user.rebirth_date %>
-  <% else %>
-    <%= ct(:not_yet_baptized) %>
-  <% end %>
-  <h2><%= ct(:presentation) %></h2>
-  <p>
-    <% if @user.bio.present? %>
-      <%= @user.bio %>
-    <% else %>
-      <%= @user.first_name %> <%= t(:has_no_bio) %>
-    <% end %>
-  </p>
-  <h2 class="flex f-jsb"><span><%= ct(:status) %></span><span class="<%= @user.is_active? ? "signed_in" : "signed_out" %>"><%= @user.is_active? ? "🟢 #{t(:is_active)}" : "🔴 #{t(:is_not_active)}" %></span></h2>
-  <p class="flex f-jsb" style="max-width: 800px">
-    <span><%= ct(:account) %>: <%= @user.verified? ? "✅#{ct(:verified)}" : "⛔#{ct(:not_verified)}" %></span>
-    <span><%= ct(:congregation) %>: <%= @user.verified_congregation? ? "✅#{ct(:verified)}" : "⛔#{ct(:not_verified)}" %></span>
-    <span><%= ct(:baptism) %>: <%= @user.verified_rebirth? ? "✅#{ct(:verified)}" : "⛔#{ct(:not_verified)}" %></span>
-  </p>
+<% if @current_user == @user %>
+  <h1><%= "#{ct(:welcome)} " %><%= @user.first_name %></h1>
+<% else %>
+  <h1><%= "#{@user.first_name}, " %><span title='<%= t(:age) %>'><%= @user.age %></span></h1>
+<% end %>
+<div class="user-profile flex c-m-lr-5">
+  <div>
+    <%= image_tag "#{@user.gender}.svg" %>
+    <p class="flex f-jsb c-m-lr-5">
+      <span>
+        <% if @user.rebirth_date.present? %>
+          <%= ct(:baptized_since) %>: <%= @user.rebirth_date %>
+        <% else %>
+          <%= ct(:not_yet_baptized) %>
+        <% end %>
+      </span>
+      <span>
+        <%= t("searching_for", gender: t("singular.#{@user.searching_for}"), age_range_lower: @user.age_range_lower, age_range_upper: @user.age_range_upper) %>
+      </span>
+    </p>
+    <h2><%= ct(:details) %></h2>
+    <table class="w-100 details-table table-striped">
+      <tbody class="flex f-g-1 f-d-c">
+        <tr class="flex f-g-1">
+          <th><%= ct(:marital_status) %></th>
+          <td><%= t(@user.specified(:marital_status)) %></td>
+          <th><%= ct(:diet) %></th>
+          <td><%= t(@user.specified(:diet)) %></td>
+        </tr>
+        <tr class="flex f-g-1">
+          <th><%= ct(:body_height) %></th>
+          <td><%= @user.body_height_string %></td>
+          <th><%= ct(:weight) %></th>
+          <td><%= @user.body_weight_string %></td>
+        </tr>
+        <tr class="flex f-g-1">
+          <th><%= ct(:body_type) %></th>
+          <td><%= t(@user.specified(:body_type)) %></td>
+          <th><%= ct(:eye_color) %></th>
+          <td><%= t(@user.specified(:eye_color)) %></td>
+        </tr>
+      </tbody>
+    </table>
+    <h2 class="flex f-jsb"><span><%= ct(:status) %></span><span class="<%= @user.is_active? ? "signed_in" : "signed_out" %>"><%= @user.is_active? ? "🟢 #{t(:is_active)}" : "🔴 #{t(:is_not_active)}" %></span></h2>
+    <p class="flex f-jsb c-m-lr-5">
+      <span><strong><%= ct(:account) %></strong>: <%= @user.verified? ? "✅#{ct(:verified)}" : "⛔#{ct(:not_verified)}" %></span>
+      <span><strong><%= ct(:congregation) %></strong>: <%= @user.verified_congregation? ? "✅#{ct(:verified)}" : "⛔#{ct(:not_verified)}" %></span>
+      <span><strong><%= ct(:baptism) %></strong>: <%= @user.verified_rebirth? ? "✅#{ct(:verified)}" : "⛔#{ct(:not_verified)}" %></span>
+    </p>
+  </div>
+  <div class="f-g-1">
+    <h2 class="m-t-none"><%= ct(:presentation) %></h2>
+    <p>
+      <% if @user.bio.present? %>
+        <%= @user.bio %>
+      <% else %>
+        <%= @user.first_name %> <%= t(:has_no_bio) %>
+      <% end %>
+    </p>
+  </div>
 </div>
+
+
+<!--
+t.point :location
+t.float :longitude
+t.float :latitude
+t.date :last_active, default: -> { 'CURRENT_TIMESTAMP' }
+
+t.float :distance_radius, default: 5.0
+t.boolean :limit_contact_to_age_range, default: false
+
+t.string :eye_color
+t.string :tattoos, array: true, default: []
+t.string :education
+t.integer :income_amount
+t.string :income_currency
+t.string :economy_status
+t.string :work_status
+t.string :attendance_frequency
+t.string :tithing_status
+t.string :alms_status
+t.date :rebirth_date
+t.string :prayer_frequency
+t.integer :number_of_times_read_bible
+t.string :smoke_status
+t.string :sober_status
+t.string :caffeine_status
+t.string :drug_status
+t.string :medical_status
+t.string :allergies, array: true, default: []
+t.string :exercise
+t.boolean :children_status
+t.string :wants_children
+t.boolean :pets_status
+t.boolean :wants_pets
+-->
