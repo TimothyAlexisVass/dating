@@ -30,11 +30,13 @@ class SessionsController < ApplicationController
   private
   
   def sign_in(user)
-    session[:user_id] = user.id
+    session[:user_id] = user.id 
+    user.is_active = true 
   end
   
   def sign_out
     session.delete(:user_id)
+    @current_user.is_active = false
     @current_user = nil
   end
   

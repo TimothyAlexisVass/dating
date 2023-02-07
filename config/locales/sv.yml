@@ -12,6 +12,17 @@ sv:
   password: lösenord
   birth_date: födelsedatum
   rebirth_date: återfödelse (dopdag)
+  baptized_since: döpt sedan
+  not_yet_baptized: ännu ej döpt
+  presentation: presentation
+  account: användare
+  congregation: församling
+  baptism: dop
+  is_active: inloggad
+  is_not_active: utloggad
+  verified: verifierad
+  not_verified: ännu inte verifierad
+  has_no_bio: har inte fyllt i sin presentationstext
   email_placeholder: din@epost.här
   username_or_email: Användarnamn eller epost
   sign_up: Registrera dig

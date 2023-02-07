@@ -1,7 +1,27 @@
-<h1><%= "#{ct(:welcome)} " if @current_user == @user %><%= "#{@user.first_name} #{@user.last_name}" %></h1>
-
-<%= image_tag "#{@user.gender}.svg" %>
-<%= ct(:birth_date) %>
-<%= @user.birth_date %>
-<%= ct(:rebirth_date) %>
-<%= @user.rebirth_date %>
+<div class="user-profile">
+  <% if @current_user == @user %>
+    <h1><%= "#{ct(:welcome)} " %><%= @user.first_name %></h1>
+  <% else %>
+    <h1><%= "#{@user.first_name}, " %><span title='<%= t(:age) %>'><%= @user.age %></span></h1>
+  <% end %>
+  <%= image_tag "#{@user.gender}.svg" %><br>
+  <% if @user.rebirth_date.present? %>
+    <%= ct(:baptized_since) %>: <%= @user.rebirth_date %>
+  <% else %>
+    <%= ct(:not_yet_baptized) %>
+  <% end %>
+  <h2><%= ct(:presentation) %></h2>
+  <p>
+    <% if @user.bio.present? %>
+      <%= @user.bio %>
+    <% else %>
+      <%= @user.first_name %> <%= t(:has_no_bio) %>
+    <% end %>
+  </p>
+  <h2 class="flex f-jsb"><span><%= ct(:status) %></span><span class="<%= @user.is_active? ? "signed_in" : "signed_out" %>"><%= @user.is_active? ? "🟢 #{t(:is_active)}" : "🔴 #{t(:is_not_active)}" %></span></h2>
+  <p class="flex f-jsb" style="max-width: 800px">
+    <span><%= ct(:account) %>: <%= @user.verified? ? "✅#{ct(:verified)}" : "⛔#{ct(:not_verified)}" %></span>
+    <span><%= ct(:congregation) %>: <%= @user.verified_congregation? ? "✅#{ct(:verified)}" : "⛔#{ct(:not_verified)}" %></span>
+    <span><%= ct(:baptism) %>: <%= @user.verified_rebirth? ? "✅#{ct(:verified)}" : "⛔#{ct(:not_verified)}" %></span>
+  </p>
+</div>

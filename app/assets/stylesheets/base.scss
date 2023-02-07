@@ -35,8 +35,14 @@ main, header {
   padding-bottom: 0 !important;
 }
 
+.flex {
+  display: flex;
+}
 .f-jc {
   justify-content: center;
+}
+.f-jsb {
+  justify-content: space-between;
 }
 
 .password-toggle-icon {
@@ -178,5 +184,29 @@ header.top-header, .user-form {
       font-size: 18px;
       margin: 0 3px;
     }
+  }
+}
+
+.user-profile {
+  h2 {
+    padding: 5px;
+    color: white;
+    margin-bottom: 0;
+    background: var(--deep-purple);
+    .signed_in {
+      color: green
+    }
+    .signed_out {
+      color: #cd1616
+    }
+  }
+  p {
+    margin: 5px 0;
+  }
+  img {
+    width: 100%;
+    max-width: 600px;
+    background: rgb(164, 209, 209);
+    border-radius: 5px;
   }
 }

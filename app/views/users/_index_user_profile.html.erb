@@ -1,6 +1,6 @@
 <div class="user-profile">
-  <%= image_tag "#{user.gender}.svg" %>
   <h2><%= user.first_name %> <%= user.last_name %> (<%= user.age %>)</h2>
+  <%= image_tag "#{user.gender}.svg" %>
   <%= ct(:birth_date) %>
   <%= user.birth_date %>
   <%= ct(:rebirth_date) %>
