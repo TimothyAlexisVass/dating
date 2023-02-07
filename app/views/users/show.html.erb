@@ -24,8 +24,8 @@
         <tr class="flex f-g-1">
           <th><%= ct(:marital_status) %></th>
           <td><%= t(@user.specified(:marital_status)) %></td>
-          <th><%= ct(:diet) %></th>
-          <td><%= t(@user.specified(:diet)) %></td>
+          <th><%= ct(:body_type) %></th>
+          <td><%= t(@user.specified(:body_type)) %></td>
         </tr>
         <tr class="flex f-g-1">
           <th><%= ct(:body_height) %></th>
@@ -34,10 +34,16 @@
           <td><%= @user.body_weight_string %></td>
         </tr>
         <tr class="flex f-g-1">
-          <th><%= ct(:body_type) %></th>
-          <td><%= t(@user.specified(:body_type)) %></td>
+          <th><%= ct(:diet) %></th>
+          <td><%= t(@user.specified(:diet)) %></td>
+          <th><%= ct(:exercise) %></th>
+          <td><%= t(@user.specified(:exercise)) %></td>
+        </tr>
+        <tr class="flex f-g-1">
           <th><%= ct(:eye_color) %></th>
           <td><%= t(@user.specified(:eye_color)) %></td>
+          <th><%= ct(:tattoos) %></th>
+          <td><%= t(@user.specified(:tattoos)) %></td>
         </tr>
       </tbody>
     </table>
@@ -70,8 +76,6 @@ t.date :last_active, default: -> { 'CURRENT_TIMESTAMP' }
 t.float :distance_radius, default: 5.0
 t.boolean :limit_contact_to_age_range, default: false
 
-t.string :eye_color
-t.string :tattoos, array: true, default: []
 t.string :education
 t.integer :income_amount
 t.string :income_currency
@@ -80,7 +84,6 @@ t.string :work_status
 t.string :attendance_frequency
 t.string :tithing_status
 t.string :alms_status
-t.date :rebirth_date
 t.string :prayer_frequency
 t.integer :number_of_times_read_bible
 t.string :smoke_status
@@ -89,7 +92,6 @@ t.string :caffeine_status
 t.string :drug_status
 t.string :medical_status
 t.string :allergies, array: true, default: []
-t.string :exercise
 t.boolean :children_status
 t.string :wants_children
 t.boolean :pets_status

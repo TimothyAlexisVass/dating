@@ -38,6 +38,8 @@ es:
   weight: peso
   eye_color: color de ojos
   diet: dieta
+  exercise: ejercicio
+  tattoos: tatuajes
   not_specified: no especificado
   marital_status: estado civil
   male: masculino

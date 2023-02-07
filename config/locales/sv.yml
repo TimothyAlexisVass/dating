@@ -38,6 +38,8 @@ sv:
   body_type: kroppstyp
   eye_color: ögonfärg
   diet: diet
+  exercise: träning
+  tattoos: tatueringar
   weight: vikt
   marital_status: civilstånd
   not_specified: ej angett
