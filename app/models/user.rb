@@ -107,6 +107,7 @@ class User < ApplicationRecord
   validates :birth_date, presence: true
   validates :rebirth_date, presence: true
   validates :gender, presence: true, :inclusion => 0..1
+  enum gender: gender_options
   validates :verified, inclusion: { in: boolean_options, allow_nil: true }
   validates :verified_congregation, inclusion: { in: boolean_options, allow_nil: true }
   validates :verified_rebirth, inclusion: { in: boolean_options, allow_nil: true }
