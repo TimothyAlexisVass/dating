@@ -34,10 +34,11 @@ es:
   language: idioma
   searching_for: Buscando un %{gender} entre %{age_range_lower} y %{age_range_upper} años.
   body_height: altura
-  body_type: tipo de cuerpo
+  body_type: cuerpo
   weight: peso
-  eye_color: color de ojos
+  eye_color: ojos
   diet: dieta
+  none: ninguna
   exercise: ejercicio
   tattoos: tatuajes
   not_specified: no especificado
@@ -46,6 +47,7 @@ es:
   female: femenino
   age: edad
   to: a
+  plant_based: base de plantas
 
   singular:
     male: hombre

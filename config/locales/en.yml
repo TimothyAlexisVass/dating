@@ -13,7 +13,7 @@ en:
   birth_date: birth date
   rebirth_date: Rebirth (Date of baptism)
   baptized_since: baptized since
-  not_yet_baptized: not yet baptized
+  not_yet_baptized: not baptized yet
   presentation: presentation
   account: account
   congregation: congregation
@@ -34,10 +34,11 @@ en:
   language: language
   searching_for: Searching for a %{gender} between %{age_range_lower} and %{age_range_upper} years.
   body_height: height
-  body_type: body type
+  body_type: body
   weight: weight
-  eye_color: eye color
+  eye_color: eyes
   diet: diet
+  none: none
   exercise: exercise
   tattoos: tattoos
   not_specified: not specified
@@ -46,6 +47,7 @@ en:
   female: female
   age: age
   to: to
+  plant_based: plant based
 
   singular:
     male: man

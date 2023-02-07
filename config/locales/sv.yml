@@ -13,7 +13,7 @@ sv:
   birth_date: födelsedatum
   rebirth_date: återfödelse (dopdag)
   baptized_since: döpt sedan
-  not_yet_baptized: ännu ej döpt
+  not_yet_baptized: ej döpt än
   presentation: presentation
   account: användare
   congregation: församling
@@ -35,8 +35,9 @@ sv:
   language: språk
   searching_for: Söker en %{gender} mellan %{age_range_lower} och %{age_range_upper} år
   body_height: längd
-  body_type: kroppstyp
-  eye_color: ögonfärg
+  body_type: kropp
+  eye_color: ögon
+  none: inga
   diet: diet
   exercise: träning
   tattoos: tatueringar
@@ -47,6 +48,7 @@ sv:
   female: kvinna
   age: ålder
   to: till
+  plant_based: växtbaserad
 
   singular:
     male: man

@@ -37,7 +37,7 @@ class User < ApplicationRecord
     @boolean_options ||= [true, false]
   end
   def self.gender_options
-    @gender_options ||= [:male, :female]
+    @gender_options ||= %w[male female]
   end
   def self.marital_status_options
     @marital_status_options ||= %w[single divorced widowed]
@@ -88,7 +88,7 @@ class User < ApplicationRecord
     @drug_status_options ||= %w[always_been_free liberated trying]
   end
   def self.diet_options
-    @diet_options ||= %w[plant_based vegetarian pescatarian very_rarely_meat regularly_meat]
+    @diet_options ||= %w[plant_based vegan vegetarian pescatarian very_rarely_meat regularly_meat]
   end
   def self.exercise_options
     @exercise_options ||= %w[daily almost_daily weekly rarely]
@@ -105,13 +105,12 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: { case_sensitive: false }, format: { with: URI::MailTo::EMAIL_REGEXP, message: "is not a valid email address" }, length: { maximum: 255 }
   validates :password, presence: true, length: { minimum: 6 }
   has_secure_password
-  validates :first_name, presence: true   ######################
-  validates :last_name, presence: true    ######################
-  validates :birth_date, presence: true   ######################
-  validates :rebirth_date, presence: true ######################
-  validates :gender, presence: true, :inclusion => 0..1 ######################
-  enum gender: gender_options ######################
-  validates :verified, inclusion: { in: boolean_options, allow_nil: true }
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :birth_date, presence: true
+  validates :gender, presence: true, inclusion: { in: gender_options, allow_nil: true }
+  enum gender: gender_options
+  validates :verified_user, inclusion: { in: boolean_options, allow_nil: true }
   validates :verified_congregation, inclusion: { in: boolean_options, allow_nil: true }
   validates :verified_rebirth, inclusion: { in: boolean_options, allow_nil: true }
   validates :is_active, inclusion: { in: boolean_options, allow_nil: true }
@@ -199,10 +198,25 @@ class User < ApplicationRecord
     "#{weight} kg (#{lb} lbs)"
   end
 
+  def congregation_string
+    congregation = ""
+    return I18n.t(:not_specified) if congregation.blank?
+    congregation
+  end
+
+  def baptism_string
+    return I18n.t(:not_yet_baptized) if rebirth_date.blank?
+    rebirth_date
+  end
+
   def cm_to_ft_in
     total_inches = height.to_i / 2.54
     feet = total_inches / 12
     inches = total_inches % 12
     "#{feet.floor}'#{inches.round}\""
+  end
+
+  def verified?(field)
+    self[field] ? "✅ #{I18n.t(:verified)}" : "⛔ #{I18n.t(:not_verified)}"
   end
 end

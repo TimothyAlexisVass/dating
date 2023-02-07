@@ -63,19 +63,6 @@ main, header {
   justify-content: space-between;
 }
 
-.details-table {
-  th {
-    width: 20%;
-    text-align: left;
-    padding-left: 8px;
-  }
-  td {
-    width: 30%;
-    text-align: right;
-    padding-right: 8px;
-  }
-}
-
 .password-toggle-icon {
   position: absolute;
   right: 10px;
@@ -237,8 +224,38 @@ header.top-header, .user-form {
   }
   img {
     width: 100%;
+    min-width: 500px;
     max-width: 600px;
     background: rgb(164, 209, 209);
     border-radius: 5px;
+  }
+  .details-table {
+    th {
+      width: 35%;
+      text-align: left;
+      padding-left: 8px;
+    }
+    th:nth-child(3) {
+      width: 21%;
+    }
+    td {
+      width: 44%;
+      text-align: right;
+      padding-right: 8px;
+    }
+  }
+  .status-table {
+    th {
+      width: 40%;
+      text-align: left;
+      padding-left: 8px;
+    }
+    td {
+      text-align: right;
+      padding-right: 8px;
+    }
+    td:nth-child(2) {
+      flex-grow: 1
+    }
   }
 }

@@ -4,16 +4,9 @@
   <h1><%= "#{@user.first_name}, " %><span title='<%= t(:age) %>'><%= @user.age %></span></h1>
 <% end %>
 <div class="user-profile flex c-m-lr-5">
-  <div>
+  <div class="left-side">
     <%= image_tag "#{@user.gender}.svg" %>
     <p class="flex f-jsb c-m-lr-5">
-      <span>
-        <% if @user.rebirth_date.present? %>
-          <%= ct(:baptized_since) %>: <%= @user.rebirth_date %>
-        <% else %>
-          <%= ct(:not_yet_baptized) %>
-        <% end %>
-      </span>
       <span>
         <%= t("searching_for", gender: t("singular.#{@user.searching_for}"), age_range_lower: @user.age_range_lower, age_range_upper: @user.age_range_upper) %>
       </span>
@@ -35,24 +28,38 @@
         </tr>
         <tr class="flex f-g-1">
           <th><%= ct(:diet) %></th>
-          <td><%= t(@user.specified(:diet)) %></td>
+          <td><%= ct(@user.specified(:diet)) %></td>
           <th><%= ct(:exercise) %></th>
-          <td><%= t(@user.specified(:exercise)) %></td>
+          <td><%= ct(@user.specified(:exercise)) %></td>
         </tr>
         <tr class="flex f-g-1">
           <th><%= ct(:eye_color) %></th>
-          <td><%= t(@user.specified(:eye_color)) %></td>
+          <td><%= ct(@user.specified(:eye_color)) %></td>
           <th><%= ct(:tattoos) %></th>
-          <td><%= t(@user.specified(:tattoos)) %></td>
+          <td><%= ct(@user.specified(:tattoos)) %></td>
         </tr>
       </tbody>
     </table>
     <h2 class="flex f-jsb"><span><%= ct(:status) %></span><span class="<%= @user.is_active? ? "signed_in" : "signed_out" %>"><%= @user.is_active? ? "🟢 #{t(:is_active)}" : "🔴 #{t(:is_not_active)}" %></span></h2>
-    <p class="flex f-jsb c-m-lr-5">
-      <span><strong><%= ct(:account) %></strong>: <%= @user.verified? ? "✅#{ct(:verified)}" : "⛔#{ct(:not_verified)}" %></span>
-      <span><strong><%= ct(:congregation) %></strong>: <%= @user.verified_congregation? ? "✅#{ct(:verified)}" : "⛔#{ct(:not_verified)}" %></span>
-      <span><strong><%= ct(:baptism) %></strong>: <%= @user.verified_rebirth? ? "✅#{ct(:verified)}" : "⛔#{ct(:not_verified)}" %></span>
-    </p>
+    <table class="w-100 status-table table-striped">
+      <tbody class="flex f-g-1 f-d-c">
+        <tr class="flex f-g-1">
+          <th><%= ct(:username) %></th>
+          <td><%= @user.username %></td>
+          <td><%= @user.verified?(:verified_user) %></td>
+        </tr>
+        <tr class="flex f-g-1">
+          <th><%= ct(:congregation) %></th>
+          <td><%= @user.congregation_string %></td>
+          <td><%= @user.verified?(:verified_congregation) %></td>
+        </tr>
+        <tr class="flex f-g-1">
+          <th><%= ct(:baptism) %></th>
+          <td><%= @user.baptism_string %></td>
+          <td><%= @user.verified?(:verified_rebirth) %></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
   <div class="f-g-1">
     <h2 class="m-t-none"><%= ct(:presentation) %></h2>
