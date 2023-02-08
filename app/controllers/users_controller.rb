@@ -13,8 +13,13 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by(username: params[:username])
-    @interests = @user.interests.group_by{ |g| g.interest_category.text.gsub(/ /,"_") }
-                      .transform_values { |v| v.map(&:text) }
+    if @user.interests.present?
+      @interests = @user.interests.group_by{ |g| g.interest_category.text.tr(" ","_") }
+                      .transform_values{ |v| v.map(&:text) }
+    end
+    if @user.books.present?
+      @books = @user.books
+    end
   end
 
   def new

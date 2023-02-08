@@ -44,6 +44,7 @@ sv:
   weight: vikt
   marital_status: civilstånd
   interests: intressen
+  no_interests: har inte angett några intressen.
   not_specified: ej angett
   male: man
   female: kvinna

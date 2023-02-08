@@ -44,6 +44,7 @@ en:
   not_specified: not specified
   marital_status: marital status
   interests: interests
+  no_interests: hasn't selected any interests.
   male: male
   female: female
   age: age

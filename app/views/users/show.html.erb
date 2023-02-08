@@ -11,74 +11,13 @@
         <%= t("searching_for", gender: t("singular.#{@user.searching_for}"), age_range_lower: @user.age_range_lower, age_range_upper: @user.age_range_upper) %>
       </span>
     </p>
-    <h2><%= ct(:details) %></h2>
-    <table class="w-100 details-table table-striped">
-      <tbody class="flex f-g-1 f-d-c">
-        <tr class="flex f-g-1">
-          <th><%= ct(:marital_status) %></th>
-          <td><%= ct(@user.specified(:marital_status)) %></td>
-          <th><%= ct(:body_type) %></th>
-          <td><%= ct(@user.specified(:body_type)) %></td>
-        </tr>
-        <tr class="flex f-g-1">
-          <th><%= ct(:body_height) %></th>
-          <td><%= @user.body_height_string %></td>
-          <th><%= ct(:weight) %></th>
-          <td><%= @user.body_weight_string %></td>
-        </tr>
-        <tr class="flex f-g-1">
-          <th><%= ct(:diet) %></th>
-          <td><%= ct(@user.specified(:diet)) %></td>
-          <th><%= ct(:exercise) %></th>
-          <td><%= ct(@user.specified(:exercise)) %></td>
-        </tr>
-        <tr class="flex f-g-1">
-          <th><%= ct(:eye_color) %></th>
-          <td><%= ct("plural."+@user.specified(:eye_color)) %></td>
-          <th><%= ct(:tattoos) %></th>
-          <td><%= ct(@user.specified(:tattoos)) %></td>
-        </tr>
-      </tbody>
-    </table>
-    <h2 class="flex f-jsb"><span><%= ct(:status) %></span><span class="<%= @user.is_active? ? "signed_in" : "signed_out" %>"><%= @user.is_active? ? "🟢 #{t(:is_active)}" : "🔴 #{t(:is_not_active)}" %></span></h2>
-    <table class="w-100 status-table table-striped">
-      <tbody class="flex f-g-1 f-d-c">
-        <tr class="flex f-g-1">
-          <th><%= ct(:username) %></th>
-          <td><%= @user.username %></td>
-          <td><%= @user.verified?(:verified_user) %></td>
-        </tr>
-        <tr class="flex f-g-1">
-          <th><%= ct(:congregation) %></th>
-          <td><%= @user.congregation_string %></td>
-          <td><%= @user.verified?(:verified_congregation) %></td>
-        </tr>
-        <tr class="flex f-g-1">
-          <th><%= ct(:baptism) %></th>
-          <td><%= @user.baptism_string %></td>
-          <td><%= @user.verified?(:verified_rebirth) %></td>
-        </tr>
-      </tbody>
-    </table>
+    <%= render 'user_details' %>
+    <%= render 'user_status' %>
   </div>
   <div class="f-g-1">
-    <h2 class="m-t-none"><%= ct(:presentation) %></h2>
-    <p>
-      <% if @user.bio.present? %>
-        <%= @user.bio %>
-      <% else %>
-        <%= @user.first_name %> <%= t(:has_no_bio) %>
-      <% end %>
-    </p>
-    <h2><%= ct(:interests) %></h2>
-    <% @interests.each do |interest_category, interests| %>
-      <!--p class="interest-category"-->
-        <span class="interest interest-category <%= interest_category %> noselect"><%= t(interest_category) %></span>
-        <% interests.each do |interest| %>
-          <span title="<%= t(interest_category) %>" class="interest <%= interest_category %> noselect"><%= interest %></span>
-        <% end %>
-      <!--/p-->
-    <% end %>
+    <%= render 'user_presentation' %>
+    <%= render 'user_interests' %>
+    <%= render 'user_books' %>
   </div>
 </div>
 

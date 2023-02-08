@@ -44,6 +44,7 @@ es:
   not_specified: no especificado
   marital_status: estado civil
   interests: intereses
+  no_interests: no ha especificado ningún interés.
   male: masculino
   female: femenino
   age: edad

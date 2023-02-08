@@ -1,0 +1,8 @@
+<h2 class="m-t-none"><%= ct(:presentation) %></h2>
+<p>
+  <% if @user.bio.present? %>
+    <%= @user.bio %>
+  <% else %>
+    <%= @user.first_name %> <%= t(:has_no_bio) %>
+  <% end %>
+</p>

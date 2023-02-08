@@ -1,0 +1,29 @@
+<h2><%= ct(:details) %></h2>
+<table class="w-100 details-table table-striped">
+  <tbody class="flex f-g-1 f-d-c">
+    <tr class="flex f-g-1">
+      <th><%= ct(:marital_status) %></th>
+      <td><%= ct(@user.specified(:marital_status)) %></td>
+      <th><%= ct(:body_type) %></th>
+      <td><%= ct(@user.specified(:body_type)) %></td>
+    </tr>
+    <tr class="flex f-g-1">
+      <th><%= ct(:body_height) %></th>
+      <td><%= @user.body_height_string %></td>
+      <th><%= ct(:weight) %></th>
+      <td><%= @user.body_weight_string %></td>
+    </tr>
+    <tr class="flex f-g-1">
+      <th><%= ct(:diet) %></th>
+      <td><%= ct(@user.specified(:diet)) %></td>
+      <th><%= ct(:exercise) %></th>
+      <td><%= ct(@user.specified(:exercise)) %></td>
+    </tr>
+    <tr class="flex f-g-1">
+      <th><%= ct(:eye_color) %></th>
+      <td><%= ct("plural."+@user.specified(:eye_color)) %></td>
+      <th><%= ct(:tattoos) %></th>
+      <td><%= ct(@user.specified(:tattoos)) %></td>
+    </tr>
+  </tbody>
+</table>

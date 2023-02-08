@@ -1,0 +1,8 @@
+<h2><%= ct(:books_read) %></h2>
+<% if @books.present? %>
+  <% @books.each do |book| %>
+    <span class="interest"><%= book.title %></span>
+  <% end %>
+<% else %>
+  <%= @user.first_name %> <%= t(:no_books_read) %>
+<% end %>

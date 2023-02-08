@@ -1,0 +1,20 @@
+<h2 class="flex f-jsb"><span><%= ct(:status) %></span><span class="<%= @user.is_active? ? "signed_in" : "signed_out" %>"><%= @user.is_active? ? "🟢 #{t(:is_active)}" : "🔴 #{t(:is_not_active)}" %></span></h2>
+<table class="w-100 status-table table-striped">
+  <tbody class="flex f-g-1 f-d-c">
+    <tr class="flex f-g-1">
+      <th><%= ct(:username) %></th>
+      <td><%= @user.username %></td>
+      <td><%= @user.verified?(:verified_user) %></td>
+    </tr>
+    <tr class="flex f-g-1">
+      <th><%= ct(:congregation) %></th>
+      <td><%= @user.congregation_string %></td>
+      <td><%= @user.verified?(:verified_congregation) %></td>
+    </tr>
+    <tr class="flex f-g-1">
+      <th><%= ct(:baptism) %></th>
+      <td><%= @user.baptism_string %></td>
+      <td><%= @user.verified?(:verified_rebirth) %></td>
+    </tr>
+  </tbody>
+</table>

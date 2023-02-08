@@ -1,0 +1,11 @@
+<h2><%= ct(:interests) %></h2>
+<% if @interests.present? %>
+  <% @interests.each do |interest_category, interests| %>
+    <span class="interest interest-category <%= interest_category %> noselect"><%= t(interest_category) %></span>
+    <% interests.each do |interest| %>
+      <span title="<%= t(interest_category) %>" class="interest <%= interest_category %> noselect"><%= interest %></span>
+    <% end %>
+  <% end %>
+<% else %>
+  <%= @user.first_name %> <%= t(:no_interests) %>
+<% end %>

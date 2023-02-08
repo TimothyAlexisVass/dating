@@ -25,8 +25,8 @@ class User < ApplicationRecord
   has_many :professions, through: :user_professions
   has_many :user_callings
   has_many :callings, through: :user_callings
-  has_many :user_congregation_responsibilities
-  has_many :congregation_responsibilities, through: :user_congregation_responsibilities
+  has_many :user_church_responsibilities
+  has_many :church_responsibilities, through: :user_church_responsibilities
   has_many :user_spiritual_gifts
   has_many :spiritual_gifts, through: :user_spiritual_gifts
   has_one :congregation
