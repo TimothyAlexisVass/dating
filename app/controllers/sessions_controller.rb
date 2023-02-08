@@ -8,17 +8,19 @@ class SessionsController < ApplicationController
 
   def create
     username_or_email = params[:session][:username_or_email].downcase
-    user = if username_or_email.include?("@")
-      User.find_by(email: username_or_email)
+
+    if username_or_email.include?("@")
+      user = User.find_by(email: username_or_email)
     else
-      User.find_by(username: username_or_email)
+      user = User.find_by(username: username_or_email)
     end
     if user && user.authenticate(params[:session][:password])
-      sign_in user
+      session[:user_id] = user.id 
+      user.update_columns(is_active: true)
       redirect_to user_path(user.username)
     else
       flash.now[:danger] = 'Invalid email/password combination'
-      render 'sign_in'
+      render 'signin'
     end
   end
 
@@ -29,14 +31,9 @@ class SessionsController < ApplicationController
 
   private
   
-  def sign_in(user)
-    session[:user_id] = user.id 
-    user.is_active = true 
-  end
-  
   def sign_out
+    @current_user.update_columns(is_active: false)
     session.delete(:user_id)
-    @current_user.is_active = false
     @current_user = nil
   end
   

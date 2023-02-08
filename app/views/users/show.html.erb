@@ -16,9 +16,9 @@
       <tbody class="flex f-g-1 f-d-c">
         <tr class="flex f-g-1">
           <th><%= ct(:marital_status) %></th>
-          <td><%= t(@user.specified(:marital_status)) %></td>
+          <td><%= ct(@user.specified(:marital_status)) %></td>
           <th><%= ct(:body_type) %></th>
-          <td><%= t(@user.specified(:body_type)) %></td>
+          <td><%= ct(@user.specified(:body_type)) %></td>
         </tr>
         <tr class="flex f-g-1">
           <th><%= ct(:body_height) %></th>
@@ -70,9 +70,9 @@
         <%= @user.first_name %> <%= t(:has_no_bio) %>
       <% end %>
     </p>
+    <h2><%= ct(:interests) %></h2>
   </div>
 </div>
-
 
 <!--
 t.point :location

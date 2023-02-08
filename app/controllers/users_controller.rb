@@ -24,6 +24,7 @@ class UsersController < ApplicationController
     success = user.save
     if success
       session[:user_id] = user.id
+      user.update_columns(is_active: true)
       redirect_to user_path(user.username), flash: { success: t(:sign_up_successful) }
     else
       redirect_to root_url, flash: { danger: user.errors.full_messages }
@@ -44,7 +45,11 @@ class UsersController < ApplicationController
   private
 
   def set_user
-    @user = User.find(session[:user_id])
+    if session[:user_id].present?
+      @user = User.find(session[:user_id])
+    else
+      @user = nil
+    end
   end
 
   def user_params
