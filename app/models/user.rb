@@ -1,8 +1,9 @@
 class User < ApplicationRecord
-  before_save :downcase_email
+  before_save :downcase_email_and_username
 
-  def downcase_email
+  def downcase_email_and_username
     email.downcase!
+    username.downcase!
   end
   
   ##### Associations ####################################################
@@ -46,7 +47,7 @@ class User < ApplicationRecord
     @body_type_options ||= %w[slim average athletic muscular curvy full_figured other]
   end
   def self.eye_color_options
-    @eye_color_options ||= %w[brown blue green hazel gray mottled amber violet red other]
+    @eye_color_options ||= %w[brown blue green hazel gray mixed amber violet red other]
   end
   def self.education_options
     @education_options ||= %w[elementary_school middle_school high_school vocational_school some_college associate_degree bachelor_degree masters_degree doctoral_degree professional_degree]
@@ -94,14 +95,14 @@ class User < ApplicationRecord
     @exercise_options ||= %w[daily almost_daily weekly rarely]
   end
   def self.wants_children_options
-    @wants_children_options ||= %w[if_yah_wants yes maybe cannot no]
+    @wants_children_options ||= %w[if_yah_wills yes maybe cannot no]
   end
 
 
 
   ##### Basic ####################################################
 
-  validates :username, presence: true, uniqueness: true, length: { minimum: 2, maximum: 255 }
+  validates :username, presence: true, uniqueness: true, length: { minimum: 2, maximum: 30 }, format: { with: /\A[a-zA-Z0-9]+\z/ }
   validates :email, presence: true, uniqueness: { case_sensitive: false }, format: { with: URI::MailTo::EMAIL_REGEXP, message: "is not a valid email address" }, length: { maximum: 255 }
   validates :password, presence: true, length: { minimum: 6 }
   has_secure_password
@@ -113,7 +114,7 @@ class User < ApplicationRecord
   validates :verified_user, inclusion: { in: boolean_options, allow_nil: true }
   validates :verified_congregation, inclusion: { in: boolean_options, allow_nil: true }
   validates :verified_rebirth, inclusion: { in: boolean_options, allow_nil: true }
-  validates :is_active, inclusion: { in: boolean_options, allow_nil: true }
+  # validates :is_active, inclusion: { in: boolean_options, allow_nil: true }
 
 
 
