@@ -1,10 +1,7 @@
 class ApplicationController < ActionController::Base
+  before_action :require_signin
   before_action :set_locale
   before_action :current_user
-
-  def set_locale
-    I18n.locale = session[:locale] || default_locale
-  end
 
   def set_session_locale
     session[:locale] = params[:locale]
@@ -15,6 +12,22 @@ class ApplicationController < ActionController::Base
   end
 
   private
+
+  def require_signin
+    unless signed_in?
+      if request.path != '/' && request.path != '/signin'
+        redirect_to '/signin', flash: { danger: t(:require_signin) }
+      end
+    end
+  end
+
+  def signed_in?
+    !session[:user_id].nil?
+  end
+
+  def set_locale
+    I18n.locale = session[:locale] || default_locale
+  end
 
   def default_locale
     {
