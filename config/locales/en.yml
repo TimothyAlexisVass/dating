@@ -43,11 +43,92 @@ en:
   tattoos: tattoos
   not_specified: not specified
   marital_status: marital status
+  interests: intressen
   male: male
   female: female
   age: age
   to: to
   plant_based: plant based
+  require_signin: You need to sign in to view that page
+  single: single
+  divorced: divorced
+  widowed: widowed
+  slim: slim
+  average: average
+  athletic: athletic
+  muscular: muscular
+  curvy: curvy
+  full_figured: full figured
+  other: other
+  elementary_school: elementary school
+  middle_school: middle school
+  high_school: high school
+  vocational_school: vocational school
+  some_college: some college
+  associate_degree: associate degree
+  bachelor_degree: bachelor degree
+  masters_degree: masters degree
+  doctoral_degree: doctoral degree
+  professional_degree: professional degree
+  debt_relief: debt relief
+  heavy_debt: heavy debt
+  some_debt: some debt
+  no_debt: no debt
+  just_over_broke: just over broke
+  some_savings: some savings
+  comfortable_savings: comfortable savings
+  rich: rich
+  very_rich: very rich
+  employee: employee
+  self_employed: self employed
+  unemployed: unemployed
+  retired: retired
+  student: student
+  financially_independent: financially independent
+  every_sabbath: every sabbath
+  almost_every_sabbath: almost every sabbath
+  monthly: monthly
+  rarely: rarely
+  before_tax: before tax
+  after_tax: after tax
+  none: none
+  always_when_asked: always when asked
+  generously: generously
+  sometimes: sometimes
+  never: never
+  never: never
+  rarely: rarely
+  occasionally: occasionally
+  regularly: regularly
+  daily: daily
+  multiple_times_daily: multiple times daily
+  steadfast_in_prayer: steadfast in prayer
+  covered: covered
+  huge: huge
+  big: big
+  medium: medium
+  small: small
+  tiny: tiny
+  always_been_free: always been free
+  liberated: liberated
+  trying: trying
+  always_been_sober: always been sober
+  plant_based: plant based
+  vegan: vegan
+  vegetarian: vegetarian
+  pescatarian: pescatarian
+  very_rarely_meat: very rarely meat
+  regularly_meat: regularly meat
+  daily: daily
+  almost_daily: almost daily
+  weekly: weekly
+  rarely: rarely
+  if_yah_wills: if Yah wills
+  yes: yes
+  no: no
+  maybe: maybe
+  cannot: cannot
+
 
   singular:
     male: man
@@ -56,6 +137,16 @@ en:
     male: men
     female: women
     age: ages
+    brown: brown
+    blue: blue
+    green: green
+    hazel: hazel
+    gray: gray
+    mixed: mixed
+    amber: amber
+    violet: violet
+    red: red
+    not_specified: not specified
 
   activerecord:
     errors:

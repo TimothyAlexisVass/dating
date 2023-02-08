@@ -43,12 +43,89 @@ sv:
   tattoos: tatueringar
   weight: vikt
   marital_status: civilstånd
+  interests: intressen
   not_specified: ej angett
   male: man
   female: kvinna
   age: ålder
   to: till
   plant_based: växtbaserad
+  require_signin: Du behöver logga in för att se den sidan
+  single: ensamstående
+  divorced: skild
+  widowed: änka/änkling
+  slim: smal
+  average: medel
+  athletic: atletisk
+  muscular: muskulös
+  curvy: kurvig
+  full_figured: fyllig
+  other: annat
+  elementary_school: mellanstadie
+  middle_school: högstadie
+  high_school: gymnasieskola
+  vocational_school: yrkesutbildning
+  some_college: högskolekurser
+  associate_degree: associerad examen
+  bachelor_degree: kandidatexamen
+  masters_degree: magisterexamen
+  doctoral_degree: doktorsexamen
+  professional_degree: yrkesexamen
+  debt_relief: skuldsanering
+  heavy_debt: tung skuld
+  some_debt: någon skuld
+  no_debt: ingen skuld
+  just_over_broke: precis över gränsen
+  some_savings: några besparingar
+  comfortable_savings: bekväma besparingar
+  rich: rik
+  very_rich: mycket rik
+  employee: anställd
+  self_employed: självständig
+  unemployed: arbetslös
+  retired: pensionerad
+  student: student
+  financially_independent: ekonomiskt oberoende
+  every_sabbath: varje sabbat
+  almost_every_sabbath: nästan varje sabbat
+  monthly: månadsvis
+  rarely: sällan
+  before_tax: före skatt
+  after_tax: efter skatt
+  none: inget
+  always_when_asked: alltid när någon frågar
+  generously: generöst
+  sometimes: ibland
+  never: aldrig
+  occasionally: då och då
+  regularly: regelbundet
+  daily: dagligen
+  multiple_times_daily: flera gånger dagligen
+  steadfast_in_prayer: beständig i bön
+  covered: täckt
+  huge: enorm
+  big: stor
+  medium: medium
+  small: liten
+  tiny: pytteliten
+  always_been_free: alltid varit fri
+  liberated: befriad
+  trying: försöker
+  always_been_sober: alltid varit nykter
+  vegan: vegan
+  vegetarian: vegetarian
+  pescatarian: pescatarian
+  very_rarely_meat: mycket sällan kött
+  regularly_meat: regelbundet kött
+  daily: dagligen
+  almost_daily: nästan dagligen
+  weekly: veckovis
+  rarely: sällan
+  if_yah_wills: om Yah vill
+  yes: ja
+  no: nej
+  maybe: kanske
+  cannot: kan inte
 
   singular:
     male: man
@@ -57,6 +134,16 @@ sv:
     male: män
     female: kvinnor
     age: åldrar
+    brown: bruna
+    blue: blåa
+    green: gröna
+    hazel: ljusbruna
+    gray: gråa
+    mixed: melerade
+    amber: gulbruna
+    violet: violetta
+    red: röda
+    not_specified: ej angett
 
   activerecord:
     errors:

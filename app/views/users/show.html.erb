@@ -34,7 +34,7 @@
         </tr>
         <tr class="flex f-g-1">
           <th><%= ct(:eye_color) %></th>
-          <td><%= ct(@user.specified(:eye_color)) %></td>
+          <td><%= ct("plural."+@user.specified(:eye_color)) %></td>
           <th><%= ct(:tattoos) %></th>
           <td><%= ct(@user.specified(:tattoos)) %></td>
         </tr>

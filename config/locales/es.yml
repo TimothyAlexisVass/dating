@@ -43,11 +43,89 @@ es:
   tattoos: tatuajes
   not_specified: no especificado
   marital_status: estado civil
+  interests: intereses
   male: masculino
   female: femenino
   age: edad
   to: a
   plant_based: base de plantas
+  require_signin: Debe iniciar sesión para poder ver esa página
+  single: soltero
+  divorced: divorciado
+  widowed: viudo
+  slim: delgado
+  average: promedio
+  athletic: atlético
+  muscular: muscular
+  curvy: curvilíneo
+  full_figured: figura completa
+  other: otro
+  elementary_school: escuela primaria
+  middle_school: escuela media
+  high_school: escuela secundaria
+  vocational_school: escuela técnica
+  some_college: algún colegio
+  associate_degree: título de asociado
+  bachelor_degree: título de licenciatura
+  masters_degree: título de maestría
+  doctoral_degree: título de doctorado
+  professional_degree: título profesional
+  debt_relief: alivio de deudas
+  heavy_debt: deuda pesada
+  some_debt: alguna deuda
+  no_debt: sin deuda
+  just_over_broke: apenas sin dinero
+  some_savings: algunos ahorros
+  comfortable_savings: ahorros cómodos
+  rich: rico
+  very_rich: muy rico
+  employee: empleado
+  self_employed: autoempleado
+  unemployed: desempleado
+  retired: jubilado
+  student: estudiante
+  financially_independent: financieramente independiente
+  every_sabbath: cada sábado
+  almost_every_sabbath: casi cada sábado
+  monthly: mensualmente
+  rarely: raramente
+  before_tax: antes de impuestos
+  after_tax: después de impuestos
+  none: ninguno
+  always_when_asked: siempre cuando se pide
+  generously: generosamente
+  sometimes: a veces
+  never: nunca
+  rarely: raramente
+  occasionally: ocasionalmente
+  regularly: regularmente
+  daily: diariamente
+  multiple_times_daily: varias veces al día
+  steadfast_in_prayer: firme en la oración
+  covered: cubierto
+  huge: enorme
+  big: grande
+  medium: mediano
+  small: pequeño
+  tiny: minúsculo
+  always_been_free: siempre ha sido libre
+  liberated: liberado
+  trying: tratando
+  always_been_sober: siempre ha sido sobrio
+  plant_based: basado en plantas
+  vegan: vegano
+  vegetarian: vegetariano
+  pescatarian: pescatariano
+  very_rarely_meat: muy raramente carne
+  regularly_meat: regularmente carne
+  daily: diariamente
+  almost_daily: casi diariamente
+  weekly: semanalmente
+  rarely: raramente
+  if_yah_wills: si Yah quiere
+  yes: sí
+  no: no
+  maybe: tal vez
 
   singular:
     male: hombre
@@ -56,6 +134,16 @@ es:
     male: hombres
     female: mujeres
     age: edades
+    brown: marrónes
+    blue: azules
+    green: verdes
+    hazel: avellanas
+    gray: grises
+    mixed: mezclados
+    amber: ámbarinos
+    violet: violetas
+    red: rojos
+    not_specified: no especificado
 
   activerecord:
     errors:
