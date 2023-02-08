@@ -44,7 +44,9 @@ en:
   not_specified: not specified
   marital_status: marital status
   interests: interests
-  no_interests: hasn't selected any interests.
+  no_interests: hasn't selected any interests
+  books_read: Books read by Ellen White
+  no_books_read: hasn't selected any read books
   male: male
   female: female
   age: age
