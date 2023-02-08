@@ -71,7 +71,14 @@
       <% end %>
     </p>
     <h2><%= ct(:interests) %></h2>
-
+    <% @interests.each do |interest_category, interests| %>
+      <!--p class="interest-category"-->
+        <span class="interest interest-category <%= interest_category %> noselect"><%= t(interest_category) %></span>
+        <% interests.each do |interest| %>
+          <span title="<%= t(interest_category) %>" class="interest <%= interest_category %> noselect"><%= interest %></span>
+        <% end %>
+      <!--/p-->
+    <% end %>
   </div>
 </div>
 

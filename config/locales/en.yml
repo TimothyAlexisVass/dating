@@ -43,7 +43,7 @@ en:
   tattoos: tattoos
   not_specified: not specified
   marital_status: marital status
-  interests: intressen
+  interests: interests
   male: male
   female: female
   age: age
@@ -128,6 +128,35 @@ en:
   no: no
   maybe: maybe
   cannot: cannot
+
+  truth_and_spirituality: Truth and Spirituality
+  health_and_wellness: Health and Wellness
+  rhythm_and_dancing: Rhythm and Dancing
+  community_service: Community Service
+  education_and_improvement: Education and Improvement
+  music_and_the_arts: Music and the Arts
+  food_and_cooking: Food and Cooking
+  fitness_and_exercise: Fitness and Exercise
+  family_and_parenting: Family and Parenting
+  history_and_culture: History and Culture
+  science_and_technology: Science and Technology
+  travel_and_adventure: Travel and Adventure
+  writing_and_literature: Writing and Literature
+  photography_and_video: Photography and Video
+  outreach_and_evangelism: Outreach and Evangelism
+  nature_and_outdoor_activities: Nature and Outdoor Activities
+  sports_and_recreation: Sports and Recreation
+  financial_planning_and_management: Financial Planning and Management
+  languages_and_linguistics: Languages and Linguistics
+  storytelling_and_performance: Storytelling and Performance
+  gardening_and_horticulture: Gardening and Horticulture
+  leadership_and_mentorship: Leadership and Mentorship
+  pet_care_and_animal_welfare: Pet Care and Animal Welfare
+  crafts_and_hobbies: Crafts and Hobbies
+  ministry_and_missions: Ministry and Missions
+  sustainable_living_and_homesteading: Sustainable Living and Homesteading
+  bible_study_and_theology: Bible Study and Theology
+  natural_healing_and_therapies: Natural Healing and Therapies
 
 
   singular:
