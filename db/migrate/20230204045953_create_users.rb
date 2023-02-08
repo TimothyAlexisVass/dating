@@ -7,25 +7,26 @@ class CreateUsers < ActiveRecord::Migration[7.0]
       t.string :first_name
       t.string :last_name
       t.date :birth_date
-      t.integer :gender
+      t.string :gender
       t.point :location
       t.float :longitude
       t.float :latitude
       t.date :last_active, default: -> { 'CURRENT_TIMESTAMP' }
-      t.boolean :verified, default: false
+      t.boolean :verified_user, default: false
       t.boolean :verified_congregation, default: false
       t.boolean :verified_rebirth, default: false
       t.boolean :is_active, default: false
       t.text :bio
-      t.integer :age_range
+      t.integer :age_range_lower, default: 18
+      t.integer :age_range_upper, default: 99
       t.float :distance_radius, default: 5.0
       t.boolean :limit_contact_to_age_range, default: false
-      t.string :relationship_status
+      t.string :marital_status
       t.string :height
       t.string :body_type
       t.integer :weight
       t.string :eye_color
-      t.string :tattoos, array: true, default: []
+      t.string :tattoos
       t.string :education
       t.integer :income_amount
       t.string :income_currency

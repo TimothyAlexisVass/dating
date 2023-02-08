@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_07_192344) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_05_053012) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -20,20 +20,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_07_192344) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "books_users", id: false, force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "book_id", null: false
-  end
-
   create_table "callings", force: :cascade do |t|
     t.string "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "callings_users", id: false, force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "calling_id", null: false
   end
 
   create_table "congregation_responsibilities", force: :cascade do |t|
@@ -42,20 +32,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_07_192344) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "congregation_responsibilities_users", id: false, force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "congregation_responsibility_id", null: false
-  end
-
   create_table "images", force: :cascade do |t|
     t.string "filename"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "images_users", id: false, force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "image_id", null: false
   end
 
   create_table "interest_categories", force: :cascade do |t|
@@ -72,21 +52,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_07_192344) do
     t.index ["interest_category_id"], name: "index_interests_on_interest_category_id"
   end
 
-  create_table "interests_users", id: false, force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "interest_id", null: false
-  end
-
   create_table "languages", force: :cascade do |t|
     t.string "code"
     t.string "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "languages_users", id: false, force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "language_id", null: false
   end
 
   create_table "likes", force: :cascade do |t|
@@ -112,11 +82,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_07_192344) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "spiritual_gifts_users", id: false, force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "spiritual_gift_id", null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email"
     t.string "password_digest"
@@ -124,7 +89,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_07_192344) do
     t.string "first_name"
     t.string "last_name"
     t.date "birth_date"
-    t.integer "gender"
+    t.string "gender"
     t.point "location"
     t.float "longitude"
     t.float "latitude"
@@ -134,6 +99,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_07_192344) do
     t.boolean "verified_rebirth", default: false
     t.boolean "is_active", default: false
     t.text "bio"
+    t.integer "age_range_lower", default: 18
+    t.integer "age_range_upper", default: 99
     t.float "distance_radius", default: 5.0
     t.boolean "limit_contact_to_age_range", default: false
     t.string "marital_status"
@@ -141,7 +108,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_07_192344) do
     t.string "body_type"
     t.integer "weight"
     t.string "eye_color"
-    t.string "tattoos", default: "{}"
+    t.string "tattoos"
     t.string "education"
     t.integer "income_amount"
     t.string "income_currency"
@@ -167,10 +134,38 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_07_192344) do
     t.boolean "wants_pets"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "age_range_lower", default: 18
-    t.integer "age_range_upper", default: 99
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
+  end
+
+  create_table "users_books", id: false, force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "book_id", null: false
+  end
+
+  create_table "users_callings", id: false, force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "calling_id", null: false
+  end
+
+  create_table "users_congregation_responsibilities", id: false, force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "congregation_responsibility_id", null: false
+  end
+
+  create_table "users_interests", id: false, force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "interest_id", null: false
+  end
+
+  create_table "users_languages", id: false, force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "language_id", null: false
+  end
+
+  create_table "users_spiritual_gifts", id: false, force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "spiritual_gift_id", null: false
   end
 
   create_table "users_work_sectors", id: false, force: :cascade do |t|

@@ -2,12 +2,12 @@
   <span><%= link_to t(:app_name), root_path %></span>
   <nav>
     <% if @current_user.present? %>
-      <%= link_to user_path(@current_user) do %>
-        <i class="fa fa-<%= "fe" if @current_user.gender === 1 %>male" aria-hidden="true"></i>
+      <%= link_to user_path(@current_user.username) do %>
+        <i class="fa fa-<%= @current_user.gender %>" aria-hidden="true"></i>
         <%= ct(:profile) %>
       <% end %>
       <%= link_to users_path do %>
-        <i class="fa fa-<%= "fe" if @current_user.gender === 0 %>male" aria-hidden="true"></i>
+        <i class="fa fa-<%= @current_user.searching_for %>" aria-hidden="true"></i>
         <%= ct(:search) %>
       <% end %>
       <div class="dropdown">
