@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
     end
     if user && user.authenticate(params[:session][:password])
       session[:user_id] = user.id 
-      user.update_columns(is_active: true)
+      user.sign_in
       redirect_to user_path(user.username)
     else
       flash.now[:danger] = 'Invalid email/password combination'
@@ -32,7 +32,7 @@ class SessionsController < ApplicationController
   private
   
   def sign_out
-    @current_user.update_columns(is_active: false)
+    @current_user.sign_out
     session.delete(:user_id)
     @current_user = nil
   end

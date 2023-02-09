@@ -1,0 +1,51 @@
+  <% if @user == @current_user %>
+    <%= button_tag t(:add_images), onclick: "this.style.display='none';document.getElementById('add-image-form').style.display='flex';", class: "btn btn-primary", id: "add-image-button" %>
+    <%= form_with(model: @user, url: user_images_path(@user), local: true, method: :post, html: { style: "display: none;" }, id: "add-image-form") do |form| %>
+      <%= form.submit "Upload", class: "btn btn-primary" %>
+      <%= form.file_field :images, multiple: true %>
+    <% end %>
+  <% end %>
+<div class="user-pictures flex">
+  <% if @images.present? and @images.size > 1 %>
+    <% @images[1..].each do |image| %>
+      <div class="thumbnail-wrapper">
+        <%= image_tag image, class: "user-picture" %>
+        <% if @current_user == @user %>
+          <%= link_to "&times;".html_safe, user_delete_image_path(user_id: @user, image_id: image), method: :delete, class: "delete-image-link" %>
+        <% end %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+<% unless @user == @current_user %>
+<script>
+let zindex = 0;
+$(document).ready(function() {
+  $(".user-picture").each(function() {
+    var picture = $(this);
+    var parent = picture.parent();
+    picture.on("load", function() {
+      parent.width(100/picture.prop("naturalHeight")*picture.prop("naturalWidth"));
+    });
+  });
+  $(".user-picture").on("click", function() {
+    if($(this).hasClass("expanded")){
+      $(this).removeClass("expanded").css({
+        left: "0"
+      });
+      zindex += 10;
+    } else {
+      zindex += 10;
+      $(this).css("z-index", String(zindex));
+      setTimeout(function() {
+        $(this).css({
+          left: "-" + ($(this).offset().left - 15) + "px"
+        }).addClass("expanded");
+      }.bind(this), 50);
+    }
+    
+  });
+});
+</script>
+<% end %>

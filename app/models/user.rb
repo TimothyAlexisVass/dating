@@ -103,7 +103,7 @@ class User < ApplicationRecord
 
   validates :username, presence: true, uniqueness: true, length: { minimum: 2, maximum: 30 }, format: { with: /\A[a-zA-Z0-9]+\z/ }
   validates :email, presence: true, uniqueness: { case_sensitive: false }, format: { with: URI::MailTo::EMAIL_REGEXP, message: "is not a valid email address" }, length: { maximum: 255 }
-  validates :password, presence: true, length: { minimum: 6 }
+  validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
   has_secure_password
   validates :first_name, presence: true
   validates :last_name, presence: true
@@ -112,7 +112,8 @@ class User < ApplicationRecord
   validates :verified_user, inclusion: { in: boolean_options, allow_nil: true }
   validates :verified_congregation, inclusion: { in: boolean_options, allow_nil: true }
   validates :verified_rebirth, inclusion: { in: boolean_options, allow_nil: true }
-  # validates :is_active, inclusion: { in: boolean_options, allow_nil: true }
+  validates :is_active, inclusion: { in: boolean_options, allow_nil: true }
+  validate :images_are_images
 
 
 
@@ -218,4 +219,22 @@ class User < ApplicationRecord
   def verified?(field)
     self[field] ? "✅ #{I18n.t(:verified)}" : "⛔ #{I18n.t(:not_verified)}"
   end
+
+  def sign_in
+    update(is_active: true)
+  end
+
+  def sign_out
+    update(is_active: false)
+  end
+
+  private
+
+    def images_are_images
+      images.each do |image|
+        next if image.content_type.start_with? 'image/'
+        image.purge
+        errors.add(:images, 'only images allowed')
+      end
+    end
 end

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   get '/user/:username', to: 'users#show', as: 'user'
   resources :users, only: [:index, :new, :create, :edit, :update] do
-    resources :images, only: [:create]
+    post 'images', to: 'users#create_image', as: 'images'
+    delete 'image/:image_id', to: 'users#delete_image', as: 'delete_image'
   end
 end

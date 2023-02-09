@@ -6,6 +6,10 @@ body {
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
 main, header {
   padding: 10px;
 }
@@ -189,7 +193,6 @@ header.top-header {
 header.top-header, .user-form {
   a, span {
     color: white;
-    text-decoration: none;
     transition: all .5s;
   }
 
@@ -218,13 +221,46 @@ header.top-header, .user-form {
   p {
     margin: 5px 0;
   }
-  img {
-    width: 100%;
-    min-width: 500px;
-    max-width: 600px;
+  img.profile-image {
+    width: 500px;
     background: rgb(164, 209, 209);
-    border-radius: 5px;
   }
+  .delete-image-link {
+    position: absolute;
+    right: 4px;
+    top: -4px;
+    color: white;
+    font-size: 24px;
+    text-shadow: 1px 1px 1px black;
+  }
+  .user-pictures {
+    flex-wrap: wrap;
+    max-width: 500px;
+    padding-bottom: 12px;
+  }
+  .profile-image-wrapper, .thumbnail-wrapper {
+    position: relative;
+    margin-right: 2px;
+    margin-bottom: 2px;
+  }
+  .thumbnail-wrapper {
+    height: 100px;
+    width: min-content;
+  }
+  .user-picture {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 100px;
+    transition: all .1s;
+  }
+  
+  .user-picture.expanded {
+    height: 500px;
+    top: -250px;
+    position: absolute;
+  }
+  
   .details-table {
     th {
       width: 33%;
@@ -254,15 +290,6 @@ header.top-header, .user-form {
       flex-grow: 1
     }
   }
-}
-
-.delete-image-link {
-  position: absolute;
-  right: 0;
-  top: 0;
-  color: red;
-  font-size: 18px;
-  padding: 5px;
 }
 
 .interest {

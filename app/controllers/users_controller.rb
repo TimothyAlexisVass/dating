@@ -14,8 +14,8 @@ class UsersController < ApplicationController
   def show
     @user = User.find_by(username: params[:username])
     if @user.interests.present?
-      @interests = @user.interests.group_by{ |g| g.interest_category.text.tr(" ","_") }
-                      .transform_values{ |v| v.map(&:text) }
+      @interests = @user.interests.includes(:interest_category).group_by{ |g| g.interest_category.text.tr(" ","_") }
+                        .transform_values{ |v| v.map(&:text) }
     end
     if @user.books.present?
       @books = @user.books
@@ -34,19 +34,36 @@ class UsersController < ApplicationController
     success = user.save
     if success
       session[:user_id] = user.id
-      user.update_columns(is_active: true)
+      user.sign_in
       redirect_to user_path(user.username), flash: { success: t(:sign_up_successful) }
     else
       redirect_to root_url, flash: { danger: user.errors.full_messages }
     end    
   end
 
+  def create_image
+    user = User.find(params[:user_id])
+    user.images.attach(params[:user][:images])
+    redirect_to user_path(user.username)
+  end
+
+  def delete_image
+    user = User.find(params[:user_id])
+
+    image = user.images.find(params[:image_id])
+    image.purge
+
+    # redirect to the previous page with a success message
+    redirect_to user_path(user.username), notice: "Image was successfully deleted."
+  end
+  
+
   def edit
   end
 
   def update
     if @user.update(user_params)
-      redirect_to @user, flash: 'User was successfully updated.'
+      redirect_to user_path(@user.username), flash: 'User was successfully updated.'
     else
       render :edit
     end
