@@ -48,3 +48,5 @@ surnames = %w[Smith Johnson Brown Davis Wilson Martinez Anderson Taylor Thomas J
   }
 end
 User.create(users)
+
+Rake::Task["db:tasks:load"].invoke
