@@ -14,6 +14,24 @@
         <%= @user.is_active? ? "🟢 #{ct(:is_active)}" : "🔴 #{ct(:is_not_active)}" %>
       </span>
     </p>
+    <div class="image-thumbnails">
+      <%= link_to "Add Image", "#", class: "btn btn-primary", id: "add-image-button" %>
+      <%= form_with(model: [@user, @user.images.new], url: user_images_path(@user), local: true, method: :post, html: { style: "display: none;" }, id: "add-image-form") do |form| %>
+        <div class="field">
+          <%= form.label :images %>
+          <%= form.file_field :images, multiple: true %>
+        </div>
+        <%= form.submit "Upload", class: "btn btn-primary" %>
+      <% end %>
+      <% if @images.present? %>
+        <% @images.each do |image| %>
+          <%= image_tag image.variant(resize: "100x100") %>
+          <% if @current_user == @user %>
+            <%= link_to "&times;".html_safe, image, method: :delete, class: "delete-image-link" %>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
     <%= render 'user_details' %>
     <%= render 'user_status' %>
   </div>
@@ -24,6 +42,11 @@
   </div>
 </div>
 
+<script>
+  document.getElementById("add-image-button").addEventListener("click", function() {
+    document.getElementById("add-image-form").style.display = "block";
+  });
+</script>
 <!--
 t.point :location
 t.float :longitude

@@ -256,6 +256,15 @@ header.top-header, .user-form {
   }
 }
 
+.delete-image-link {
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: red;
+  font-size: 18px;
+  padding: 5px;
+}
+
 .interest {
   color: #444;
   border: 1px solid;

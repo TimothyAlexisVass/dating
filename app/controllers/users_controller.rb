@@ -20,6 +20,9 @@ class UsersController < ApplicationController
     if @user.books.present?
       @books = @user.books
     end
+    if @user.images.present?
+      @images = @user.images
+    end
   end
 
   def new

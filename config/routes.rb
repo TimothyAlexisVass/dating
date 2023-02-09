@@ -9,5 +9,7 @@ Rails.application.routes.draw do
   put '/set_session_locale' => 'application#set_session_locale'
 
   get '/user/:username', to: 'users#show', as: 'user'
-  resources :users, only: [:index, :new, :create, :edit, :update]
+  resources :users, only: [:index, :new, :create, :edit, :update] do
+    resources :images, only: [:create]
+  end
 end
