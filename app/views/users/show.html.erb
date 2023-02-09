@@ -10,6 +10,9 @@
       <span>
         <%= t("searching_for", gender: t("singular.#{@user.searching_for}"), age_range_lower: @user.age_range_lower, age_range_upper: @user.age_range_upper) %>
       </span>
+      <span class="<%= @user.is_active? ? "signed_in" : "signed_out" %>">
+        <%= @user.is_active? ? "🟢 #{ct(:is_active)}" : "🔴 #{ct(:is_not_active)}" %>
+      </span>
     </p>
     <%= render 'user_details' %>
     <%= render 'user_status' %>
