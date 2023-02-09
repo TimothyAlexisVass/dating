@@ -1,7 +1,7 @@
-<h2><%= ct(:books_read) %></h2>
+<h2><%= t(:books_read) %></h2>
 <% if @books.present? %>
   <% @books.each do |book| %>
-    <span class="interest"><%= book.title %></span>
+    <span class="interest"><a target="_blank" href="https://m.egwwritings.org/en/book/<%= book.id %>"><%= book.title %></a></span>
   <% end %>
 <% else %>
   <%= @user.first_name %> <%= t(:no_books_read) %>
