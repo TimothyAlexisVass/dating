@@ -1,5 +1,7 @@
 en:
   app_name: Dating App
+  user_update_success: "%{user} was successfully updated"
+  image_removed: "Image removed"
   sign_up_heading_h1: "Welcome to %{app_name}"
   sign_up_heading_text: Find your perfect spouse!
   sign_in_heading_h1: Welcome back

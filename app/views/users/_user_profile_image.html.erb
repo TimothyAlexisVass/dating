@@ -1,0 +1,7 @@
+<div class="profile-image-wrapper"<% if @current_user == @user %> title="<%= ct(:update_profile_image) %>" onclick="$('#profile-image-input').click();" style="cursor:pointer"<% end %>>
+  <% if @user.profile_image.present? %>
+    <%= image_tag @user.profile_image, class: "profile-image" %>
+  <% else %>
+    <%= image_tag "#{@user.gender}.svg", class: "profile-image" %>
+  <% end %>
+</div>

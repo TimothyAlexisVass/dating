@@ -54,7 +54,7 @@ class UsersController < ApplicationController
     image.purge
 
     # redirect to the previous page with a success message
-    redirect_to user_path(user.username), notice: "Image was successfully deleted."
+    redirect_to user_path(user.username), flash: { success: t(:image_removed) }
   end
   
 
@@ -63,7 +63,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      redirect_to user_path(@user.username), flash: { success: "#{@user.username} was successfully updated." }
+      redirect_to user_path(@user.username), flash: { success: t(:user_update_success, user: @user.username) }
     else
       render :edit
     end

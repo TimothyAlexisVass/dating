@@ -1,5 +1,7 @@
 es:
   app_name: Aplicación de citas
+  user_update_success: "%{user} actualizado"
+  image_removed: "Imagen eliminada"
   sign_up_heading_h1: "Bienvenido a %{app_name}"
   sign_up_heading_text: ¡Encuentra a tu pareja perfecta!
   sign_in_heading_h1: Bienvenido de nuevo

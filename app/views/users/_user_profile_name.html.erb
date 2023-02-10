@@ -1,0 +1,8 @@
+<% if @current_user == @user %>
+  <h1><%= "#{ct(:welcome)} " %><%= @user.first_name %></h1>
+  <%= form_for @user, url: user_path(@user), method: :patch, html: { id: "profile-image-form", multipart: true } do |form| %>
+    <%= form.file_field :profile_image, id: "profile-image-input", onchange: "this.form.submit();" %>
+  <% end %>
+<% else %>
+  <h1><%= "#{@user.first_name}, " %><span title='<%= t(:age) %>'><%= @user.age %></span></h1>
+<% end %>

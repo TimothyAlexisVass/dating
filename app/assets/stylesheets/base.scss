@@ -15,20 +15,19 @@ main, header {
 }
 
 .alert {
-  width: 100%;
   text-align: center;
-  padding: 10px;
+  padding: 20px;
+  margin: 10px;
   border-radius: 5px;
+  color: white;
 }
 .alert-success {
   border: green;
-  background: greenyellow;
-  color: green;
+  background: #5cc512;
 }
 .alert-danger {
-  border: red;
-  background: pink;
-  color: red;
+  border: #800;
+  background: #c51212;
 }
 
 .m-t-none {
@@ -209,7 +208,7 @@ header.top-header, .user-form {
   }
 }
 
-#profile-image-form {
+#profile-image-form, #add-image-form {
   display: none;
 }
 .user-profile {

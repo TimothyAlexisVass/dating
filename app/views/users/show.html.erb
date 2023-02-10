@@ -1,28 +1,8 @@
-<% if @current_user == @user %>
-  <h1><%= "#{ct(:welcome)} " %><%= @user.first_name %></h1>
-  <%= form_for @user, url: user_path(@user), method: :patch, html: { id: "profile-image-form", multipart: true } do |form| %>
-    <%= form.file_field :profile_image, id: "profile-image-input", onchange: "this.form.submit();" %>
-  <% end %>
-<% else %>
-  <h1><%= "#{@user.first_name}, " %><span title='<%= t(:age) %>'><%= @user.age %></span></h1>
-<% end %>
+<%= render 'user_profile_name' %>
 <div class="user-profile flex c-m-lr-5">
   <div class="left-side">
-    <div class="profile-image-wrapper"<% if @current_user == @user %> title="<%= ct(:update_profile_image) %>" onclick="$('#profile-image-input').click();" style="cursor:pointer"<% end %>>
-    <% if @user.profile_image.present? %>
-      <%= image_tag @user.profile_image, class: "profile-image" %>
-    <% else %>
-      <%= image_tag "#{@user.gender}.svg", class: "profile-image" %>
-    <% end %>
-    </div>
-    <p class="flex f-jsb c-m-lr-5">
-      <span>
-        <%= t("searching_for", gender: t("singular.#{@user.searching_for}"), age_range_lower: @user.age_range_lower, age_range_upper: @user.age_range_upper) %>
-      </span>
-      <span class="<%= @user.is_active? ? "signed_in" : "signed_out" %>">
-        <%= @user.is_active? ? "🟢 #{ct(:is_active)}" : "🔴 #{ct(:is_not_active)}" %>
-      </span>
-    </p>
+    <%= render 'user_profile_image' %>
+    <%= render 'user_is_active' %>
     <%= render 'user_images' %>
     <%= render 'user_details' %>
     <%= render 'user_status' %>
@@ -31,6 +11,7 @@
     <%= render 'user_presentation' %>
     <%= render 'user_interests' %>
     <%= render 'user_books' %>
+    <%= render 'worldly_details' %>
   </div>
 </div>
 
@@ -48,19 +29,23 @@ t.integer :income_amount
 t.string :income_currency
 t.string :economy_status
 t.string :work_status
+t.boolean :children_status
+t.string :wants_children
+t.boolean :pets_status
+t.boolean :wants_pets
+
 t.string :attendance_frequency
 t.string :tithing_status
 t.string :alms_status
 t.string :prayer_frequency
 t.integer :number_of_times_read_bible
+
 t.string :smoke_status
 t.string :sober_status
 t.string :caffeine_status
 t.string :drug_status
 t.string :medical_status
 t.string :allergies, array: true, default: []
-t.boolean :children_status
-t.string :wants_children
-t.boolean :pets_status
-t.boolean :wants_pets
+
+
 -->
