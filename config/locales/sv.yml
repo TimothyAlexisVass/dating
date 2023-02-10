@@ -26,6 +26,7 @@ sv:
   not_verified: ej verifierat
   email_placeholder: din@epost.här
   username_or_email: Användarnamn eller epost
+  location: plats
   sign_up: Registrera dig
   sign_in: Logga in
   sign_out: Logga ut

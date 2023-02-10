@@ -56,7 +56,6 @@ class UsersController < ApplicationController
     # redirect to the previous page with a success message
     redirect_to user_path(user.username), flash: { success: t(:image_removed) }
   end
-  
 
   def edit
   end
@@ -80,6 +79,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:username, :email, :profile_image, :gender, :password, :birth_date, :first_name, :last_name, :rebirth_date)
+    params.require(:user).permit(:username, :email, :profile_image, :gender, :password, :location, :longitude, :latitude, :birth_date, :first_name, :last_name, :rebirth_date)
   end
 end

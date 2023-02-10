@@ -13,4 +13,6 @@ Rails.application.routes.draw do
     post 'images', to: 'users#create_image', as: 'images'
     delete 'image/:image_id', to: 'users#delete_image', as: 'delete_image'
   end
+  
+  get '/location_search', to: 'location#search'
 end

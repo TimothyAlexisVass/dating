@@ -1,6 +1,7 @@
 require_relative "boot"
 
 require "rails/all"
+require "dotenv/load"
 
 Bundler.require(*Rails.groups)
 

@@ -36,11 +36,15 @@ gem "redis", "~> 4.0"
 # Use geocoder
 gem "geocoder"
 
+# Use dotenv
+gem "dotenv"
+
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 gem "bcrypt", "~> 3.1.12"
 
 # Use jquery
 gem "jquery-rails"
+gem 'jquery-ui-rails'
 
 # Use Fontawesome
 gem "font-awesome-rails"

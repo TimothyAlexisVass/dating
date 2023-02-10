@@ -36,14 +36,19 @@
       <%= f.text_field :first_name, placeholder: ct(:first_name), required: true %>
       <%= f.text_field :last_name, placeholder: ct(:last_name), required: true %>
     </div>
+    <div class="user-form-field">
+      <%= f.text_field :location, placeholder: ct(:location), id: "geocoder_location", required: true %>
+    </div>
     <div class="user-form-field m-b-none">
       <%= f.label :birth_date, ct(:birth_date) %>
       <%= f.label :rebirth_date,  ct(:rebirth_date) %>
     </div>
     <div class="user-form-field">
       <%= f.date_field :birth_date, required: true %>
-      <%= f.date_field :rebirth_date, required: true %>
+      <%= f.date_field :rebirth_date %>
     </div>
+    <%= f.hidden_field :longitude, id: 'longitude' %>
+    <%= f.hidden_field :latitude, id: 'latitude' %>
     <div class="user-form-field f-jc">
       <%= f.submit ct(:sign_up) %>
     </div>
@@ -57,3 +62,4 @@
 </div>
 
 <%= javascript_include_tag "password_toggle" %>
+<%= javascript_include_tag "geocoder_location" %>
