@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   put '/set_session_locale' => 'application#set_session_locale'
 
-  get '/user/:username', to: 'users#show', as: 'user'
+  get '/users/:username', to: 'users#show'
   resources :users, only: [:index, :new, :create, :edit, :update] do
     post 'images', to: 'users#create_image', as: 'images'
     delete 'image/:image_id', to: 'users#delete_image', as: 'delete_image'

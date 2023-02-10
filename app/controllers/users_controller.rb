@@ -63,7 +63,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      redirect_to user_path(@user.username), flash: 'User was successfully updated.'
+      redirect_to user_path(@user.username), flash: { success: "#{@user.username} was successfully updated." }
     else
       render :edit
     end
@@ -80,6 +80,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:username, :email, :gender, :password, :birth_date, :first_name, :last_name, :rebirth_date)
+    params.require(:user).permit(:username, :email, :profile_image, :gender, :password, :birth_date, :first_name, :last_name, :rebirth_date)
   end
 end

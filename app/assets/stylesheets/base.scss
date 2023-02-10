@@ -209,6 +209,9 @@ header.top-header, .user-form {
   }
 }
 
+#profile-image-form {
+  display: none;
+}
 .user-profile {
   .signed_in {color: green}
   .signed_out {color: #cd1616}
@@ -254,7 +257,6 @@ header.top-header, .user-form {
     height: 100px;
     transition: all .1s;
   }
-  
   .user-picture.expanded {
     height: 500px;
     top: -250px;

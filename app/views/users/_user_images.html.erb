@@ -1,13 +1,11 @@
   <% if @user == @current_user %>
-    <%= button_tag t(:add_images), onclick: "this.style.display='none';document.getElementById('add-image-form').style.display='flex';", class: "btn btn-primary", id: "add-image-button" %>
-    <%= form_with(model: @user, url: user_images_path(@user), local: true, method: :post, html: { style: "display: none;" }, id: "add-image-form") do |form| %>
-      <%= form.submit "Upload", class: "btn btn-primary" %>
-      <%= form.file_field :images, multiple: true %>
+    <%= form_with(model: @user, url: user_images_path(@user), local: true, method: :post, id: "add-image-form") do |form| %>
+      <%= form.file_field :images, multiple: true, onchange: "this.form.submit();", accept: "image/*", value: "Add Image" %>
     <% end %>
   <% end %>
 <div class="user-pictures flex">
-  <% if @images.present? and @images.size > 1 %>
-    <% @images[1..].each do |image| %>
+  <% if @images.present? %>
+    <% @images.each do |image| %>
       <div class="thumbnail-wrapper">
         <%= image_tag image, class: "user-picture" %>
         <% if @current_user == @user %>

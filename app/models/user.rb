@@ -12,6 +12,7 @@ class User < ApplicationRecord
   has_many :liked_by_others, class_name: "Like", foreign_key: "liked_by_other_id", dependent: :destroy
   has_many :user_interests
   has_many :interests, through: :user_interests
+  has_one_attached :profile_image
   has_many_attached :images
   has_many :user_search_settings
   has_many :search_settings, through: :user_search_settings
