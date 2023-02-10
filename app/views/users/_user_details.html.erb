@@ -3,7 +3,7 @@
   <tbody class="flex f-g-1 f-d-c">
     <tr class="flex f-g-1">
       <th><%= ct(:marital_status) %></th>
-      <td><%= ct(@user.specified(:marital_status)) %></td>
+      <td><%= @user.marital_status_string.capitalize %></td>
       <th><%= ct(:body_type) %></th>
       <td><%= ct(@user.specified(:body_type)) %></td>
     </tr>

@@ -210,6 +210,11 @@ class User < ApplicationRecord
     rebirth_date
   end
 
+  def marital_status_string
+    return I18n.t(:not_specified) if marital_status.blank?
+    I18n.t("#{marital_status}.#{gender}")
+  end
+
   def cm_to_ft_in
     total_inches = height.to_i / 2.54
     feet = total_inches / 12

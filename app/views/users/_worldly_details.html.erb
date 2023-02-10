@@ -1,1 +1,7 @@
 <h2><%= ct(:worldly) %></h2>
+<%= t(:education) %>: <%= ct(@user.specified(:education)) %>
+<%= t(:income_amount) %>: <%= ct(@user.specified(:income_amount)) %><%= ct(@user.specified(:income_currency)) %>
+<%= t(:economy_status) %>: <%= ct(@user.specified(:economy_status)) %>
+<%= t(:work_status) %>: <%= ct(@user.specified(:work_status)) %>
+<%= t(:children_status) %>: <%= ct(@user.specified(:children_status)) %> (<%= ct(@user.specified(:wants_children)) %>)
+<%= t(:pets_status) %>: <%= ct(@user.specified(:pets_status)) %> (<%= ct(@user.specified(:wants_pets)) %>)
