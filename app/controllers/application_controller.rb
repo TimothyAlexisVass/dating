@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
   private
 
   def require_signin
-    guests_allowed = ['/', '/signin', '/location_search'] 
+    guests_allowed = ['/', '/signin', '/location_search', '/users'] 
     if not signed_in? and not guests_allowed.include?(request.path)
       redirect_to '/signin', flash: { danger: t(:require_signin) }
     end
