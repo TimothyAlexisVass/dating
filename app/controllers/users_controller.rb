@@ -68,6 +68,12 @@ class UsersController < ApplicationController
     end
   end
 
+  def ajax_update
+    @user = User.find(params[:id])
+    @user.update(user_params.merge(params.require(:update).permit(:field)))
+    render json: { field: params[:field], value: @user.send(params[:field]) }
+  end
+
   private
 
   def set_user

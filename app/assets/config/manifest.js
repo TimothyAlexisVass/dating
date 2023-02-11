@@ -2,6 +2,7 @@
 //= link_directory ../stylesheets .css
 //= link_tree ../../javascript .js
 //= link geocoder_location.js
+//= link user_ajax_update.js
 //= link password_toggle.js
 //= link dropdown_menu.js
 //= link jquery-ui.css

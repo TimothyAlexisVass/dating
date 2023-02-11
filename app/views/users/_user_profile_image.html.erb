@@ -1,7 +1,7 @@
 <%= form_for @user, url: user_path(@user), method: :patch, html: { id: "profile-image-form", multipart: true } do |form| %>
   <%= form.file_field :profile_image, id: "profile-image-input", accept: "image/*", onchange: "this.form.submit();" %>
 <% end %>
-<div class="profile-image-wrapper"<% if @current_user == @user %> title="<%= ct(:update_profile_image) %>" onclick="$('#profile-image-input').click();" style="cursor:pointer"<% end %>>
+<div class="profile-image-wrapper"<% if @current_user == @user %> title="<%= ct(:change_profile_image) %>" onclick="$('#profile-image-input').click();" style="cursor:pointer"<% end %>>
   <% if @user.profile_image.present? %>
     <%= image_tag @user.profile_image, class: "profile-image" %>
   <% else %>

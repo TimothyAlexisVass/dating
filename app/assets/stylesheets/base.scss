@@ -59,10 +59,13 @@ main, header {
 .f-g-1 {
   flex-grow: 1;
 }
-.f-jc {
+.f-a-c {
+  align-items: center;
+}
+.f-j-c {
   justify-content: center;
 }
-.f-jsb {
+.f-j-sb {
   justify-content: space-between;
 }
 
@@ -73,6 +76,13 @@ main, header {
   transform: translateY(-50%);
   cursor: pointer;
   color: darkslategrey;
+}
+
+h1 > input {
+  font-size: 20px;
+  position: relative;
+  margin: 10px;
+  padding: 2px;
 }
 
 .user-heading {
@@ -238,7 +248,7 @@ header.top-header, .user-form {
   .user-pictures {
     flex-wrap: wrap;
     max-width: 500px;
-    padding-bottom: 12px;
+    padding: 6px 0 12px;
   }
   .profile-image-wrapper, .thumbnail-wrapper {
     position: relative;

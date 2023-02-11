@@ -1,5 +1,11 @@
 <% if @current_user == @user %>
-  <h1><%= "#{ct(:welcome)} " %><%= @user.first_name %>  (<%= @user.location %>)</h1>
+  <h1 class="flex f-a-c">
+    <%= "#{ct(:welcome)} " %><%= @user.first_name %>
+    <%= text_field_tag :location, @user.location, placeholder: ct(:location), id: "geocoder_location", onchange: "userAjaxUpdate(this, 'location')" %>
+  </h1>
 <% else %>
   <h1><%= "#{@user.first_name}, " %><span title='<%= t(:age) %>'><%= @user.age %> (<%= @user.location %>)</span></h1>
 <% end %>
+
+<%= javascript_include_tag "geocoder_location" %>
+<%= javascript_include_tag "user_ajax_update" %>

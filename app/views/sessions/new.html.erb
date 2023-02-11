@@ -13,7 +13,7 @@
       <%= f.password_field :password, id: "toggle_password", class: "password-field", placeholder: ct(:password), required: true %>
       <div class="password-toggle-icon" title="Show password"><i class="fa fa-eye" aria-hidden="true"></i></div>
     </div>
-    <div class="user-form-field f-jc">
+    <div class="user-form-field f-j-c">
       <%= f.submit ct(:sign_in) %>
     </div>
   <% end %>
@@ -49,7 +49,7 @@
     </div>
     <%= f.hidden_field :longitude, id: 'longitude' %>
     <%= f.hidden_field :latitude, id: 'latitude' %>
-    <div class="user-form-field f-jc">
+    <div class="user-form-field f-j-c">
       <%= f.submit ct(:sign_up) %>
     </div>
   <% end %>
