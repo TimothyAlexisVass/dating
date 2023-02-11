@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
-  
+
   def index
     now = Time.now.to_date
-    
+
     birth_date_lower = now.years_ago(@current_user.age_range_upper)
     birth_date_upper = now.years_ago(@current_user.age_range_lower)
     @users = User.all.where(gender: @current_user.searching_for).where(
@@ -38,7 +38,7 @@ class UsersController < ApplicationController
       redirect_to user_path(user.username), flash: { success: t(:sign_up_successful) }
     else
       redirect_to root_url, flash: { danger: user.errors.full_messages }
-    end    
+    end
   end
 
   def create_image

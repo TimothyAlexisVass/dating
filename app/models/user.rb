@@ -5,7 +5,7 @@ class User < ApplicationRecord
     email.downcase!
     username.downcase!
   end
-  
+
   ##### Associations ####################################################
 
   has_many :like_others, class_name: "Like", foreign_key: "like_other_id", dependent: :destroy

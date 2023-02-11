@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
       user = User.find_by(username: username_or_email)
     end
     if user && user.authenticate(params[:session][:password])
-      session[:user_id] = user.id 
+      session[:user_id] = user.id
       user.sign_in
       redirect_to user_path(user.username)
     else
@@ -30,11 +30,11 @@ class SessionsController < ApplicationController
   end
 
   private
-  
+
   def sign_out
     @current_user.sign_out
     session.delete(:user_id)
     @current_user = nil
   end
-  
+
 end

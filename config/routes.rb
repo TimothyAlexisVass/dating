@@ -14,6 +14,6 @@ Rails.application.routes.draw do
     delete 'image/:image_id', to: 'users#delete_image', as: 'delete_image'
     put 'ajax_update', on: :member
   end
-  
+
   get '/location_search', to: 'location#search'
 end
