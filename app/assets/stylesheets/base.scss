@@ -68,14 +68,22 @@ main, header {
 .f-j-sb {
   justify-content: space-between;
 }
+.f-j-fs {
+  justify-content: flex-start;
+}
 
 .password-toggle-icon {
   position: absolute;
   right: 10px;
   top: 50%;
   transform: translateY(-50%);
-  cursor: pointer;
   color: darkslategrey;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 h1 > input {
@@ -218,6 +226,13 @@ header.top-header, .user-form {
   }
 }
 
+#user-bio {
+  width: 100%;
+  resize: vertical;
+  height: max-content;
+  min-height: 200px;
+  box-sizing: border-box;
+}
 #profile-image-form, #add-image-form {
   display: none;
 }
@@ -286,6 +301,9 @@ header.top-header, .user-form {
       text-align: right;
       padding-right: 8px;
     }
+    select {
+      width: 100%;
+    }
   }
   .status-table {
     th {
@@ -349,6 +367,10 @@ header.top-header, .user-form {
 .sustainable_living_and_homesteading{ background-color: hsl(38, 100%, 80%); color: hsl(38, 100%, 20%); border-color: hsl(38, 100%, 60%); }
 .bible_study_and_theology{ background-color: hsl(25, 100%, 80%); color: hsl(25, 100%, 20%); border-color: hsl(25, 100%, 60%); }
 .natural_healing_and_therapies{ background-color: hsl(12, 100%, 80%); color: hsl(12, 100%, 20%); border-color: hsl(12, 100%, 60%); }
+
+.password-toggle-icon, .thumbnail-wrapper {
+  cursor: pointer;
+}
 
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */

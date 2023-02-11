@@ -97,8 +97,12 @@ class User < ApplicationRecord
   def self.wants_children_options
     @wants_children_options ||= %w[if_yah_wills yes maybe cannot no]
   end
-
-
+  def height_options
+    (120..220).to_a.map{ |height| ["#{height} cm (#{cm_to_ft_in(height)})", height.to_s] }
+  end
+  def weight_options
+    (40..150).to_a.map{ |weight| ["#{weight} kg (#{(weight * 2.20462).floor} lbs)", weight.to_s] }
+  end
 
   ##### Basic ####################################################
 
@@ -109,11 +113,11 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :birth_date, presence: true
-  validates :gender, presence: true, inclusion: { in: gender_options, allow_nil: true }
-  validates :verified_user, inclusion: { in: boolean_options, allow_nil: true }
-  validates :verified_congregation, inclusion: { in: boolean_options, allow_nil: true }
-  validates :verified_rebirth, inclusion: { in: boolean_options, allow_nil: true }
-  validates :is_active, inclusion: { in: boolean_options, allow_nil: true }
+  validates :gender, presence: true, inclusion: { in: gender_options, allow_nil: true, allow_blank: true }
+  validates :verified_user, inclusion: { in: boolean_options, allow_nil: true, allow_blank: true }
+  validates :verified_congregation, inclusion: { in: boolean_options, allow_nil: true, allow_blank: true }
+  validates :verified_rebirth, inclusion: { in: boolean_options, allow_nil: true, allow_blank: true }
+  validates :is_active, inclusion: { in: boolean_options, allow_nil: true, allow_blank: true }
   validate :images_are_images
 
 
@@ -122,57 +126,57 @@ class User < ApplicationRecord
 
   validates :bio, length: { maximum: 5000 }
   validates :distance_radius, numericality: { greater_than_or_equal_to: 0 }
-  validates :marital_status, inclusion: { in: marital_status_options, allow_nil: true }
-  validates :age_range_lower, numericality: { greater_than_or_equal_to: 18, allow_nil: true }
-  validates :age_range_upper, numericality: { less_than_or_equal_to: 99, allow_nil: true }
-  validates :limit_contact_to_age_range, inclusion: { in: boolean_options, allow_nil: true }
+  validates :marital_status, inclusion: { in: marital_status_options, allow_nil: true, allow_blank: true }
+  validates :age_range_lower, numericality: { greater_than_or_equal_to: 18, allow_nil: true, allow_blank: true }
+  validates :age_range_upper, numericality: { less_than_or_equal_to: 99, allow_nil: true, allow_blank: true }
+  validates :limit_contact_to_age_range, inclusion: { in: boolean_options, allow_nil: true, allow_blank: true }
 
 
 
   ##### Appearance ####################################################
 
-  validates :body_type, inclusion: { in: body_type_options, allow_nil: true }
-  validates :eye_color, inclusion: { in: eye_color_options, allow_nil: true }
+  validates :body_type, inclusion: { in: body_type_options, allow_nil: true, allow_blank: true }
+  validates :eye_color, inclusion: { in: eye_color_options, allow_nil: true, allow_blank: true }
 
 
 
   ##### Worldly ####################################################
 
-  validates :education, inclusion: { in: education_options, allow_nil: true }
+  validates :education, inclusion: { in: education_options, allow_nil: true, allow_blank: true }
   validates :income_amount, numericality: { greater_than_or_equal_to: 0, allow_nil: true  }
-  validates :income_currency, inclusion: { in: income_currency_options, allow_nil: true }
-  validates :economy_status, inclusion: { in: economy_status_options, allow_nil: true }
-  validates :work_status, inclusion: { in: work_status_options, allow_nil: true }
+  validates :income_currency, inclusion: { in: income_currency_options, allow_nil: true, allow_blank: true }
+  validates :economy_status, inclusion: { in: economy_status_options, allow_nil: true, allow_blank: true }
+  validates :work_status, inclusion: { in: work_status_options, allow_nil: true, allow_blank: true }
 
 
 
   ##### Spiritually ####################################################
 
-  validates :attendance_frequency, inclusion: { in: attendance_frequency_options, allow_nil: true }
-  validates :tithing_status, inclusion: { in: tithing_status_options, allow_nil: true }
-  validates :alms_status, inclusion: { in: alms_status_options, allow_nil: true }
-  validates :prayer_frequency, inclusion: { in: prayer_frequency_options, allow_nil: true }
-  validates :number_of_times_read_bible, numericality: { greater_than_or_equal_to: 0, allow_nil: true }
+  validates :attendance_frequency, inclusion: { in: attendance_frequency_options, allow_nil: true, allow_blank: true }
+  validates :tithing_status, inclusion: { in: tithing_status_options, allow_nil: true, allow_blank: true }
+  validates :alms_status, inclusion: { in: alms_status_options, allow_nil: true, allow_blank: true }
+  validates :prayer_frequency, inclusion: { in: prayer_frequency_options, allow_nil: true, allow_blank: true }
+  validates :number_of_times_read_bible, numericality: { greater_than_or_equal_to: 0, allow_nil: true, allow_blank: true }
 
 
 
   ##### Lifestyle ####################################################
 
-  validates :smoke_status, inclusion: { in: smoke_status_options, allow_nil: true }
-  validates :sober_status, inclusion: { in: sober_status_options, allow_nil: true }
-  validates :caffeine_status, inclusion: { in: caffeine_status_options, allow_nil: true }
-  validates :drug_status, inclusion: { in: drug_status_options, allow_nil: true }
-  validates :diet, inclusion: { in: diet_options, allow_nil: true }
-  validates :exercise, inclusion: { in: exercise_options, allow_nil: true }
+  validates :smoke_status, inclusion: { in: smoke_status_options, allow_nil: true, allow_blank: true }
+  validates :sober_status, inclusion: { in: sober_status_options, allow_nil: true, allow_blank: true }
+  validates :caffeine_status, inclusion: { in: caffeine_status_options, allow_nil: true, allow_blank: true }
+  validates :drug_status, inclusion: { in: drug_status_options, allow_nil: true, allow_blank: true }
+  validates :diet, inclusion: { in: diet_options, allow_nil: true, allow_blank: true }
+  validates :exercise, inclusion: { in: exercise_options, allow_nil: true, allow_blank: true }
 
 
 
   ##### Family ####################################################
 
-  validates :children_status, inclusion: { in: boolean_options, allow_nil: true }
-  validates :wants_children, inclusion: { in: wants_children_options, allow_nil: true }
-  validates :pets_status, inclusion: { in: boolean_options, allow_nil: true }
-  validates :wants_pets, inclusion: { in: boolean_options, allow_nil: true }
+  validates :children_status, inclusion: { in: boolean_options, allow_nil: true, allow_blank: true }
+  validates :wants_children, inclusion: { in: wants_children_options, allow_nil: true, allow_blank: true }
+  validates :pets_status, inclusion: { in: boolean_options, allow_nil: true, allow_blank: true }
+  validates :wants_pets, inclusion: { in: boolean_options, allow_nil: true, allow_blank: true }
 
   def age
     now = Time.now.utc.to_date
@@ -190,7 +194,7 @@ class User < ApplicationRecord
 
   def body_height_string
     return I18n.t(:not_specified) if height.blank?
-    "#{height} cm (#{cm_to_ft_in})"
+    "#{height} cm (#{cm_to_ft_in(height)})"
   end
 
   def body_weight_string
@@ -215,8 +219,8 @@ class User < ApplicationRecord
     I18n.t("#{marital_status}.#{gender}")
   end
 
-  def cm_to_ft_in
-    total_inches = height.to_i / 2.54
+  def cm_to_ft_in(cm)
+    total_inches = cm.to_i / 2.54
     feet = total_inches / 12
     inches = total_inches % 12
     "#{feet.floor}'#{inches.round}\""

@@ -3,27 +3,78 @@
   <tbody class="flex f-g-1 f-d-c">
     <tr class="flex f-g-1">
       <th><%= ct(:marital_status) %></th>
-      <td><%= @user.marital_status_string.capitalize %></td>
+      <td>
+        <% if @user==@current_user %>
+          <% # This one is special, because marital_status has a suffix in translations %>
+          <%= select_tag :marital_status, options_for_select(User.marital_status_options.map{ |option| [ct("#{option}.#{@user.gender}"), option]}, @user.marital_status), include_blank: ct(:not_specified), onchange: "userAjaxUpdate(this, 'marital_status')" %>
+        <% else %>
+          <%= @user.marital_status_string.capitalize %>
+        <% end %>
+      </td>
       <th><%= ct(:body_type) %></th>
-      <td><%= ct(@user.specified(:body_type)) %></td>
+      <td>
+        <% if @user==@current_user %>
+          <%= select_tag :body_type, options_for_select(ot(User.body_type_options), @user.body_type), include_blank: ct(:not_specified), onchange: "userAjaxUpdate(this, 'body_type')" %>
+        <% else %>
+          <%= ct(@user.specified(:body_type)) %>
+        <% end %>
+      </td>
     </tr>
     <tr class="flex f-g-1">
       <th><%= ct(:body_height) %></th>
-      <td><%= @user.body_height_string %></td>
+      <td>
+        <% if @user==@current_user %>
+          <% # This one is special, because height_options are both in SI and imperial systems %>
+          <%= select_tag :height, options_for_select(@user.height_options, @user.height), include_blank: ct(:not_specified), onchange: "userAjaxUpdate(this, 'height')" %>
+        <% else %>
+          <%= @user.body_height_string %>
+        <% end %>
+      </td>
       <th><%= ct(:weight) %></th>
-      <td><%= @user.body_weight_string %></td>
+      <td>
+        <% if @user==@current_user %>
+          <% # This one is special, because weight_options are both in SI and imperial systems %>
+          <%= select_tag :weight, options_for_select(@user.weight_options, @user.weight), include_blank: ct(:not_specified), onchange: "userAjaxUpdate(this, 'weight')" %>
+        <% else %>
+          <%= @user.body_weight_string %>
+        <% end %>
+      </td>
     </tr>
     <tr class="flex f-g-1">
       <th><%= ct(:diet) %></th>
-      <td><%= ct(@user.specified(:diet)) %></td>
+      <td>
+        <% if @user==@current_user %>
+          <%= select_tag :diet, options_for_select(ot(User.diet_options), @user.diet), include_blank: ct(:not_specified), onchange: "userAjaxUpdate(this, 'diet')" %>
+        <% else %>
+          <%= ct(@user.specified(:diet)) %>
+        <% end %>
+      </td>
       <th><%= ct(:exercise) %></th>
-      <td><%= ct(@user.specified(:exercise)) %></td>
+      <td>
+        <% if @user==@current_user %>
+          <%= select_tag :exercise, options_for_select(ot(User.exercise_options), @user.exercise), include_blank: ct(:not_specified), onchange: "userAjaxUpdate(this, 'exercise')" %>
+        <% else %>
+          <%= ct(@user.specified(:exercise)) %>
+        <% end %>
+      </td>
     </tr>
     <tr class="flex f-g-1">
       <th><%= ct(:eye_color) %></th>
-      <td><%= ct("plural.#{@user.specified(:eye_color)}") %></td>
+      <td>
+        <% if @user==@current_user %>
+          <%= select_tag :eye_color, options_for_select(ot(User.eye_color_options, "eye_colors"), @user.eye_color), include_blank: ct(:not_specified), onchange: "userAjaxUpdate(this, 'eye_color')" %>
+        <% else %>
+          <%= ct("plural.#{@user.specified(:eye_color)}") %>
+        <% end %>
+      </td>
       <th><%= ct(:tattoos) %></th>
-      <td><%= ct(@user.specified(:tattoos)) %></td>
+      <td>
+        <% if @user==@current_user %>
+          <%= select_tag :tattoos, options_for_select(ot(User.tattoos_options), @user.tattoos), include_blank: ct(:not_specified), onchange: "userAjaxUpdate(this, 'tattoos')" %>
+        <% else %>
+          <%= ct(@user.specified(:tattoos)) %>
+        <% end %>
+      </td>
     </tr>
   </tbody>
 </table>

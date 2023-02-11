@@ -54,7 +54,7 @@ class UsersController < ApplicationController
     image.purge
 
     # redirect to the previous page with a success message
-    redirect_to user_path(user.username), flash: { success: t(:image_removed) }
+    redirect_to user_path(user.username)#, flash: { success: t(:image_removed) }
   end
 
   def edit
@@ -62,7 +62,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      redirect_to user_path(@user.username), flash: { success: t(:user_update_success, user: @user.username) }
+      redirect_to user_path(@user.username)#, flash: { success: t(:user_update_success, user: @user.username) }
     else
       render :edit
     end
@@ -85,6 +85,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:username, :email, :profile_image, :gender, :password, :location, :longitude, :latitude, :birth_date, :first_name, :last_name, :rebirth_date)
+    @remove_from_permit ||= [:id, :created_at, :updated_at]
+    params.require(:user).permit(User.column_names.map(&:to_sym).reject{ |column| @remove_from_permit.include?(column)})
   end
 end

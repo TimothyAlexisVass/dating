@@ -14,6 +14,9 @@
     <%= render 'worldly_details' %>
   </div>
 </div>
+<% if @user == @current_user %>
+  <%= javascript_include_tag "user_ajax_update" %>
+<% end %>
 
 <!--
 t.point :location

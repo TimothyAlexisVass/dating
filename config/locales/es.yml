@@ -132,6 +132,16 @@ es:
   yes: sí
   no: no
   maybe: tal vez
+  cannot: no puedo
+  worldly: mundano
+  education: educación
+  income_amount: cantidad de ingresos
+  economy_status: estado económico
+  work_status: estado laboral
+  children_status: estado de los hijos
+  pets_status: estado de las mascotas
+  add_pictures: agregar fotos
+  save: guardar
 
   singular:
     male: hombre
@@ -140,6 +150,7 @@ es:
     male: hombres
     female: mujeres
     age: edades
+  eye_colors:
     brown: marrónes
     blue: azules
     green: verdes
@@ -149,6 +160,7 @@ es:
     amber: ámbarinos
     violet: violetas
     red: rojos
+    other: otro
     not_specified: no especificado
 
   activerecord:

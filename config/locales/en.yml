@@ -1,5 +1,5 @@
 en:
-  app_name: Dating App
+  app_name: Seventh Dating Adventists
   user_update_success: "%{user} was successfully updated"
   image_removed: "Image removed"
   sign_up_heading_h1: "Welcome to %{app_name}"
@@ -134,6 +134,15 @@ en:
   no: no
   maybe: maybe
   cannot: cannot
+  worldly: worldly
+  education: education
+  income_amount: income amount
+  economy_status: economy status
+  work_status: work status
+  children_status: children_status
+  pets_status: pets status
+  add_pictures: add pictures
+  save: save
 
   truth_and_spirituality: Truth and Spirituality
   health_and_wellness: Health and Wellness
@@ -172,6 +181,7 @@ en:
     male: men
     female: women
     age: ages
+  eye_colors:
     brown: brown
     blue: blue
     green: green
@@ -181,6 +191,7 @@ en:
     amber: amber
     violet: violet
     red: red
+    other: other
     not_specified: not specified
 
   activerecord:
