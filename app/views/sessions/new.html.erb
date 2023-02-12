@@ -37,6 +37,8 @@
       <%= f.text_field :last_name, placeholder: ct(:last_name), required: true %>
     </div>
     <div class="user-form-field">
+      <%= f.hidden_field :longitude, id: 'longitude' %>
+      <%= f.hidden_field :latitude, id: 'latitude' %>
       <%= f.text_field :location, placeholder: ct(:location), id: "geocoder_location", required: true %>
     </div>
     <div class="user-form-field m-b-none">
@@ -47,8 +49,6 @@
       <%= f.date_field :birth_date, required: true %>
       <%= f.date_field :rebirth_date %>
     </div>
-    <%= f.hidden_field :longitude, id: 'longitude' %>
-    <%= f.hidden_field :latitude, id: 'latitude' %>
     <div class="user-form-field f-j-c">
       <%= f.submit ct(:sign_up) %>
     </div>

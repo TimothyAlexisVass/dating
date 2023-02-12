@@ -1,7 +1,11 @@
 <h1 class="f-j-fs">
   <% if @current_user == @user %>
     <%= "#{ct(:welcome)} " %><%= @user.first_name %>
-    <%= text_field_tag :location, @user.location, placeholder: ct(:location), id: "geocoder_location", onchange: "userAjaxUpdate(this, 'location')" %>
+    <%= form_for @current_user do |f| %>
+      <%= f.hidden_field :longitude, id: 'longitude' %>
+      <%= f.hidden_field :latitude, id: 'latitude' %>
+      <%= f.text_field :location, placeholder: ct(:location), id: "geocoder_location", required: true, onchange: "this.form.submit();" %>
+    <% end %>
     <%= javascript_include_tag "geocoder_location" %>
   <% else %>
     <%= "#{@user.first_name}," %>&nbsp;<span title='<%= t(:age) %>'><%= @user.age %> <%= "(#{@user.location})" if @user.location.present? %></span>

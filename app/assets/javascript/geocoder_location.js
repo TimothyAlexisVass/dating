@@ -21,6 +21,10 @@ $(document).ready(function() {
     select: function(event, ui) {
       $("#longitude").val(ui.item.longitude);
       $("#latitude").val(ui.item.latitude);
+      $("#geocoder_location").val(ui.item.address);
+      setTimeout(function() {
+        $("#longitude, #latitude, #geocoder_location").change();
+      }, 50);
     }
   });
 });
