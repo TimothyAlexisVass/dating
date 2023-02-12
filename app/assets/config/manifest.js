@@ -1,6 +1,7 @@
 //= link_tree ../images
 //= link_directory ../stylesheets .css
 //= link_tree ../../javascript .js
+//= link geocoder_congregation.js
 //= link geocoder_location.js
 //= link user_ajax_update.js
 //= link password_toggle.js

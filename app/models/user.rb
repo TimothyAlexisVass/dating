@@ -30,7 +30,6 @@ class User < ApplicationRecord
   has_many :church_responsibilities, through: :user_church_responsibilities
   has_many :user_spiritual_gifts
   has_many :spiritual_gifts, through: :user_spiritual_gifts
-  has_one :congregation
 
 
 
@@ -201,12 +200,6 @@ class User < ApplicationRecord
     return I18n.t(:not_specified) if weight.blank?
     lb = (weight * 2.20462).floor
     "#{weight} kg (#{lb} lbs)"
-  end
-
-  def congregation_string
-    congregation = ""
-    return I18n.t(:not_specified) if congregation.blank?
-    congregation
   end
 
   def baptism_string
