@@ -2,23 +2,25 @@
   <% @user = user %>
   <% heading = "#{user.first_name} (#{user.age})" %>
   <% heading += ", #{user.location}" if user.location.present? %>
-  <h2><%= link_to heading, user_path(user.username) %></h2>
   <div class="flex">
     <div>
+      <h2 class="m-t-none"><%= link_to heading, user_path(user.username) %></h2>
       <%= render 'user_profile_image' %>
       <%= render 'user_is_active' %>
     </div>
-    <div class="flex f-w m-l-none w-100">
-      <div class="w-50" style="height:240px">
-        <%= render 'user_details' %>
-        <%= render 'spiritual_details' %>
-      </div>
-      <div class="w-50" style="height:240px">
-        <%= render 'user_status' %>
-        <%= render 'worldly_details' %>
-      </div>
-      <div class="w-100" style="height:100px;overflow:hidden">
+    <div class="flex f-d-c m-l-none w-100">
+      <div class="w-100" style="height:240px;overflow:hidden">
         <%= render 'user_presentation' %>
+      </div>
+      <div class="flex">
+        <div class="w-50" style="height:240px">
+          <%= render 'user_details' %>
+          <%= render 'spiritual_details' %>
+        </div>
+        <div class="w-50" style="height:240px">
+          <%= render 'user_status' %>
+          <%= render 'worldly_details' %>
+        </div>
       </div>
     </div>
   </div>
