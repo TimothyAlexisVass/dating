@@ -86,6 +86,8 @@ class UsersController < ApplicationController
 
   def user_params
     @remove_from_permit ||= [:id, :created_at, :updated_at]
-    params.require(:user).permit(User.column_names.map(&:to_sym).reject{ |column| @remove_from_permit.include?(column)})
+    @active_storage_params ||= [:profile_image] 
+    @selection ||= User.column_names + @active_storage_params - @remove_from_permit
+    params.require(:user).permit(@selection.map(&:to_sym))
   end
 end
