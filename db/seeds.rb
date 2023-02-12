@@ -39,7 +39,8 @@ users = [{
 names = [%w[Adam Brian Charles David Ethan Frank George Henry Ivan John Kevin Liam Michael Nathan Oliver Peter Robert Samuel Thomas William], %w[Amanda Brittany Caroline Diana Elizabeth Fiona Grace Hannah Isabella Jennifer Katie Lauren Michelle Nicole Olivia Patricia Quinn Rachel Sarah Tracy]]
 surnames = %w[Smith Johnson Brown Davis Wilson Martinez Anderson Taylor Thomas Jackson White Harris Martin Thompson Garcia Martinez Robinson Clark Rodriguez Lopez Gonzalez]
 
-(1..20).each do |i|
+(1..200).each do |i|
+
   gender = [0,1].sample
   start_date = Date.new(1970, 1, 1)
   end_date = Date.today - 18.years
@@ -81,7 +82,7 @@ surnames = %w[Smith Johnson Brown Davis Wilson Martinez Anderson Taylor Thomas J
 end
 User.create(users)
 
-(1..21).each do |user_id|
+(1..201).each do |user_id|
   (1..1+rand(10)).each{
     begin
       UserBook.new(user_id: user_id, book_id: Book.order("RANDOM()").limit(1).first.id).save!

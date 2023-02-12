@@ -1,2 +1,22 @@
 <h1><%= ct("plural.#{@current_user.searching_for}") %> <%= t("plural.age") %> <%= @current_user.age_range_lower %> <%= t(:to) %> <%= @current_user.age_range_upper %></h1>
-<%= render partial: 'index_user_profile', collection: @users, as: :user %>
+<div id="my-posts">
+  <%= render @users %>
+</div>
+
+<div id="infinite-scrolling">
+  <%= will_paginate %>
+</div>
+
+<script>
+$(document).ready(function() {
+  if($('#infinite-scrolling').size() > 0) {
+    $(window).scroll(function() {
+      more_items_url = $('.pagination .next_page').attr('href');
+      if(more_items_url && $(window).scrollTop() > $(document).height() - $(window).height() - 100){
+        $('.pagination').html('<img src="/assets/ajax-loading.gif" alt="Loading..." title="Loading..." />');
+        $.getScript(more_items_url);
+      }
+    });
+  }
+});
+</script>

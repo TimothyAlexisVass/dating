@@ -9,6 +9,13 @@ class UsersController < ApplicationController
     @users = User.all.where(gender: @current_user.searching_for).where(
       'birth_date >= ? and birth_date <= ?', birth_date_lower, birth_date_upper
     )
+
+    @users = @users.paginate(page: params[:page], per_page: 5)
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def show
