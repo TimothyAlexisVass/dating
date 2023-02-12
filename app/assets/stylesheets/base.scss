@@ -260,8 +260,9 @@ header.top-header, .user-form {
     font-size: 24px;
     text-shadow: 1px 1px 1px black;
   }
-  .user-pictures {
-    flex-wrap: wrap;
+  .user-images {
+    overflow-x: auto;
+    overflow-y: hidden;
     max-width: 500px;
     padding: 6px 0 12px;
   }

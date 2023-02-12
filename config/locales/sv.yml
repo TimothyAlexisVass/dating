@@ -144,7 +144,7 @@ sv:
   work_status: arbete
   children_status: barn
   pets_status: husdjur
-  add_pictures: lägg till bilder
+  add_images: lägg till bilder
   save: spara
 
   singular:

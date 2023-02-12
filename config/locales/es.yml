@@ -140,7 +140,7 @@ es:
   work_status: estado laboral
   children_status: estado de los hijos
   pets_status: estado de las mascotas
-  add_pictures: agregar fotos
+  add_images: agregar fotos
   save: guardar
 
   singular:
