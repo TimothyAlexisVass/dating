@@ -94,7 +94,7 @@ class User < ApplicationRecord
     @exercise_options ||= %w[daily almost_daily weekly rarely]
   end
   def self.wants_children_options
-    @wants_children_options ||= %w[if_yah_wills yes maybe cannot no]
+    @wants_children_options ||= %w[if_yah_wills_will_have_children want_children maybe_want_children cannot_have_children dont_want_children]
   end
   def height_options
     @height_options ||= (120..220).to_a.map{ |height| ["#{height} cm (#{cm_to_ft_in(height)})", height.to_s] }
@@ -104,6 +104,28 @@ class User < ApplicationRecord
   end
   def age_options(low=18, high=99)
     (low..high).to_a.map(&:to_s)
+  end
+  def self.number_of_times_read_bible_options
+    @times_read_bible_options ||= [
+      [ViewsHelper.ct(:havent_read_the_bible), 0],
+      [ViewsHelper.ct(:once), 1],
+      [ViewsHelper.ct(:twice), 2],
+      [ViewsHelper.ct(:three_times), 3],
+      [ViewsHelper.ct(:four_times), 4],
+      [ViewsHelper.ct(:five_times), 5],
+      [ViewsHelper.ct(:six_times), 6],
+      [ViewsHelper.ct(:seven_times), 7],
+      [ViewsHelper.ct(:more_than_seven), 8]
+    ]
+  end
+  def self.children_status_options
+    @children_status_options ||= [[I18n.t(:no_children), 0], [I18n.t(:have_children), 1]]
+  end
+  def self.wants_pets_options
+    @wants_pets_options ||= [[I18n.t(:dont_want_pets), 0], [I18n.t(:want_pets), 1]]
+  end
+  def self.pets_status_options
+    @pets_status_options ||= [[I18n.t(:no_pets), 0], [I18n.t(:have_pets), 1]]
   end
   
 
@@ -214,6 +236,16 @@ class User < ApplicationRecord
   def marital_status_string
     return I18n.t(:not_specified) if marital_status.blank?
     I18n.t("#{marital_status}.#{gender}")
+  end
+
+  def children_status_string
+    return I18n.t(:not_specified) if children_status.blank?
+    children_status ? I18n.t(:have_children) : I18n.t(:no_children)
+  end
+
+  def pets_status_string
+    return I18n.t(:not_specified) if children_status.blank?
+    children_status ? I18n.t(:have_pets) : I18n.t(:no_pets)
   end
 
   def cm_to_ft_in(cm)

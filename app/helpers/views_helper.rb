@@ -16,7 +16,12 @@ module ViewsHelper
   end
 
   def ct(string)
-    return t(string).capitalize if I18n.exists?(string, locale: I18n.locale)
+    return I18n.t(string).capitalize if I18n.exists?(string, locale: I18n.locale)
+    string.capitalize
+  end
+
+  def self.ct(string)
+    return I18n.t(string).capitalize if I18n.exists?(string, locale: I18n.locale)
     string.capitalize
   end
 end

@@ -3,19 +3,49 @@
   <tbody class="flex f-g-1 f-d-c">
     <tr class="flex f-g-1">
       <th><%= ct(:attendance_frequency) %></th>
-      <td><%= ct(@user.specified(:attendance_frequency)) %></td>
+      <td>
+        <% if @user==@current_user %>
+          <%= select_tag :attendance_frequency, options_for_select(ot(User.attendance_frequency_options), @user.attendance_frequency), include_blank: ct(:not_specified), onchange: "userAjaxUpdate(this, 'attendance_frequency')" %>
+        <% else %>
+          <%= ct(@user.specified(:attendance_frequency)) %>
+        <% end %>
+      </td>
       <th><%= ct(:tithing_status) %></th>
-      <td><%= ct(@user.specified(:tithing_status)) %></td>
+      <td>
+        <% if @user==@current_user %>
+          <%= select_tag :tithing_status, options_for_select(ot(User.tithing_status_options), @user.tithing_status), include_blank: ct(:not_specified), onchange: "userAjaxUpdate(this, 'tithing_status')" %>
+        <% else %>
+          <%= ct(@user.specified(:tithing_status)) %>
+        <% end %>
+      </td>
     </tr>
     <tr class="flex f-g-1">
       <th><%= ct(:alms_status) %></th>
-      <td><%= ct(@user.specified(:alms_status)) %></td>
+      <td>
+        <% if @user==@current_user %>
+          <%= select_tag :alms_status, options_for_select(ot(User.alms_status_options), @user.alms_status), include_blank: ct(:not_specified), onchange: "userAjaxUpdate(this, 'alms_status')" %>
+        <% else %>
+          <%= ct(@user.specified(:alms_status)) %>
+        <% end %>
+      </td>
       <th><%= ct(:prayer_frequency) %></th>
-      <td><%= ct(@user.specified(:prayer_frequency)) %></td>
+      <td>
+        <% if @user==@current_user %>
+          <%= select_tag :prayer_frequency, options_for_select(ot(User.prayer_frequency_options), @user.prayer_frequency), include_blank: ct(:not_specified), onchange: "userAjaxUpdate(this, 'prayer_frequency')" %>
+        <% else %>
+          <%= ct(@user.specified(:prayer_frequency)) %>
+        <% end %>
+      </td>
     </tr>
     <tr class="flex f-g-1">
       <th><%= ct(:number_of_times_read_bible) %></th>
-      <td><%= ct(@user.specified(:number_of_times_read_bible)) %></td>
+      <td>
+        <% if @user==@current_user %>
+          <%= select_tag :number_of_times_read_bible, options_for_select(User.number_of_times_read_bible_options, @user.number_of_times_read_bible), include_blank: ct(:not_specified), onchange: "userAjaxUpdate(this, 'number_of_times_read_bible')" %>
+        <% else %>
+          <%= ct(@user.specified(:number_of_times_read_bible)) %>
+        <% end %>
+      </td>
       <th></th>
       <td></td>
     </tr>

@@ -4,6 +4,8 @@
       <%= ct(:search_age_range_between) %> <%= select_tag :age_range_lower, options_for_select(@user.age_options(18, @user.age_range_upper.to_i), @user.age_range_lower), id: "age_range_lower", include_blank: false, onchange: "userAjaxUpdate(this, 'age_range_lower');updateAgeRangeFields();" %>
       <%= t(:and) %> <%= select_tag :age_range_upper, options_for_select(@user.age_options(@user.age_range_lower.to_i, 99), @user.age_range_upper), id: "age_range_upper", include_blank: false, onchange: "userAjaxUpdate(this, 'age_range_upper');updateAgeRangeFields();" %>
       <%= t(:years) %>
+      <br>
+      <%= label_tag :limit_contact_to_age_range, ct(:limit_contact_to_age_range) %><%= check_box_tag :limit_contact_to_age_range, 1, @user.limit_contact_to_age_range, onchange: "userAjaxUpdate(this, 'limit_contact_to_age_range')" %>
     </div>
   <% else %>
     <span>

@@ -3,21 +3,68 @@
   <tbody class="flex f-g-1 f-d-c">
     <tr class="flex f-g-1">
       <th><%= ct(:education) %></th>
-      <td><%= ct(@user.specified(:education)) %></td>
+      <td>
+        <% if @user==@current_user %>
+          <%= select_tag :education, options_for_select(ot(User.education_options), @user.education), include_blank: ct(:not_specified), onchange: "userAjaxUpdate(this, 'education')" %>
+        <% else %>
+          <%= ct(@user.specified(:education)) %>
+        <% end %>
+      </td>
       <th><%= ct(:income_amount) %></th>
-      <td><%= ct(@user.specified(:income_amount)) %><% if @user.income_currency.present? %><span title="<%= ct(@user.income_currency) %>"><%= " (#{@user.income_currency})" %></span><% end %><%= " / #{t(:year)}" if @user.income_amount.present? %></td>
+      <td>
+        <div class="flex">
+        <% if @user==@current_user %>
+            <%= number_field_tag :income_amount, @user.income_amount, style: "width: 110px", onchange: "userAjaxUpdate(this, 'income_amount')" %>
+            <%= select_tag :income_currency, options_for_select(User.income_currency_options, @user.income_currency), style: "width:min-content", include_blank: true, onchange: "userAjaxUpdate(this, 'income_currency')" %>
+        <% else %>
+          <span class="f-g-1"><%= ct(@user.specified(:income_amount)) %></span>
+          <% if @user.income_currency.present? %>
+            <span class="text-right" title="<%= ct(@user.income_currency) %>">&nbsp;<%= "(#{@user.income_currency})" %></span>
+          <% end %>
+        <% end %>
+        <span>&nbsp;<%= "/ #{t(:year)}" if @user.income_amount.present? %></span>
+        </div>
+      </td>
     </tr>
     <tr class="flex f-g-1">
       <th><%= ct(:economy_status) %></th>
-      <td><%= ct(@user.specified(:economy_status)) %></td>
+      <td>
+        <% if @user==@current_user %>
+          <%= select_tag :economy_status, options_for_select(ot(User.economy_status_options), @user.economy_status), include_blank: ct(:not_specified), onchange: "userAjaxUpdate(this, 'economy_status')" %>
+        <% else %>
+          <%= ct(@user.specified(:economy_status)) %>
+        <% end %>
+      </td>
       <th><%= ct(:work_status) %></th>
-      <td><%= ct(@user.specified(:work_status)) %></td>
+      <td>
+        <% if @user==@current_user %>
+          <%= select_tag :work_status, options_for_select(ot(User.work_status_options), @user.work_status), include_blank: ct(:not_specified), onchange: "userAjaxUpdate(this, 'work_status')" %>
+        <% else %>
+          <%= ct(@user.specified(:work_status)) %>
+        <% end %>
+      </td>
     </tr>
     <tr class="flex f-g-1">
       <th><%= ct(:children_status) %></th>
-      <td><%= ct(@user.specified(:children_status)) %> (<%= ct(@user.specified(:wants_children)) %>)</td>
+      <td>
+        <% if @user==@current_user %>
+          <%= select_tag :children_status, options_for_select(User.children_status_options, @user.children_status), include_blank: ct(:not_specified), onchange: "userAjaxUpdate(this, 'children_status')" %>
+          <%= select_tag :wants_children, options_for_select(ot(User.wants_children_options), @user.wants_children), include_blank: ct(:not_specified), onchange: "userAjaxUpdate(this, 'wants_children')" %>
+        <% else %>
+          <%= @user.children_status_string %><br>
+          <%= ct(@user.specified(:wants_children)) %>
+        <% end %>
+      </td>
       <th><%= ct(:pets_status) %></th>
-      <td><%= ct(@user.specified(:pets_status)) %> (<%= ct(@user.specified(:wants_pets)) %>)</td>
+      <td>
+        <% if @user==@current_user %>
+          <%= select_tag :pets_status, options_for_select(User.pets_status_options, @user.pets_status), include_blank: ct(:not_specified), onchange: "userAjaxUpdate(this, 'pets_status')" %>
+          <%= select_tag :wants_pets, options_for_select(User.wants_pets_options, @user.wants_pets), include_blank: ct(:not_specified), onchange: "userAjaxUpdate(this, 'wants_pets')" %>
+        <% else %>
+          <%= @user.pets_status_string %><br>
+          <%= ct(@user.specified(:wants_pets)) %>
+        <% end %>
+      </td>
     </tr>
   </tbody>
 </table>

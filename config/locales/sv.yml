@@ -131,12 +131,12 @@ sv:
   almost_daily: nästan dagligen
   weekly: veckovis
   rarely: sällan
-  if_yah_wills: om Yah vill
   change_profile_image: byt profilbild
-  yes: ja
-  no: nej
-  maybe: kanske
-  cannot: kan inte
+  if_yah_wills_will_have_children: om Yah vill så skaffar vi fler barn
+  want_children: ja, jag vill ha fler barn
+  dont_want_children: no, jag vill inte ha fler barn
+  maybe_want_children: jag vill kanske ha fler barn
+  cannot_have_children: jag kan inte få barn
   worldly: världsligt
   education: utbildning
   income_amount: inkomst
@@ -148,14 +148,30 @@ sv:
   save: spara
   and: och
   search_age_range_between: önskar partner mellan
+  limit_contact_to_age_range: endast de mellan dessa åldrar får se min profil
   years: år
   year: år
-  spiritual: andlig
+  spiritual: andligt
   attendance_frequency: kyrkobesök
   tithing_status: jag ger tionde
   alms_status: jag ger allmosor
   prayer_frequency: bönefrekvens
   number_of_times_read_bible: jag har läst Biblen
+  havent_read_the_bible: inte än
+  once: 1 gång
+  twice: 2 gånger
+  three_times: 3 gånger
+  four_times: 4 gånger
+  five_times: 5 gånger
+  six_times: 6 gånger
+  seven_times: 7 gånger
+  more_than_seven: fler än 7 gånger
+  no_children: Har inga barn
+  have_children: Ja, jag har barn
+  no_pets: Har inga husdjur
+  have_pets: Ja, jag har husdjur
+  dont_want_pets: Jag vill inte ha fler husdjur
+  want_pets: Jag vill ha fler husdjur
 
   singular:
     male: man

@@ -134,12 +134,12 @@ en:
   almost_daily: almost daily
   weekly: weekly
   rarely: rarely
-  if_yah_wills: if Yah wills
   change_profile_image: change profile image
-  yes: yes
-  no: no
-  maybe: maybe
-  cannot: cannot
+  if_yah_wills_will_have_children: if Yah wills we will have more
+  want_children: yes, I want more children
+  dont_want_children: no, I don't want more children
+  maybe_want_children: I may want more children
+  cannot_have_children: I cannot get children
   worldly: worldly
   education: education
   income_amount: income
@@ -151,6 +151,8 @@ en:
   save: save
   and: and
   search_age_range_between: want a partner between
+  limit_contact_to_age_range_explanation: Only those in this age range may contact me
+  limit_contact_to_age_range: Only these may contact
   years: years old
   year: year
   spiritual: spiritual
@@ -159,7 +161,21 @@ en:
   alms_status: I give alms
   prayer_frequency: prayer frequency
   number_of_times_read_bible: I've read the Bible
-
+  havent_read_the_bible: not yet
+  once: once
+  twice: twice
+  three_times: 3 times
+  four_times: 4 times
+  five_times: 5 times
+  six_times: 6 times
+  seven_times: 7 times
+  more_than_seven: more than 7 times
+  no_children: I don't have children
+  have_children: Yes, I have children
+  no_pets: I don't have pets
+  have_pets: Yes, I have pets
+  dont_want_pets: I don't want more pets
+  want_pets: I want to have more pets
 
   truth_and_spirituality: Truth and Spirituality
   health_and_wellness: Health and Wellness
