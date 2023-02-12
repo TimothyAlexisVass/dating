@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_12_052843) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_09_081138) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -70,12 +70,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_12_052843) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "images", force: :cascade do |t|
-    t.string "filename"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "interest_categories", force: :cascade do |t|
     t.string "text"
     t.datetime "created_at", null: false
@@ -105,7 +99,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_12_052843) do
   end
 
   create_table "search_settings", force: :cascade do |t|
-    t.integer "user_id"
+    t.bigint "user_id", null: false
     t.integer "age_range_min"
     t.integer "age_range_max"
     t.float "distance_radius"
@@ -124,6 +118,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_12_052843) do
     t.bigint "user_id", null: false
     t.bigint "book_id", null: false
     t.index ["book_id"], name: "index_user_books_on_book_id"
+    t.index ["user_id", "book_id"], name: "index_user_books_on_user_id_and_book_id", unique: true
     t.index ["user_id"], name: "index_user_books_on_user_id"
   end
 
@@ -131,6 +126,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_12_052843) do
     t.bigint "user_id", null: false
     t.bigint "calling_id", null: false
     t.index ["calling_id"], name: "index_user_callings_on_calling_id"
+    t.index ["user_id", "calling_id"], name: "index_user_callings_on_user_id_and_calling_id", unique: true
     t.index ["user_id"], name: "index_user_callings_on_user_id"
   end
 
@@ -145,6 +141,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_12_052843) do
     t.bigint "user_id", null: false
     t.bigint "interest_id", null: false
     t.index ["interest_id"], name: "index_user_interests_on_interest_id"
+    t.index ["user_id", "interest_id"], name: "index_user_interests_on_user_id_and_interest_id", unique: true
     t.index ["user_id"], name: "index_user_interests_on_user_id"
   end
 
@@ -152,6 +149,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_12_052843) do
     t.bigint "user_id", null: false
     t.bigint "language_id", null: false
     t.index ["language_id"], name: "index_user_languages_on_language_id"
+    t.index ["user_id", "language_id"], name: "index_user_languages_on_user_id_and_language_id", unique: true
     t.index ["user_id"], name: "index_user_languages_on_user_id"
   end
 
@@ -159,12 +157,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_12_052843) do
     t.bigint "user_id", null: false
     t.bigint "spiritual_gift_id", null: false
     t.index ["spiritual_gift_id"], name: "index_user_spiritual_gifts_on_spiritual_gift_id"
+    t.index ["user_id", "spiritual_gift_id"], name: "index_user_spiritual_gifts_on_user_id_and_spiritual_gift_id", unique: true
     t.index ["user_id"], name: "index_user_spiritual_gifts_on_user_id"
   end
 
   create_table "user_work_sectors", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "work_sector_id", null: false
+    t.index ["user_id", "work_sector_id"], name: "index_user_work_sectors_on_user_id_and_work_sector_id", unique: true
     t.index ["user_id"], name: "index_user_work_sectors_on_user_id"
     t.index ["work_sector_id"], name: "index_user_work_sectors_on_work_sector_id"
   end
@@ -181,6 +181,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_12_052843) do
     t.float "longitude"
     t.float "latitude"
     t.date "last_active", default: -> { "CURRENT_TIMESTAMP" }
+    t.string "congregation"
     t.boolean "verified_user", default: false
     t.boolean "verified_congregation", default: false
     t.boolean "verified_rebirth", default: false
@@ -221,7 +222,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_12_052843) do
     t.boolean "wants_pets"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "congregation"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
   end
@@ -235,6 +235,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_12_052843) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "interests", "interest_categories"
+  add_foreign_key "search_settings", "users"
   add_foreign_key "user_books", "books"
   add_foreign_key "user_books", "users"
   add_foreign_key "user_callings", "callings"

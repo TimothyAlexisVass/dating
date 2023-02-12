@@ -8,10 +8,11 @@ class CreateUsers < ActiveRecord::Migration[7.0]
       t.string :last_name
       t.date :birth_date
       t.string :gender
-      t.point :location
+      t.string :location
       t.float :longitude
       t.float :latitude
       t.date :last_active, default: -> { 'CURRENT_TIMESTAMP' }
+      t.string :congregation
       t.boolean :verified_user, default: false
       t.boolean :verified_congregation, default: false
       t.boolean :verified_rebirth, default: false

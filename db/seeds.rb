@@ -1,10 +1,11 @@
+system("#{Rails.root}/populate_database")
+
 users = [{
   username: "timvas",
   email: "test@example.com",
   password: "test123",
   first_name: "Timothy",
   last_name: "Vass",
-  bio: "Hej alla glada tjejer!",
   gender: :male,
   birth_date: "1982-02-13",
   height: 189,
@@ -12,11 +13,27 @@ users = [{
   eye_color: :mixed,
   marital_status: :single,
   body_type: :athletic,
-  tattoos: :none,
+  tattoos: :tiny,
   diet: :plant_based,
   exercise: :daily,
   age_range_lower: 18,
-  age_range_upper: 40
+  age_range_upper: 40,
+  distance_radius: 5.0,
+  limit_contact_to_age_range: true,
+  education: "some_college",
+  income_amount: 777777,
+  income_currency: "EUR",
+  economy_status: "some_savings",
+  work_status: "employee",
+  attendance_frequency: "every_sabbath",
+  tithing_status: "before_tax",
+  alms_status: "always_when_asked",
+  prayer_frequency: "multiple_times_daily",
+  number_of_times_read_bible: 5,
+  children_status: true,
+  wants_children: "if_yah_wills_will_have_children",
+  pets_status: false,
+  wants_pets: false
 }]
 
 names = [%w[Adam Brian Charles David Ethan Frank George Henry Ivan John Kevin Liam Michael Nathan Oliver Peter Robert Samuel Thomas William], %w[Amanda Brittany Caroline Diana Elizabeth Fiona Grace Hannah Isabella Jennifer Katie Lauren Michelle Nicole Olivia Patricia Quinn Rachel Sarah Tracy]]
@@ -44,9 +61,39 @@ surnames = %w[Smith Johnson Brown Davis Wilson Martinez Anderson Taylor Thomas J
     diet: User.diet_options.sample,
     exercise: User.exercise_options.sample,
     age_range_lower: 18 + rand(10),
-    age_range_upper: 30 + rand(20)
+    age_range_upper: 30 + rand(20),
+    limit_contact_to_age_range: [true,false].sample,
+    education: User.education_options.sample,
+    income_amount: 1000+rand(222222),
+    income_currency: User.income_currency_options.sample,
+    economy_status: User.economy_status_options.sample,
+    work_status: User.work_status_options.sample,
+    attendance_frequency: User.attendance_frequency_options.sample,
+    tithing_status: User.tithing_status_options.sample,
+    alms_status: User.alms_status_options.sample,
+    prayer_frequency: User.prayer_frequency_options.sample,
+    number_of_times_read_bible: rand(9),
+    children_status: [true,false].sample,
+    wants_children: User.wants_children_options.sample,
+    pets_status: [true,false].sample,
+    wants_pets: [true,false].sample
   }
 end
 User.create(users)
 
-Rake::Task["db:tasks:load"].invoke
+(1..21).each do |user_id|
+  (1..1+rand(10)).each{
+    begin
+      UserBook.new(user_id: user_id, book_id: Book.order("RANDOM()").limit(1).first.id).save!
+    rescue => e
+      nil
+    end
+  }
+  (10..10+rand(15)).each{
+    begin
+      UserInterest.new(user_id: user_id, interest_id: Interest.order("RANDOM()").limit(1).first.id).save!
+    rescue => e
+      nil
+    end
+  }
+end

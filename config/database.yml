@@ -17,5 +17,5 @@ test:
 production:
   <<: *default
   database: dating_production
-  username: Nx1tqqrtt1!
-  password: <%= ENV['DATING_DATABASE_PASSWORD'] %>
+  #username: Nx1tqqrtt1!
+  #password: <%= ENV['DATING_DATABASE_PASSWORD'] %>
