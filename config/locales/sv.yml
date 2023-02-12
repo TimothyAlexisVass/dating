@@ -1,5 +1,5 @@
 sv:
-  app_name: Sjunde Dates Adventister
+  app_name: Seventh Date Adventists
   user_update_success: "%{user} uppdaterades"
   image_removed: "Bild borttagen"
   sign_up_heading_h1: "Välkommen till %{app_name}"
@@ -147,7 +147,7 @@ sv:
   add_images: lägg till bilder
   save: spara
   and: och
-  search_age_range_between: jag söker partner mellan
+  search_age_range_between: önskar partner mellan
   years: år
 
   singular:
