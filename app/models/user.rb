@@ -58,7 +58,7 @@ class User < ApplicationRecord
     @economy_status_options ||= %w[debt_relief heavy_debt some_debt no_debt just_over_broke some_savings comfortable_savings rich very_rich]
   end
   def self.work_status_options
-    @work_status_options ||= %w[employee self_employed unemployed retired student financially_independent]
+    @work_status_options ||= %w[employed self_employed unemployed retired student financially_independent]
   end
   def self.attendance_frequency_options
     @attendance_frequency_options ||= %w[every_sabbath almost_every_sabbath monthly rarely]

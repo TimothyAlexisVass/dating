@@ -24,7 +24,7 @@ users = [{
   income_amount: 777777,
   income_currency: "EUR",
   economy_status: "some_savings",
-  work_status: "employee",
+  work_status: "employed",
   attendance_frequency: "every_sabbath",
   tithing_status: "before_tax",
   alms_status: "always_when_asked",
