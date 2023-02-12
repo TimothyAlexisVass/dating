@@ -1,7 +1,23 @@
 <h2><%= ct(:worldly) %></h2>
-<%= t(:education) %>: <%= ct(@user.specified(:education)) %>
-<%= t(:income_amount) %>: <%= ct(@user.specified(:income_amount)) %><%= ct(@user.specified(:income_currency)) %>
-<%= t(:economy_status) %>: <%= ct(@user.specified(:economy_status)) %>
-<%= t(:work_status) %>: <%= ct(@user.specified(:work_status)) %>
-<%= t(:children_status) %>: <%= ct(@user.specified(:children_status)) %> (<%= ct(@user.specified(:wants_children)) %>)
-<%= t(:pets_status) %>: <%= ct(@user.specified(:pets_status)) %> (<%= ct(@user.specified(:wants_pets)) %>)
+<table class="w-100 details-table table-striped">
+  <tbody class="flex f-g-1 f-d-c">
+    <tr class="flex f-g-1">
+      <th><%= ct(:education) %></th>
+      <td><%= ct(@user.specified(:education)) %></td>
+      <th><%= ct(:income_amount) %></th>
+      <td><%= ct(@user.specified(:income_amount)) %><% if @user.income_currency.present? %><span title="<%= ct(@user.income_currency) %>"><%= " (#{@user.income_currency})" %></span><% end %><%= " / #{t(:year)}" if @user.income_amount.present? %></td>
+    </tr>
+    <tr class="flex f-g-1">
+      <th><%= ct(:economy_status) %></th>
+      <td><%= ct(@user.specified(:economy_status)) %></td>
+      <th><%= ct(:work_status) %></th>
+      <td><%= ct(@user.specified(:work_status)) %></td>
+    </tr>
+    <tr class="flex f-g-1">
+      <th><%= ct(:children_status) %></th>
+      <td><%= ct(@user.specified(:children_status)) %> (<%= ct(@user.specified(:wants_children)) %>)</td>
+      <th><%= ct(:pets_status) %></th>
+      <td><%= ct(@user.specified(:pets_status)) %> (<%= ct(@user.specified(:wants_pets)) %>)</td>
+    </tr>
+  </tbody>
+</table>

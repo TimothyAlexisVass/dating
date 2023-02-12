@@ -1,6 +1,23 @@
 <h2><%= ct(:spiritual) %></h2>
-<%= t(:attendance_frequency) %>: <%= ct(@user.specified(:attendance_frequency)) %>
-<%= t(:tithing_status) %>: <%= ct(@user.specified(:tithing_status)) %>
-<%= t(:alms_status) %>: <%= ct(@user.specified(:alms_status)) %>
-<%= t(:prayer_frequency) %>: <%= ct(@user.specified(:prayer_frequency)) %>
-<%= t(:number_of_times_read_bible) %>: <%= ct(@user.specified(:number_of_times_read_bible)) %>
+<table class="w-100 details-table table-striped">
+  <tbody class="flex f-g-1 f-d-c">
+    <tr class="flex f-g-1">
+      <th><%= ct(:attendance_frequency) %></th>
+      <td><%= ct(@user.specified(:attendance_frequency)) %></td>
+      <th><%= ct(:tithing_status) %></th>
+      <td><%= ct(@user.specified(:tithing_status)) %></td>
+    </tr>
+    <tr class="flex f-g-1">
+      <th><%= ct(:alms_status) %></th>
+      <td><%= ct(@user.specified(:alms_status)) %></td>
+      <th><%= ct(:prayer_frequency) %></th>
+      <td><%= ct(@user.specified(:prayer_frequency)) %></td>
+    </tr>
+    <tr class="flex f-g-1">
+      <th><%= ct(:number_of_times_read_bible) %></th>
+      <td><%= ct(@user.specified(:number_of_times_read_bible)) %></td>
+      <th></th>
+      <td></td>
+    </tr>
+  </tbody>
+</table>

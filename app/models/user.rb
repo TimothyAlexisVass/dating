@@ -192,7 +192,7 @@ class User < ApplicationRecord
 
   def specified(field)
     return :not_specified if self[field].blank?
-    self[field]
+    self[field].to_s
   end
 
   def body_height_string
