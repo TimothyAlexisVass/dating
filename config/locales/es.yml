@@ -151,6 +151,12 @@ es:
   and: y
   search_age_range_between: quiero una pareja entre
   years: años
+  spiritual: espiritual
+  attendance_frequency: asistencia a la iglesia
+  tithing_status: diezmo
+  alms_status: doy limosna
+  prayer_frequency: frecuencia de rezar
+  number_of_times_read_bible: número de veces que he leído la Biblia
 
   singular:
     male: hombre

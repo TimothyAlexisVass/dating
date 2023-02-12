@@ -12,6 +12,7 @@
     <%= render 'user_interests' %>
     <%= render 'user_books' %>
     <%= render 'worldly_details' %>
+    <%= render 'spiritual_details' %>
   </div>
 </div>
 <% if @user == @current_user %>
@@ -19,19 +20,8 @@
 <% end %>
 
 <!--
-t.point :location
-t.float :longitude
-t.float :latitude
-t.date :last_active, default: -> { 'CURRENT_TIMESTAMP' }
-
 t.float :distance_radius, default: 5.0
 t.boolean :limit_contact_to_age_range, default: false
-
-t.string :attendance_frequency
-t.string :tithing_status
-t.string :alms_status
-t.string :prayer_frequency
-t.integer :number_of_times_read_bible
 
 t.string :smoke_status
 t.string :sober_status
@@ -39,6 +29,4 @@ t.string :caffeine_status
 t.string :drug_status
 t.string :medical_status
 t.string :allergies, array: true, default: []
-
-
 -->

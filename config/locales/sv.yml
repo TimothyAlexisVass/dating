@@ -149,6 +149,12 @@ sv:
   and: och
   search_age_range_between: önskar partner mellan
   years: år
+  spiritual: andlig
+  attendance_frequency: kyrkobesök
+  tithing_status: jag ger tionde
+  alms_status: jag ger allmosor
+  prayer_frequency: bönefrekvens
+  number_of_times_read_bible: antal gånger jag har läst Bibeln
 
   singular:
     male: man
