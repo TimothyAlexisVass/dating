@@ -146,6 +146,9 @@ sv:
   pets_status: husdjur
   add_images: lägg till bilder
   save: spara
+  and: och
+  search_age_range_between: jag söker partner mellan
+  years: år
 
   singular:
     male: man

@@ -97,11 +97,15 @@ class User < ApplicationRecord
     @wants_children_options ||= %w[if_yah_wills yes maybe cannot no]
   end
   def height_options
-    (120..220).to_a.map{ |height| ["#{height} cm (#{cm_to_ft_in(height)})", height.to_s] }
+    @height_options ||= (120..220).to_a.map{ |height| ["#{height} cm (#{cm_to_ft_in(height)})", height.to_s] }
   end
   def weight_options
-    (40..150).to_a.map{ |weight| ["#{weight} kg (#{(weight * 2.20462).floor} lbs)", weight.to_s] }
+    @weight_options ||= (40..150).to_a.map{ |weight| ["#{weight} kg (#{(weight * 2.20462).floor} lbs)", weight.to_s] }
   end
+  def age_options(low=18, high=99)
+    (low..high).to_a.map(&:to_s)
+  end
+  
 
   ##### Basic ####################################################
 

@@ -142,6 +142,9 @@ es:
   pets_status: estado de las mascotas
   add_images: agregar fotos
   save: guardar
+  and: y
+  search_age_range_between: estoy buscando una pareja entre
+  years: años
 
   singular:
     male: hombre
