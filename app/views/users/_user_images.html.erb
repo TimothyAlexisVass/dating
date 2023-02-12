@@ -1,9 +1,3 @@
-<% if @user == @current_user %>
-  <%= form_with(model: @user, url: user_images_path(@user), local: true, method: :post, id: "add-image-form") do |form| %>
-    <%= form.file_field :images, multiple: true, onchange: "this.form.submit();", accept: "image/*", id: "add-images-input" %>
-  <% end %>
-  <%= button_tag ct(:add_images), onclick: "$('#add-images-input').click();", style: "cursor:pointer" %>
-<% end %>
 <div class="user-images flex">
   <% if @images.present? %>
     <% @images.each do |image| %>

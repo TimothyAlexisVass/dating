@@ -1,10 +1,16 @@
 <%= form_for @user, url: user_path(@user), method: :patch, html: { id: "profile-image-form", multipart: true } do |form| %>
   <%= form.file_field :profile_image, id: "profile-image-input", accept: "image/*", onchange: "this.form.submit();" %>
 <% end %>
-<div class="profile-image-wrapper"<% if @current_user == @user %> title="<%= ct(:change_profile_image) %>" onclick="$('#profile-image-input').click();" style="cursor:pointer"<% end %>>
-  <% if @user.profile_image.present? %>
-    <%= image_tag @user.profile_image, class: "profile-image" %>
+<div class="profile-image-wrapper">
+  <% profile_image = @user.profile_image.present? ? @user.profile_image : "#{@user.gender}.svg" %>
+  <% if @user == @current_user %>
+    <%= image_tag profile_image, class: "profile-image", title: ct(:change_profile_image), onclick: "$('#profile-image-input').click();", style: "cursor:pointer" %>
+    <%= form_with(model: @user, url: user_images_path(@user), local: true, method: :post, id: "add-image-form") do |form| %>
+      <%= form.file_field :images, multiple: true, onchange: "this.form.submit();", accept: "image/*", id: "add-images-input" %>
+    <% end %>
+    <%= button_tag ct(:change_profile_image), onclick: "$('#profile-image-input').click();", style: "position:absolute;left:5px;bottom:10px;cursor:pointer" %>
+    <%= button_tag ct(:add_images), onclick: "$('#add-images-input').click();", style: "position:absolute;right:3px;bottom:10px;cursor:pointer" %>
   <% else %>
-    <%= image_tag "#{@user.gender}.svg", class: "profile-image" %>
+    <%= image_tag profile_image, class: "profile-image" %>
   <% end %>
 </div>

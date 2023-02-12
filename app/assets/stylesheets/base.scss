@@ -53,6 +53,9 @@ main, header {
 .flex {
   display: flex;
 }
+.f-w {
+  flex-wrap: wrap;
+}
 .f-d-c {
   flex-direction: column;
 }
@@ -239,6 +242,7 @@ header.top-header, .user-form {
 .user-profile {
   .signed_in {color: green}
   .signed_out {color: #cd1616}
+
   h2 {
     padding: 5px 15px 5px 5px;
     color: white;
