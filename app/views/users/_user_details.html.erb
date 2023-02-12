@@ -1,5 +1,6 @@
 <h2 class="m-t-none"><%= ct(:details) %></h2>
-<table class="w-100 details-table table-striped">
+
+<table class="w-100 details-table table-striped" style="height: 120px">
   <tbody class="flex f-g-1 f-d-c">
     <tr class="flex f-g-1">
       <th><%= ct(:marital_status) %></th>
@@ -64,7 +65,7 @@
         <% if @user==@current_user %>
           <%= select_tag :eye_color, options_for_select(ot(User.eye_color_options, "eye_colors"), @user.eye_color), include_blank: ct(:not_specified), onchange: "userAjaxUpdate(this, 'eye_color')" %>
         <% else %>
-          <%= ct("plural.#{@user.specified(:eye_color)}") %>
+          <%= ct("eye_colors.#{@user.specified(:eye_color)}") %>
         <% end %>
       </td>
       <th><%= ct(:tattoos) %></th>

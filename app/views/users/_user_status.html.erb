@@ -1,5 +1,5 @@
-<h2 class="flex f-j-sb"><span><%= ct(:status) %></span></h2>
-<table class="w-100 status-table table-striped">
+<h2 class="flex f-j-sb m-t-none"><%= ct(:status) %></h2>
+<table class="w-100 status-table table-striped" style="height: 120px">
   <tbody class="flex f-g-1 f-d-c">
     <tr class="flex f-g-1">
       <th><%= ct(:username) %></th>
@@ -11,6 +11,7 @@
       <td>
         <% if @user==@current_user %>
           <%= text_field_tag :congregation, @user.congregation, placeholder: ct(:congregation), id: "geocoder_congregation", onchange: "userAjaxUpdate(this, 'congregation')" %>
+          <%= javascript_include_tag "geocoder_congregation" %>
         <% else %>
           <%= ct(@user.specified(:congregation)) %>
         <% end %>
@@ -30,5 +31,3 @@
     </tr>
   </tbody>
 </table>
-
-<%= javascript_include_tag "geocoder_congregation" %>

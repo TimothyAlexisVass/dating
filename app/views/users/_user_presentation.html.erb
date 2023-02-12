@@ -12,7 +12,7 @@
 <% if @user == @current_user %>
   <%= text_area_tag :bio, @user.bio, id: "user-bio" %>
 <% else %>
-  <p>
+  <p class="p-l-8">
     <% @user.bio.split(/\n/).each do |line| %>
       <%= line %><br>
     <% end %>
