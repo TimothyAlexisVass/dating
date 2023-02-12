@@ -36,5 +36,7 @@ class ApplicationController < ActionController::Base
 
   def current_user
     @current_user ||= User.find_by(id: session[:user_id])
+    @current_user.update(last_active: Time.now) if @current_user.present?
+    @current_user
   end
 end
