@@ -307,13 +307,16 @@ header.top-header, .user-form {
   }
   .status-table {
     th {
-      width: 40%;
+      width: 30%;
       text-align: left;
       padding-left: 8px;
     }
     td {
       text-align: right;
       padding-right: 8px;
+      input {
+        width: 100%;
+      }
     }
     td:nth-child(2) {
       flex-grow: 1

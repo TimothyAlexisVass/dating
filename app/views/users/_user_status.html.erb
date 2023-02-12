@@ -8,13 +8,27 @@
     </tr>
     <tr class="flex f-g-1">
       <th><%= ct(:congregation) %></th>
-      <td><%= @user.congregation_string %></td>
+      <td>
+        <% if @user==@current_user %>
+          <%= text_field_tag :congregation, @user.congregation, placeholder: ct(:congregation), id: "geocoder_congregation", onchange: "userAjaxUpdate(this, 'congregation')" %>
+        <% else %>
+          <%= ct(@user.specified(:congregation)) %>
+        <% end %>
+      </td>
       <td><%= @user.verified?(:verified_congregation) %></td>
     </tr>
     <tr class="flex f-g-1">
       <th><%= ct(:baptism) %></th>
-      <td><%= @user.baptism_string %></td>
+      <td>
+        <% if @user==@current_user %>
+          <%= date_field_tag :rebirth_date, @user.rebirth_date, onchange: "userAjaxUpdate(this, 'rebirth_date')" %>
+        <% else %>
+          <%= @user.baptism_string %>
+        <% end %>
+      </td>
       <td><%= @user.verified?(:verified_rebirth) %></td>
     </tr>
   </tbody>
 </table>
+
+<%= javascript_include_tag "geocoder_congregation" %>
