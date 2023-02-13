@@ -132,11 +132,13 @@ sv:
   weekly: veckovis
   rarely: sällan
   change_profile_image: byt profilbild
-  if_yah_wills_will_have_children: om Yah vill så skaffar vi fler barn
-  want_children: ja, jag vill ha fler barn
-  dont_want_children: no, jag vill inte ha fler barn
-  maybe_want_children: jag vill kanske ha fler barn
-  cannot_have_children: jag kan inte få barn
+  select_all: Visa alla
+  show_these: Visa dessa %{usertypes}
+  if_yah_wills_will_have_children: Om Yah vill så skaffar vi fler barn
+  want_children: Ja, jag vill ha fler barn
+  dont_want_children: Jag vill inte ha fler barn
+  maybe_want_children: Jag vill kanske ha fler barn
+  cannot_have_children: Jag kan inte få barn
   worldly: världsligt
   education: utbildning
   income_amount: inkomst
@@ -172,6 +174,22 @@ sv:
   have_pets: Ja, jag har husdjur
   dont_want_pets: Jag vill inte ha fler husdjur
   want_pets: Jag vill ha fler husdjur
+  select_body_type: Kroppstyp
+  select_exercise: Träning
+  select_diet: Diet
+  select_marital_status: Äktenskapsstatus
+  filter_search: filtrera sökning
+  only_show: endast
+  only_verified_male: verifierade
+  only_verified_female: verifierade
+  only_reborn_male: döpta
+  only_reborn_female: döpta
+  only_smokefree_male: rökfria
+  only_smokefree_female: rökfria
+  only_drugfree_male: drogfria
+  only_drugfree_female: drogfria
+  only_sober_male: nyktra
+  only_sober_female: nyktra
 
   singular:
     male: man

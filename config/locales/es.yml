@@ -174,6 +174,22 @@ es:
   have_pets: Sí, tengo mascotas
   dont_want_pets: No quiero más mascotas
   want_pets: Sí, quiero más mascotas
+  select_body_type: Seleccionar tipos de cuerpo
+  select_exercise: Seleccionar rutinas de ejercicio
+  select_diet: Seleccionar dietas
+  select_marital_status: Seleccionar estados civiles
+  filter_search: filtro de búsqueda
+  only_show: solo mostrar
+  only_verified_male: verificados
+  only_verified_female: verificadas
+  only_reborn_male: renacidos
+  only_reborn_female: renacidas
+  only_smokefree_male: no fumadores
+  only_smokefree_female: no fumadoras
+  only_drugfree_male: libres de drogas
+  only_drugfree_female: libres de drogas
+  only_sober_male: sobrios
+  only_sober_female: sobrias
 
   singular:
     male: hombre

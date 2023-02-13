@@ -151,8 +151,7 @@ en:
   save: save
   and: and
   search_age_range_between: want a partner between
-  limit_contact_to_age_range_explanation: Only those in this age range may contact me
-  limit_contact_to_age_range: Only these may contact
+  limit_contact_to_age_range: Only those in this age range may contact me
   years: years old
   year: year
   spiritual: spiritual
@@ -176,6 +175,22 @@ en:
   have_pets: Yes, I have pets
   dont_want_pets: I don't want more pets
   want_pets: I want to have more pets
+  select_body_type: Select body types
+  select_exercise: Select exercise routines
+  select_diet: Select diets
+  select_marital_status: Select marital statuses
+  filter_search: filter search
+  only_show: endast
+  only_verified_male: verified
+  only_verified_female: verified
+  only_reborn_male: reborn
+  only_reborn_female: reborn
+  only_smokefree_male: smoke free
+  only_smokefree_female: smoke free
+  only_drugfree_male: drug free
+  only_drugfree_female: drug free
+  only_sober_male: sober
+  only_sober_female: sober
 
   truth_and_spirituality: Truth and Spirituality
   health_and_wellness: Health and Wellness

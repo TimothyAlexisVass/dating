@@ -1,0 +1,46 @@
+<div id="overlay" onclick="if(event.target.matches('#overlay')){$(this).css({opacity:0});setTimeout(function(){$('#overlay').css({top:'-10000px'})},500);}">
+  <div id="modal" style="overflow: auto">
+  <h2 class="flex f-j-c"><%= ct(:filter_search) %></h2>
+    <%= form_with url: users_path, method: :get, class: "user-form" do |f| %>
+      <%= field_set_tag ct(:only_show) do %>
+        <%= f.collection_check_boxes :only_show, @current_user.only_show_options, :last, :first, checked: params[:only_show] do |b| %>
+          <label class="checkbox-label"><%= b.check_box %><span><%= b.text %></span></label>
+        <% end %>
+      <% end %>
+
+      <%= field_set_tag t(:select_diet) do %>
+        <%= f.collection_check_boxes :diet, ot([:not_specified]+User.diet_options), :last, :first, checked: params[:diet] do |b| %>
+          <label class="checkbox-label"><%= b.check_box %><span><%= b.text %></span></label>
+        <% end %>
+      <% end %>
+      <%= field_set_tag t(:select_body_type) do %>
+        <%= f.collection_check_boxes :body_type, ot([:not_specified]+User.body_type_options), :last, :first, checked: params[:body_type] do |b| %>
+          <label class="checkbox-label"><%= b.check_box %><span><%= b.text %></span></label>
+        <% end %>
+      <% end %>
+      <%= field_set_tag t(:select_exercise) do %>
+        <%= f.collection_check_boxes :exercise, ot([:not_specified]+User.exercise_options), :last, :first, checked: params[:exercise] do |b| %>
+          <label class="checkbox-label"><%= b.check_box %><span><%= b.text %></span></label>
+        <% end %>
+      <% end %>
+      <%= field_set_tag t(:select_marital_status) do %>
+        <%= f.collection_check_boxes :marital_status, ot([:not_specified])+User.marital_status_options.map{ |option| [ct("#{option}.#{@current_user.searching_for}"), option]}, :last, :first, checked: params[:marital_status] do |b| %>
+          <label class="checkbox-label"><%= b.check_box %><span><%= b.text %></span></label>
+        <% end %>
+      <% end %>
+      <%= field_set_tag ct(:pets_status) do %>
+        <%= f.select :pets_status, User.pets_status_options, prompt: ct(:select_all), selected: params[:pets_status] %>
+        <%= f.select :wants_pets, User.wants_pets_options, prompt: ct(:select_all), selected: params[:wants_pets] %>
+      <% end %>
+      <%= field_set_tag ct(:children_status) do %>
+        <%= f.select :children_status, User.children_status_options, prompt: ct(:select_all), selected: params[:children_status] %>
+        <%= f.collection_check_boxes :wants_children, ot([:not_specified]+User.wants_children_options, "", false), :last, :first, checked: params[:wants_children] do |b| %>
+          <label class="checkbox-label"><%= b.check_box %><span><%= b.text %></span></label>
+        <% end %>
+      <% end %>
+      <div class="user-form-field flex f-j-c m-t-15">
+        <%= f.submit t(:show_these, usertypes: t("plural.#{@current_user.searching_for}")) %>
+      </div>
+    <% end %>
+  </div>
+</div>

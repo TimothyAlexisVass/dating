@@ -127,7 +127,9 @@ class User < ApplicationRecord
   def self.pets_status_options
     @pets_status_options ||= [[I18n.t(:no_pets), 0], [I18n.t(:have_pets), 1]]
   end
-  
+  def only_show_options
+    @only_show_option ||= %i[only_verified only_reborn only_smokefree only_drugfree only_sober].map{ |e| [ViewsHelper.ct(:"#{e}_#{self.searching_for}"), e]}
+  end
 
   ##### Basic ####################################################
 
