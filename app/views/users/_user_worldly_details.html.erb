@@ -48,7 +48,7 @@
       <th><%= ct(:children_status) %></th>
       <td>
         <% if @user==@current_user %>
-          <%= select_tag :children_status, options_for_select(User.children_status_options, @user.children_status), include_blank: ct(:not_specified), onchange: "userAjaxUpdate(this, 'children_status')" %>
+          <%= select_tag :children_status, options_for_select(ot(User.children_status_options), @user.children_status), include_blank: ct(:not_specified), onchange: "userAjaxUpdate(this, 'children_status')" %>
           <%= select_tag :wants_children, options_for_select(ot(User.wants_children_options), @user.wants_children), include_blank: ct(:not_specified), onchange: "userAjaxUpdate(this, 'wants_children')" %>
         <% else %>
           <%= @user.children_status_string %><br>

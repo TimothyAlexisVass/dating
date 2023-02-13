@@ -118,6 +118,20 @@ class User < ApplicationRecord
       [ViewsHelper.ct(:more_than_seven), 8]
     ]
   end
+  def number_of_times_read_bible_string
+    {
+      :not_specified => ViewsHelper.ct(:not_specified),
+      0 => ViewsHelper.ct(:havent_read_the_bible),
+      1 => ViewsHelper.ct(:once),
+      2 => ViewsHelper.ct(:twice),
+      3 => ViewsHelper.ct(:three_times),
+      4 => ViewsHelper.ct(:four_times),
+      5 => ViewsHelper.ct(:five_times),
+      6 => ViewsHelper.ct(:six_times),
+      7 => ViewsHelper.ct(:seven_times),
+      8 => ViewsHelper.ct(:more_than_seven)
+    }[number_of_times_read_bible]
+  end
   def self.children_status_options
     @children_status_options ||= [[I18n.t(:no_children), 0], [I18n.t(:have_children), 1]]
   end
@@ -231,23 +245,23 @@ class User < ApplicationRecord
   end
 
   def baptism_string
-    return I18n.t(:not_yet_baptized) if rebirth_date.blank?
+    return ViewsHelper.ct(:not_yet_baptized) if rebirth_date.blank?
     rebirth_date
   end
 
   def marital_status_string
-    return I18n.t(:not_specified) if marital_status.blank?
-    I18n.t("#{marital_status}.#{gender}")
+    return ViewsHelper.ct(:not_specified) if marital_status.blank?
+    ViewsHelper.ct("#{marital_status}.#{gender}")
   end
 
   def children_status_string
-    return I18n.t(:not_specified) if children_status.blank?
-    children_status ? I18n.t(:have_children) : I18n.t(:no_children)
+    return ViewsHelper.ct(:not_specified) if children_status.blank?
+    children_status ? ViewsHelper.ct(:have_children) : ViewsHelper.ct(:no_children)
   end
 
   def pets_status_string
-    return I18n.t(:not_specified) if children_status.blank?
-    children_status ? I18n.t(:have_pets) : I18n.t(:no_pets)
+    return ViewsHelper.ct(:not_specified) if children_status.blank?
+    children_status ? ViewsHelper.ct(:have_pets) : ViewsHelper.ct(:no_pets)
   end
 
   def cm_to_ft_in(cm)

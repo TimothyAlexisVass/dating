@@ -155,8 +155,8 @@ sv:
   year: år
   spiritual: andligt
   attendance_frequency: kyrkobesök
-  tithing_status: jag ger tionde
-  alms_status: jag ger allmosor
+  tithing_status: ger tionde
+  alms_status: ger allmosor
   prayer_frequency: bönefrekvens
   number_of_times_read_bible: jag har läst Biblen
   havent_read_the_bible: inte än

@@ -43,7 +43,7 @@
         <% if @user==@current_user %>
           <%= select_tag :number_of_times_read_bible, options_for_select(User.number_of_times_read_bible_options, @user.number_of_times_read_bible), include_blank: ct(:not_specified), onchange: "userAjaxUpdate(this, 'number_of_times_read_bible')" %>
         <% else %>
-          <%= ct(@user.specified(:number_of_times_read_bible)) %>
+          <%= @user.number_of_times_read_bible_string %>
         <% end %>
       </td>
       <th></th>
