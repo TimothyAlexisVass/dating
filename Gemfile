@@ -44,7 +44,7 @@ gem "bcrypt", "~> 3.1.12"
 
 # Use jquery
 gem "jquery-rails"
-gem 'jquery-ui-rails'
+gem "jquery-ui-rails"
 
 # Use Fontawesome
 gem "font-awesome-rails"
@@ -60,10 +60,10 @@ gem "sassc-rails"
 gem "sassc"
 
 # Use activestorage
-gem 'activestorage'
+gem "activestorage"
 
 # Use will_paginate for infinite scrolling index pages
-gem 'will_paginate'
+gem "will_paginate"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 gem "image_processing", "~> 1.2"
