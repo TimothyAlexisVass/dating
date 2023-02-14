@@ -191,6 +191,210 @@ sv:
   only_sober_male: nyktra
   only_sober_female: nyktra
 
+  prayer: bön
+  meditation: meditation
+  ethics: etik
+  faith: tro
+  moral values: moraliska värderingar
+  nutrition: näring
+  wellness: hälsa och välbefinnande
+  mental health: mental hälsa
+  physical health: fysisk hälsa
+  self-care: självomsorg
+  dancing: dans
+  rhythm: rytm
+  choreography: koreografi
+  movement: rörelse
+  ballet: balett
+  jazz: jazz
+  tap: stepp
+  volunteering: volontärarbete
+  philanthropy: filantropi
+  charity: välgörenhet
+  human rights: mänskliga rättigheter
+  giving back: att ge tillbaka
+  personal growth: personlig utveckling
+  learning: lärande
+  seminars: seminarier
+  skill development: färdighetsutveckling
+  courses: kurser
+  workshops: workshops
+  music: musik
+  art: konst
+  painting: målning
+  drawing: teckning
+  sculpture: skulptur
+  theater: teater
+  cuisine: matlagning
+  recipes: recept
+  baking: bakning
+  food culture: matkultur
+  culinary arts: kulinariska konster
+  gastronomy: gastronomi
+  meal planning: måltidsplanering
+  fitness: träning
+  athletics: atletik
+  exercise: motion
+  gymnastics: gymnastik
+  running: löpning
+  swimming: simning
+  calisthenics: kalisthenik
+  biking: cykling
+  weightlifting: styrketräning
+  postures: kroppshållning
+  pilates: pilates
+  parenting: föräldraskap
+  family life: familjeliv
+  marriage: äktenskap
+  relationships: relationer
+  child-rearing: uppfostran av barn
+  family therapy: familjeterapi
+  adoption: adoption
+  foster care: fosteromsorg
+  history: historia
+  culture: kultur
+  heritage: arv
+  traditions: traditioner
+  museums: museer
+  archeology: arkeologi
+  anthropology: antropologi
+  genealogy: genealogi
+  civilization: civilisation
+  science: vetenskap
+  technology: teknologi
+  engineering: ingenjörskonst
+  mathematics: matematik
+  innovation: innovation
+  robotics: robotteknik
+  artificial intelligence: artificiell intelligens
+  space exploration: rymdforskning
+  computer science: datavetenskap
+  travel: resor
+  adventure: äventyr
+  geography: geografi
+  wildlife: vilda djur
+  backpacking: backpacking
+  road trips: bilresor
+  writing: skrivande
+  literature: litteratur
+  poetry: poesi
+  creative writing: kreativt skrivande
+  journalism: journalistik
+  publishing: publicering
+  blogging: bloggande
+  photography: fotografi
+  film: film
+  cinematography: filmfotografi
+  video production: videoproduktion
+  editing: redigering
+  visual arts: bildkonst
+  design: design
+  imaging: avbildning
+  outreach: utåtriktad verksamhet
+  evangelism: evangelisation
+  missionary work: missionärsarbete
+  preaching: predikan
+  religious education: religiös utbildning
+  social justice: social rättvisa
+  nature: natur
+  hiking: vandring
+  camping: camping
+  climbing: klättring
+  rock climbing: bergsklättring
+  wildlife observation: observation av vilda djur
+  geocaching: geocaching
+  sports: sport
+  recreation: rekreation
+  outdoor activities: utomhusaktiviteter
+  team sports: lagidrott
+  individual sports: individuell idrott
+  finances: ekonomi
+  budgeting: budgetering
+  investing: investering
+  retirement planning: pensionssparande
+  estate planning: testamentsplanering
+  personal finance: personlig ekonomi
+  wealth management: förmögenhetsförvaltning
+  languages: språk
+  linguistics: lingvistik
+  translation: översättning
+  interpretation: tolkning
+  grammar: grammatik
+  phonology: fonologi
+  syntax: syntax
+  semiotics: semiotik
+  storytelling: berättande
+  performance: framträdande
+  acting: skådespeleri
+  stand-up comedy: ståupp-komik
+  improvisation: improvisation
+  story writing: berättelseskriveri
+  playwriting: pjässkrivande
+  gardening: trädgårdsarbete
+  horticulture: trädgårdskonst
+  landscaping: landskapsarkitektur
+  permaculture: permakultur
+  syntropic forestry: syntropisk skogsvård
+  agroforestry: agroforestry
+  forest gardening: skogsträdgårdsskötsel
+  botany: botanik
+  agriculture: jordbruk
+  floriculture: blomsterodling
+  land management: markförvaltning
+  soil science: markvetenskap
+  leadership: ledarskap
+  mentorship: mentorskap
+  coaching: coachning
+  team building: teambyggande
+  management: ledning
+  communication: kommunikation
+  strategy: strategi
+  development: utveckling
+  pet care: djurvård
+  animal welfare: djurskydd
+  zoology: zoologi
+  conservation: bevarande
+  animal behavior: djurens beteende
+  animal rights: djurrättigheter
+  animal advocacy: djurrättsaktivism
+  vet medicine: veterinärmedicin
+  crafts: hantverk
+  hobbies: hobbyer
+  woodworking: träbearbetning
+  knitting: stickning
+  sewing: sömnad
+  jewelry making: smyckestillverkning
+  pottery: keramik
+  ceramics: keramik
+  scrapbooking: scrapbooking
+  collecting: samlarobjekt
+  ministry: själavård
+  missions: missionsarbete
+  spiritual growth: andlig tillväxt
+  service: tjänst
+  sustainable living: hållbart liv
+  homesteading: självhushållning
+  green living: miljövänligt liv
+  self-sufficiency: självförsörjning
+  bible study: bibelstudier
+  theology: teologi
+  biblical history: biblisk historia
+  apologetics: apologetik
+  biblical languages: bibliska språk
+  biblical archaeology: biblisk arkeologi
+  biblical counseling: biblisk rådgivning
+  biblical leadership: bibliskt ledarskap
+  physiotherapy: fysioterapi
+  herbal medicine: örtmedicin
+  acupuncture: akupunktur
+  massage: massage
+  aromatherapy: aromaterapi
+  chiropractic: kiropraktik
+  nutritional therapy: näringsterapi
+  art therapy: konstterapi
+  bodywork: bodywork
+  sound healing: ljudläkande
+
   singular:
     male: man
     female: kvinna

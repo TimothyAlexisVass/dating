@@ -191,6 +191,210 @@ es:
   only_sober_male: sobrios
   only_sober_female: sobrias
 
+  prayer: oración
+  meditation: meditación
+  ethics: ética
+  faith: fe
+  moral values: valores morales
+  nutrition: nutrición
+  wellness: bienestar
+  mental health: salud mental
+  physical health: salud física
+  self-care: autocuidado
+  dancing: baile
+  rhythm: ritmo
+  choreography: coreografía
+  movement: movimiento
+  ballet: ballet
+  jazz: jazz
+  tap: claqué
+  volunteering: voluntariado
+  philanthropy: filantropía
+  charity: caridad
+  human rights: derechos humanos
+  giving back: dar de vuelta
+  personal growth: crecimiento personal
+  learning: aprendizaje
+  seminars: seminarios
+  skill development: desarrollo de habilidades
+  courses: cursos
+  workshops: talleres
+  music: música
+  art: arte
+  painting: pintura
+  drawing: dibujo
+  sculpture: escultura
+  theater: teatro
+  cuisine: cocina
+  recipes: recetas
+  baking: hornear
+  food culture: cultura gastronómica
+  culinary arts: artes culinarias
+  gastronomy: gastronomía
+  meal planning: planificación de comidas
+  fitness: fitness
+  athletics: atletismo
+  exercise: ejercicio
+  gymnastics: gimnasia
+  running: correr
+  swimming: natación
+  calisthenics: calistenia
+  biking: bicicleta
+  weightlifting: levantamiento de pesas
+  postures: posturas
+  pilates: pilates
+  parenting: paternidad
+  family life: vida familiar
+  marriage: matrimonio
+  relationships: relaciones
+  child-rearing: crianza de los hijos
+  family therapy: terapia familiar
+  adoption: adopción
+  foster care: cuidado de crianza temporal
+  history: historia
+  culture: cultura
+  heritage: patrimonio
+  traditions: tradiciones
+  museums: museos
+  archeology: arqueología
+  anthropology: antropología
+  genealogy: genealogía
+  civilization: civilización
+  science: ciencia
+  technology: tecnología
+  engineering: ingeniería
+  mathematics: matemáticas
+  innovation: innovación
+  robotics: robótica
+  artificial intelligence: inteligencia artificial
+  space exploration: exploración espacial
+  computer science: informática
+  travel: viajes
+  adventure: aventura
+  geography: geografía
+  wildlife: vida silvestre
+  backpacking: mochilero
+  road trips: viajes por carretera
+  writing: escritura
+  literature: literatura
+  poetry: poesía
+  creative writing: escritura creativa
+  journalism: periodismo
+  publishing: publicación
+  blogging: blogs
+  photography: fotografía
+  film: cine
+  cinematography: cinematografía
+  video production: producción de videos
+  editing: edición
+  visual arts: artes visuales
+  design: diseño
+  imaging: imagen
+  outreach: alcance comunitario
+  evangelism: evangelización
+  missionary work: trabajo misionero
+  preaching: predicación
+  religious education: educación religiosa
+  social justice: justicia social
+  nature: naturaleza
+  hiking: senderismo
+  camping: acampada
+  climbing: escalada
+  rock climbing: escalada en roca
+  wildlife observation: observación de la vida silvestre
+  geocaching: geocaching
+  sports: deportes
+  recreation: recreación
+  outdoor activities: actividades al aire libre
+  team sports: deportes en equipo
+  individual sports: deportes individuales
+  finances: finanzas
+  budgeting: presupuesto
+  investing: inversión
+  retirement planning: planificación de la jubilación
+  estate planning: planificación patrimonial
+  personal finance: finanzas personales
+  wealth management: gestión de riqueza
+  languages: idiomas
+  linguistics: lingüística
+  translation: traducción
+  interpretation: interpretación
+  grammar: gramática
+  phonology: fonología
+  syntax: sintaxis
+  semiotics: semiótica
+  storytelling: narración de cuentos
+  performance: actuación
+  acting: actuación
+  stand-up comedy: comedia en vivo
+  improvisation: improvisación
+  story writing: escritura de historias
+  playwriting: escritura de obras de teatro
+  gardening: jardinería
+  horticulture: horticultura
+  landscaping: paisajismo
+  permaculture: permacultura
+  syntropic forestry: silvicultura sintrópica
+  agroforestry: agrosilvicultura
+  forest gardening: jardinería forestal
+  botany: botánica
+  agriculture: agricultura
+  floriculture: floricultura
+  land management: manejo de la tierra
+  soil science: ciencia del suelo
+  leadership: liderazgo
+  mentorship: mentoría
+  coaching: entrenamiento
+  team building: construcción de equipos
+  management: gestión
+  communication: comunicación
+  strategy: estrategia
+  development: desarrollo
+  pet care: cuidado de mascotas
+  animal welfare: bienestar animal
+  zoology: zoología
+  conservation: conservación
+  animal behavior: comportamiento animal
+  animal rights: derechos de los animales
+  animal advocacy: defensa de los animales
+  vet medicine: medicina veterinaria
+  crafts: manualidades
+  hobbies: pasatiempos
+  woodworking: carpintería
+  knitting: tejido de punto
+  sewing: costura
+  jewelry making: fabricación de joyas
+  pottery: cerámica
+  ceramics: cerámica
+  scrapbooking: scrapbooking
+  collecting: colección
+  ministry: ministerio
+  missions: misiones
+  spiritual growth: crecimiento espiritual
+  service: servicio
+  sustainable living: vida sostenible
+  homesteading: vida en una granja autosuficiente
+  green living: vida verde
+  self-sufficiency: autosuficiencia
+  bible study: estudio de la Biblia
+  theology: teología
+  biblical history: historia bíblica
+  apologetics: apologética
+  biblical languages: idiomas bíblicos
+  biblical archaeology: arqueología bíblica
+  biblical counseling: consejería bíblica
+  biblical leadership: liderazgo bíblico
+  physiotherapy: fisioterapia
+  herbal medicine: medicina herbaria
+  acupuncture: acupuntura
+  massage: masaje
+  aromatherapy: aromaterapia
+  chiropractic: quiropráctica
+  nutritional therapy: terapia nutricional
+  art therapy: terapia artística
+  bodywork: trabajo corporal
+  sound healing: terapia del sonido
+
   singular:
     male: hombre
     female: mujer

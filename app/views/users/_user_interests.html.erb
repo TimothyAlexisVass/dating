@@ -3,7 +3,7 @@
   <% @interests.each do |interest_category, interests| %>
     <span class="interest interest-category <%= interest_category %> noselect"><%= t(interest_category) %></span>
     <% interests.each do |interest| %>
-      <span class="interest <%= interest_category %> noselect"><%= t(interest) %></span>
+      <span class="interest <%= interest_category %> noselect"><%= ct(interest) %></span>
     <% end %>
   <% end %>
 <% else %>
