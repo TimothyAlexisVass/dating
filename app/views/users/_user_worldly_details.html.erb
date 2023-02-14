@@ -62,7 +62,7 @@
           <%= select_tag :wants_pets, options_for_select(User.wants_pets_options, @user.wants_pets), include_blank: ct(:not_specified), onchange: "userAjaxUpdate(this, 'wants_pets')" %>
         <% else %>
           <%= @user.pets_status_string %><br>
-          <%= ct(@user.specified(:wants_pets)) %>
+          <%= @user.wants_pets_string %>
         <% end %>
       </td>
     </tr>

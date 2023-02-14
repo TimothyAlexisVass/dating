@@ -28,15 +28,15 @@
           <label class="checkbox-label"><%= b.check_box %><span><%= b.text %></span></label>
         <% end %>
       <% end %>
-      <%= field_set_tag ct(:pets_status) do %>
-        <%= f.select :pets_status, User.pets_status_options, include_blank: ct(:select_all), selected: params[:pets_status] %>
-        <%= f.select :wants_pets, User.wants_pets_options, include_blank: ct(:select_all), selected: params[:wants_pets] %>
-      <% end %>
       <%= field_set_tag ct(:children_status) do %>
         <%= f.select :children_status, User.children_status_options, include_blank: ct(:select_all), selected: params[:children_status] %>
         <%= f.collection_check_boxes :wants_children, ot([:not_specified]+User.wants_children_options, "", false), :last, :first, checked: params[:wants_children] do |b| %>
           <label class="checkbox-label"><%= b.check_box %><span><%= b.text %></span></label>
         <% end %>
+      <% end %>
+      <%= field_set_tag ct(:pets_status) do %>
+        <%= f.select :pets_status, User.pets_status_options, include_blank: ct(:select_all), selected: params[:pets_status] %>
+        <%= f.select :wants_pets, User.wants_pets_options, include_blank: ct(:select_all), selected: params[:wants_pets] %>
       <% end %>
     <% end %>
   </div>

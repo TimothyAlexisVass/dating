@@ -118,20 +118,6 @@ class User < ApplicationRecord
       [ViewsHelper.ct(:more_than_seven), 8]
     ]
   end
-  def number_of_times_read_bible_string
-    {
-      :not_specified => ViewsHelper.ct(:not_specified),
-      0 => ViewsHelper.ct(:havent_read_the_bible),
-      1 => ViewsHelper.ct(:once),
-      2 => ViewsHelper.ct(:twice),
-      3 => ViewsHelper.ct(:three_times),
-      4 => ViewsHelper.ct(:four_times),
-      5 => ViewsHelper.ct(:five_times),
-      6 => ViewsHelper.ct(:six_times),
-      7 => ViewsHelper.ct(:seven_times),
-      8 => ViewsHelper.ct(:more_than_seven)
-    }[number_of_times_read_bible]
-  end
   def self.children_status_options
     @children_status_options ||= [[I18n.t(:no_children), false], [I18n.t(:have_children), true]]
   end
@@ -228,6 +214,21 @@ class User < ApplicationRecord
     gender == "male" ? :female : :male
   end
 
+  def number_of_times_read_bible_string
+    {
+      :not_specified => ViewsHelper.ct(:not_specified),
+      0 => ViewsHelper.ct(:havent_read_the_bible),
+      1 => ViewsHelper.ct(:once),
+      2 => ViewsHelper.ct(:twice),
+      3 => ViewsHelper.ct(:three_times),
+      4 => ViewsHelper.ct(:four_times),
+      5 => ViewsHelper.ct(:five_times),
+      6 => ViewsHelper.ct(:six_times),
+      7 => ViewsHelper.ct(:seven_times),
+      8 => ViewsHelper.ct(:more_than_seven)
+    }[number_of_times_read_bible]
+  end
+
   def specified(field)
     return :not_specified if self[field].blank?
     self[field].to_s
@@ -262,6 +263,11 @@ class User < ApplicationRecord
   def pets_status_string
     return ViewsHelper.ct(:not_specified) if pets_status == nil
     pets_status ? ViewsHelper.ct(:have_pets) : ViewsHelper.ct(:no_pets)
+  end
+
+  def wants_pets_string
+    return ViewsHelper.ct(:not_specified) if wants_pets == nil
+    @want_pets_string ||= wants_pets ? ViewsHelper.ct(:want_pets) : ViewsHelper.ct(:dont_want_pets)
   end
 
   def cm_to_ft_in(cm)
