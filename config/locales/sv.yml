@@ -49,7 +49,7 @@ sv:
   no_interests: har inte angett några intressen
   books_read: Lästa Böcker av Ellen White
   no_books_read: har inte angett några lästa böcker
-  not_specified: ej angett
+  not_specified: Ej angett
   male: man
   female: kvinna
   age: ålder
@@ -175,7 +175,7 @@ sv:
   dont_want_pets: Jag vill inte ha fler husdjur
   want_pets: Jag vill ha fler husdjur
   select_body_type: Kroppstyp
-  select_exercise: Träning
+  select_exercise: Träningsrutin
   select_diet: Diet
   select_marital_status: Äktenskapsstatus
   filter_search: filtrera sökning

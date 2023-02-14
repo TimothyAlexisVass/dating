@@ -43,7 +43,7 @@ en:
   none: none
   exercise: exercise
   tattoos: tattoos
-  not_specified: not specified
+  not_specified: Not specified
   marital_status: marital status
   interests: interests
   no_interests: hasn't selected any interests
@@ -135,9 +135,9 @@ en:
   weekly: weekly
   rarely: rarely
   change_profile_image: change profile image
-  if_yah_wills_will_have_children: if Yah wills we will have more
-  want_children: yes, I want more children
-  dont_want_children: no, I don't want more children
+  if_yah_wills_will_have_children: If Yah wills we will have more
+  want_children: Yes, I want more children
+  dont_want_children: No, I don't want more children
   maybe_want_children: I may want more children
   cannot_have_children: I cannot get children
   worldly: worldly
@@ -175,12 +175,14 @@ en:
   have_pets: Yes, I have pets
   dont_want_pets: I don't want more pets
   want_pets: I want to have more pets
-  select_body_type: Select body types
-  select_exercise: Select exercise routines
-  select_diet: Select diets
-  select_marital_status: Select marital statuses
-  filter_search: filter search
-  only_show: endast
+  select_body_type: Body type
+  select_exercise: Exercise routine
+  select_diet: Diet
+  select_marital_status: Marital status
+  filter_search: Filter search
+  select_all: Show all
+  show_these: Show these %{usertypes}
+  only_show: only show
   only_verified_male: verified
   only_verified_female: verified
   only_reborn_male: reborn

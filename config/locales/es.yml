@@ -43,7 +43,7 @@ es:
   none: ninguna
   exercise: ejercicio
   tattoos: tatuajes
-  not_specified: no especificado
+  not_specified: No especificado
   marital_status: estado civil
   interests: intereses
   no_interests: no ha especificado ningún interés.
@@ -135,10 +135,10 @@ es:
   rarely: raramente
   change_profile_image: cambiar imagen de perfil
   if_yah_wills_will_have_children: Si Yah quiere, tendremos más hijos
-  want_children: sí, quiero tener más hijos
-  dont_want_children: no quiero tener más hijos
-  maybe_want_children: tal vez quiera tener más hijos
-  cannot_have_children: no puedo tener hijos
+  want_children: Sí, quiero tener más hijos
+  dont_want_children: No quiero tener más hijos
+  maybe_want_children: Tal vez quiera tener más hijos
+  cannot_have_children: No puedo tener hijos
   worldly: mundano
   education: educación
   income_amount: ingresos
@@ -174,11 +174,12 @@ es:
   have_pets: Sí, tengo mascotas
   dont_want_pets: No quiero más mascotas
   want_pets: Sí, quiero más mascotas
-  select_body_type: Seleccionar tipos de cuerpo
-  select_exercise: Seleccionar rutinas de ejercicio
-  select_diet: Seleccionar dietas
-  select_marital_status: Seleccionar estados civiles
-  filter_search: filtro de búsqueda
+  select_body_type: Tipo de cuerpo
+  select_exercise: Rutina de ejercicio
+  select_diet: Dieta
+  select_marital_status: Estado civil
+  select_all: Elegir todos
+  show_these: Mostrar %{usertypes}
   only_show: solo mostrar
   only_verified_male: verificados
   only_verified_female: verificadas
