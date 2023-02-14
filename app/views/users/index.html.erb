@@ -1,5 +1,3 @@
-<%= params %><br>
-<%= params.values.map{ |e| e.is_a?(Array) ? e.select(&:present?) : e.blank? ? nil : e } %>
 <h1 class="flex f-j-fs c-m-lr-5">
   <%= ct("plural.#{@current_user.searching_for}") %>
   <%= t("plural.age") %>

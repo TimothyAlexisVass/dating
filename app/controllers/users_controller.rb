@@ -30,7 +30,7 @@ class UsersController < ApplicationController
       wants_pets = filter_params[:wants_pets]
       children_status = filter_params[:children_status]
       wants_children = filter_params[:wants_children]
-      
+
       only_show.each do |option|
         case option
           when "only_verified"
@@ -54,18 +54,6 @@ class UsersController < ApplicationController
       @users = @users.where(wants_pets: wants_pets=="true" ? true : false) if wants_pets.present?
       @users = @users.where(children_status: children_status=="true" ? true : false) if children_status.present?
       @users = @users.where(wants_children: wants_children.map { |e| e == "not_specified" ? nil : e }) if wants_children.present?
-
-      puts "#"*200
-      puts "only_show: #{only_show}"
-      puts "diet: #{diet}"
-      puts "body_type: #{body_type}"
-      puts "exercise: #{exercise}"
-      puts "marital_status: #{marital_status}"
-      puts "pets_status: #{pets_status}"
-      puts "wants_pets: #{wants_pets}"
-      puts "children_status: #{children_status}"
-      puts "wants_children: #{wants_children}"
-      puts "#"*200
     end
 
     @users = @users.paginate(page: params[:page], per_page: 5)
@@ -151,7 +139,7 @@ class UsersController < ApplicationController
 
   def user_params
     @remove_from_permit ||= [:id, :created_at, :updated_at]
-    @active_storage_params ||= [:profile_image] 
+    @active_storage_params ||= [:profile_image]
     @selection ||= User.column_names + @active_storage_params - @remove_from_permit
     params.require(:user).permit(@selection.map(&:to_sym))
   end

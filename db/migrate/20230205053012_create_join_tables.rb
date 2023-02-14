@@ -9,7 +9,7 @@ class CreateJoinTables < ActiveRecord::Migration[7.0]
       t.references :user, null: false, foreign_key: true
       t.references :book, null: false, foreign_key: true
       t.index [:user_id, :book_id], unique: true
-    end    
+    end
     create_table :user_languages do |t|
       t.references :user, null: false, foreign_key: true
       t.references :language, null: false, foreign_key: true
