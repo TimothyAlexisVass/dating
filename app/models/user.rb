@@ -133,13 +133,13 @@ class User < ApplicationRecord
     }[number_of_times_read_bible]
   end
   def self.children_status_options
-    @children_status_options ||= [[I18n.t(:no_children), 0], [I18n.t(:have_children), 1]]
+    @children_status_options ||= [[I18n.t(:no_children), false], [I18n.t(:have_children), true]]
   end
   def self.wants_pets_options
-    @wants_pets_options ||= [[I18n.t(:dont_want_pets), 0], [I18n.t(:want_pets), 1]]
+    @wants_pets_options ||= [[I18n.t(:dont_want_pets), false], [I18n.t(:want_pets), true]]
   end
   def self.pets_status_options
-    @pets_status_options ||= [[I18n.t(:no_pets), 0], [I18n.t(:have_pets), 1]]
+    @pets_status_options ||= [[I18n.t(:no_pets), false], [I18n.t(:have_pets), true]]
   end
   def only_show_options
     @only_show_option ||= %i[only_verified only_reborn only_smokefree only_drugfree only_sober].map{ |e| [ViewsHelper.ct(:"#{e}_#{self.searching_for}"), e]}
@@ -250,18 +250,18 @@ class User < ApplicationRecord
   end
 
   def marital_status_string
-    return ViewsHelper.ct(:not_specified) if marital_status.blank?
+    return ViewsHelper.ct(:not_specified) if marital_status == nil
     ViewsHelper.ct("#{marital_status}.#{gender}")
   end
 
   def children_status_string
-    return ViewsHelper.ct(:not_specified) if children_status.blank?
+    return ViewsHelper.ct(:not_specified) if children_status == nil
     children_status ? ViewsHelper.ct(:have_children) : ViewsHelper.ct(:no_children)
   end
 
   def pets_status_string
-    return ViewsHelper.ct(:not_specified) if children_status.blank?
-    children_status ? ViewsHelper.ct(:have_pets) : ViewsHelper.ct(:no_pets)
+    return ViewsHelper.ct(:not_specified) if pets_status == nil
+    pets_status ? ViewsHelper.ct(:have_pets) : ViewsHelper.ct(:no_pets)
   end
 
   def cm_to_ft_in(cm)

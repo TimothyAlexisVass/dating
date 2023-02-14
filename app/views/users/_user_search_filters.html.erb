@@ -1,7 +1,7 @@
 <div id="overlay" onclick="if(event.target.matches('#overlay')){$(this).css({opacity:0});setTimeout(function(){$('#overlay').css({top:'-10000px'})},500);}">
   <div id="modal" style="overflow: auto">
   <h2 class="flex f-j-c"><%= ct(:filter_search) %></h2>
-    <%= form_with url: users_path, method: :get, class: "user-form" do |f| %>
+    <%= form_with url: users_path, method: :get, id: "filter-form", class: "user-form" do |f| %>
       <%= field_set_tag ct(:only_show) do %>
         <%= f.collection_check_boxes :only_show, @current_user.only_show_options, :last, :first, checked: params[:only_show] do |b| %>
           <label class="checkbox-label"><%= b.check_box %><span><%= b.text %></span></label>
@@ -29,18 +29,20 @@
         <% end %>
       <% end %>
       <%= field_set_tag ct(:pets_status) do %>
-        <%= f.select :pets_status, User.pets_status_options, prompt: ct(:select_all), selected: params[:pets_status] %>
-        <%= f.select :wants_pets, User.wants_pets_options, prompt: ct(:select_all), selected: params[:wants_pets] %>
+        <%= f.select :pets_status, User.pets_status_options, include_blank: ct(:select_all), selected: params[:pets_status] %>
+        <%= f.select :wants_pets, User.wants_pets_options, include_blank: ct(:select_all), selected: params[:wants_pets] %>
       <% end %>
       <%= field_set_tag ct(:children_status) do %>
-        <%= f.select :children_status, User.children_status_options, prompt: ct(:select_all), selected: params[:children_status] %>
+        <%= f.select :children_status, User.children_status_options, include_blank: ct(:select_all), selected: params[:children_status] %>
         <%= f.collection_check_boxes :wants_children, ot([:not_specified]+User.wants_children_options, "", false), :last, :first, checked: params[:wants_children] do |b| %>
           <label class="checkbox-label"><%= b.check_box %><span><%= b.text %></span></label>
         <% end %>
       <% end %>
-      <div class="user-form-field flex f-j-c m-t-15">
-        <%= f.submit t(:show_these, usertypes: t("plural.#{@current_user.searching_for}")) %>
-      </div>
     <% end %>
+  </div>
+  <div class="user-form" style="padding:0;background:transparent">
+    <div class="user-form-field flex f-j-c" style="margin:0">
+      <%= submit_tag t(:show_these, usertypes: t("plural.#{@current_user.searching_for}")), onclick: "$('#filter-form').submit()" %>
+    </div>
   </div>
 </div>

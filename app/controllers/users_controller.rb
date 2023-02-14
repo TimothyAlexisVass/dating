@@ -10,6 +10,64 @@ class UsersController < ApplicationController
       'birth_date >= ? and birth_date <= ?', birth_date_lower, birth_date_upper
     )
 
+    if params[:only_show].present?
+      relevant_params = ["only_show", "diet", "body_type", "exercise", "marital_status", "pets_status", "wants_pets", "children_status", "wants_children"]
+
+      filter_params = params.select{ |k,_| relevant_params.include?(k) }
+      filter_params.transform_values! do |value|
+        if value.is_a?(Array)
+          value.select(&:present?).map{ |e| e=="not_specified" ? nil : e }
+        else
+          value.blank? ? nil : value
+        end
+      end
+      only_show = filter_params[:only_show]
+      diet = filter_params[:diet]
+      body_type = filter_params[:body_type]
+      exercise = filter_params[:exercise]
+      marital_status = filter_params[:marital_status]
+      pets_status = filter_params[:pets_status]
+      wants_pets = filter_params[:wants_pets]
+      children_status = filter_params[:children_status]
+      wants_children = filter_params[:wants_children]
+      
+      only_show.each do |option|
+        case option
+          when "only_verified"
+            @users = @users.where(verified_user: true)
+          when "only_reborn"
+            @users = @users.where.not(rebirth_date: nil)
+          when "only_smokefree"
+            @users = @users.where(smoke_status: ['always_been_free', 'liberated'])
+          when "only_drugfree"
+            @users = @users.where(caffeine_status: ['always_been_free', 'liberated'], drug_status: ['always_been_free', 'liberated'])
+          when "only_sober"
+            @users = @users.where(sober_status: ['always_been_sober', 'liberated'])
+        end
+      end
+
+      @users = @users.where(diet: diet) if diet.present?
+      @users = @users.where(body_type: body_type) if body_type.present?
+      @users = @users.where(exercise: exercise) if exercise.present?
+      @users = @users.where(marital_status: marital_status) if marital_status.present?
+      @users = @users.where(pets_status: pets_status=="true" ? true : false) if pets_status.present?
+      @users = @users.where(wants_pets: wants_pets=="true" ? true : false) if wants_pets.present?
+      @users = @users.where(children_status: children_status=="true" ? true : false) if children_status.present?
+      @users = @users.where(wants_children: wants_children.map { |e| e == "not_specified" ? nil : e }) if wants_children.present?
+
+      puts "#"*200
+      puts "only_show: #{only_show}"
+      puts "diet: #{diet}"
+      puts "body_type: #{body_type}"
+      puts "exercise: #{exercise}"
+      puts "marital_status: #{marital_status}"
+      puts "pets_status: #{pets_status}"
+      puts "wants_pets: #{wants_pets}"
+      puts "children_status: #{children_status}"
+      puts "wants_children: #{wants_children}"
+      puts "#"*200
+    end
+
     @users = @users.paginate(page: params[:page], per_page: 5)
 
     respond_to do |format|

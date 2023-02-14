@@ -47,10 +47,10 @@ class CreateUsers < ActiveRecord::Migration[7.0]
       t.string :diet
       t.string :allergies, array: true, default: []
       t.string :exercise
-      t.boolean :children_status
+      t.boolean :children_status, default: nil
       t.string :wants_children
-      t.boolean :pets_status
-      t.boolean :wants_pets
+      t.boolean :pets_status, default: nil
+      t.boolean :wants_pets, default: nil
 
       t.index :email, unique: true
       t.index :username, unique: true
