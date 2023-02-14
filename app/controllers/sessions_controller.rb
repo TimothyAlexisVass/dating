@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   def new
+    redirect_to user_path(@current_user.username) if @current_user.present?
     @user = User.new
   end
 
