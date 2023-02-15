@@ -38,6 +38,18 @@ en:
   body_height: height
   body_type: body
   weight: weight
+  smoke_status: smoking
+  sober_status: sobriety
+  drug_status: drugs
+  caffeine_status: caffeine
+  medical_status: medications
+  allergies_status: allergies
+  prescribed: prescribed
+  non_prescribed: non-prescribed
+  free_from_medications: free from medications
+  heavy_allergies: heavy allergy
+  mild_allergies: mild allergy
+  free_from_allergies: free from allergies
   eye_color: eyes
   diet: diet
   none: none

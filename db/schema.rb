@@ -213,8 +213,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_09_081138) do
     t.string "caffeine_status"
     t.string "drug_status"
     t.string "medical_status"
+    t.string "allergies_status"
     t.string "diet"
-    t.string "allergies", default: [], array: true
     t.string "exercise"
     t.boolean "children_status"
     t.string "wants_children"

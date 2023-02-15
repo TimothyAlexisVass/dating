@@ -44,8 +44,8 @@ class CreateUsers < ActiveRecord::Migration[7.0]
       t.string :caffeine_status
       t.string :drug_status
       t.string :medical_status
+      t.string :allergies_status
       t.string :diet
-      t.string :allergies, array: true, default: []
       t.string :exercise
       t.boolean :children_status, default: nil
       t.string :wants_children

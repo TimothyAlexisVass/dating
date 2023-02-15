@@ -87,6 +87,12 @@ class User < ApplicationRecord
   def self.drug_status_options
     @drug_status_options ||= %w[always_been_free liberated trying]
   end
+  def self.medical_status_options
+    @medical_status_options ||= %w[prescribed non_prescribed free_from_medications]
+  end
+  def self.allergies_status_options
+    @allergies_status_options ||= %w[heavy_allergies mild_allergies free_from_allergies]
+  end
   def self.diet_options
     @diet_options ||= %w[plant_based vegan vegetarian pescatarian very_rarely_meat regularly_meat]
   end
@@ -193,6 +199,8 @@ class User < ApplicationRecord
   validates :sober_status, inclusion: { in: sober_status_options, allow_nil: true, allow_blank: true }
   validates :caffeine_status, inclusion: { in: caffeine_status_options, allow_nil: true, allow_blank: true }
   validates :drug_status, inclusion: { in: drug_status_options, allow_nil: true, allow_blank: true }
+  validates :medical_status, inclusion: { in: medical_status_options, allow_nil: true, allow_blank: true }
+  validates :allergies_status, inclusion: { in: allergies_status_options, allow_nil: true, allow_blank: true }
   validates :diet, inclusion: { in: diet_options, allow_nil: true, allow_blank: true }
   validates :exercise, inclusion: { in: exercise_options, allow_nil: true, allow_blank: true }
 

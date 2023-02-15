@@ -44,6 +44,18 @@ sv:
   exercise: träning
   tattoos: tatueringar
   weight: vikt
+  smoke_status: rökning
+  sober_status: nykterhet
+  drug_status: droger
+  caffeine_status: koffein
+  medical_status: mediciner
+  allergies_status: allergier
+  prescribed: receptbelagt
+  non_prescribed: ej receptbelagt
+  free_from_medications: fri från mediciner
+  heavy_allergies: tung allergi
+  mild_allergies: mild allergi
+  free_from_allergies: fri från allergier
   marital_status: civilstånd
   interests: intressen
   no_interests: har inte angett några intressen

@@ -38,6 +38,18 @@ es:
   body_height: altura
   body_type: cuerpo
   weight: peso
+  smoke_status: fumando
+  sober_status: sobriedad
+  estado_drogas: drogas
+  cafeína_status: cafeína
+  medical_status: medicamentos
+  alergias_status: alergias
+  prescrito: prescripción
+  non_prescribed: no prescrito
+  free_from_medications: libre de medicamentos
+  heavy_allergies: alergia fuerte
+  mild_allergies: alergia leve
+  free_from_allergies: libre de alergias
   eye_color: ojos
   diet: dieta
   none: ninguna

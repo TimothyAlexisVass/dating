@@ -77,5 +77,59 @@
         <% end %>
       </td>
     </tr>
+    <tr class="flex f-g-1">
+      <th><%= ct(:smoke_status) %></th>
+      <td>
+        <% if @user==@current_user %>
+          <%= select_tag :smoke_status, options_for_select(ot(User.smoke_status_options), @user.smoke_status), include_blank: ct(:not_specified), onchange: "userAjaxUpdate(this, 'smoke_status')" %>
+        <% else %>
+          <%= ct(@user.specified(:smoke_status)) %>
+        <% end %>
+      </td>
+      <th><%= ct(:sober_status) %></th>
+      <td>
+        <% if @user==@current_user %>
+          <%= select_tag :sober_status, options_for_select(ot(User.sober_status_options), @user.sober_status), include_blank: ct(:not_specified), onchange: "userAjaxUpdate(this, 'sober_status')" %>
+        <% else %>
+          <%= ct(@user.specified(:sober_status)) %>
+        <% end %>
+      </td>
+    </tr>
+    <tr class="flex f-g-1">
+      <th><%= ct(:caffeine_status) %></th>
+      <td>
+        <% if @user==@current_user %>
+          <%= select_tag :caffeine_status, options_for_select(ot(User.caffeine_status_options), @user.caffeine_status), include_blank: ct(:not_specified), onchange: "userAjaxUpdate(this, 'caffeine_status')" %>
+        <% else %>
+          <%= ct(@user.specified(:caffeine_status)) %>
+        <% end %>
+      </td>
+      <th><%= ct(:drug_status) %></th>
+      <td>
+        <% if @user==@current_user %>
+          <%= select_tag :drug_status, options_for_select(ot(User.drug_status_options), @user.drug_status), include_blank: ct(:not_specified), onchange: "userAjaxUpdate(this, 'drug_status')" %>
+        <% else %>
+          <%= ct(@user.specified(:drug_status)) %>
+        <% end %>
+      </td>
+    </tr>
+    <tr class="flex f-g-1">
+      <th><%= ct(:medical_status) %></th>
+      <td>
+        <% if @user==@current_user %>
+          <%= select_tag :medical_status, options_for_select(ot(User.medical_status_options), @user.medical_status), include_blank: ct(:not_specified), onchange: "userAjaxUpdate(this, 'medical_status')" %>
+        <% else %>
+          <%= ct(@user.specified(:medical_status)) %>
+        <% end %>
+      </td>
+      <th><%= ct(:allergies_status) %></th>
+      <td>
+        <% if @user==@current_user %>
+          <%= select_tag :allergies_status, options_for_select(ot(User.allergies_status_options), @user.allergies_status), include_blank: ct(:not_specified), onchange: "userAjaxUpdate(this, 'allergies_status')" %>
+        <% else %>
+          <%= ct(@user.specified(:allergies_status)) %>
+        <% end %>
+      </td>
+    </tr>
   </tbody>
 </table>
