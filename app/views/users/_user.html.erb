@@ -8,17 +8,23 @@
       <%= render 'user_profile_image' %>
       <%= render 'user_is_active' %>
     </div>
-    <div class="flex f-d-c m-l-none w-100">
-      <div class="w-100" style="height:222px;overflow:hidden">
-        <%= render 'user_presentation' %>
-      </div>
-      <div class="flex">
-        <div class="w-50" style="height:200px">
+    <div class="flex m-l-none w-100">
+      <div class="flex f-d-c w-50">
+        <div class="w-100" style="height:352px;overflow:hidden">
+          <%= render 'user_presentation' %>
+        </div>
+        <div class="w-100" style="height:222px">
           <%= render 'user_details' %>
+        </div>
+      </div>
+      <div class="flex f-d-c w-50">
+        <div class="w-100" style="height:152px">
+          <%= render 'user_status' %>
+        </div>
+        <div class="w-100" style="height:180px">
           <%= render 'user_spiritual_details' %>
         </div>
-        <div class="w-50" style="height:200px">
-          <%= render 'user_status' %>
+        <div class="w-100" style="height:200px">
           <%= render 'user_worldly_details' %>
         </div>
       </div>
