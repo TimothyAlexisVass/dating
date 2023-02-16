@@ -479,7 +479,12 @@ header.top-header, .user-form {
             user-select: none; /* Non-prefixed version */
 }
 
-#overlay {
+.select2 {
+  margin-top: 5px !important;
+  margin-bottom: 5px !important;
+}
+
+#overlay, #overlay-books {
   opacity: 0;
   transition: opacity .5s;
   display: flex;

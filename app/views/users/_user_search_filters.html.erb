@@ -1,5 +1,5 @@
-<button id="filter-button" onclick="$('#overlay').css({opacity:1,top:0})">Filter</button>
-<div id="overlay" onclick="if(event.target.matches('#overlay')){$(this).css({opacity:0});setTimeout(function(){$('#overlay').css({top:'-10000px'})},500);}">
+<button onclick="$('#overlay').css({opacity:1,top:0})">Filter</button>
+<div id="overlay" onclick="e=this;if(event.target.matches(`#${e.id}`)){$(e).css({opacity:0});setTimeout(function(){$(e).css({top:'-10000px'})},500);}">
   <div class="modal" style="overflow: auto">
   <h2 class="flex f-j-c"><%= ct(:filter_search) %></h2>
     <%= form_with url: users_path, method: :get, id: "filter-form", class: "user-form" do |f| %>

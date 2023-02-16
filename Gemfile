@@ -46,6 +46,9 @@ gem "bcrypt", "~> 3.1.12"
 gem "jquery-rails"
 gem "jquery-ui-rails"
 
+# Use Select2
+gem 'select2-rails'
+
 # Use Fontawesome
 gem "font-awesome-rails"
 

@@ -2,6 +2,7 @@
  *= require_tree .
  *= require_self
  *= require font-awesome
+ *= require select2
  */
 @import "jquery-ui";
 @import "root_vars";
