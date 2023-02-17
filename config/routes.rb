@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     put 'ajax_update', on: :member
   
     resources :user_books, only: [:create, :destroy]
+    resources :user_interests, only: [:create, :destroy]
   end
 
   get '/location_search', to: 'location#search'

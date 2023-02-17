@@ -1,7 +1,7 @@
 <h2><%= t(:books_read) %></h2>
 <% if @current_user==@user %>
   <%= form_with model: [@current_user, UserBook.new], local: false, data: { remote: true } do |form| %>
-    <%= form.collection_select(:book_id, Book.where.not(id: @current_user.books), :id, :title, { prompt: t(:add_a_book) }, { class: 'select2', onchange: "this.form.submit();" }) %>
+    <%= form.collection_select(:book_id, Book.where.not(id: @books), :id, :title, { prompt: t(:add_a_book) }, { class: "select2", style: "width: 100%", onchange: "this.form.submit();" }) %>
   <% end %>
 <% end %>
 <% if @books.present? %>

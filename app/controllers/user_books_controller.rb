@@ -5,7 +5,7 @@ class UserBooksController < ApplicationController
     @user_book = @user.user_books.new(user_book_params)
 
     if @user_book.save
-      redirect_to user_path(@user.username), flash: { success: "Book added successfully." }
+      redirect_to user_path(@user.username)
     else
       render :new
     end

@@ -1,4 +1,14 @@
 <h2><%= ct(:interests) %></h2>
+<% if @current_user == @user %>
+  <%= form_with model: [@current_user, UserInterest.new], local: false, data: { remote: true } do |form| %>
+    <%= form.select(:interest_id,
+                    grouped_options_for_select(
+                      Interest.where.not(id: @user.interests).group_by{ |g| t(g.interest_category.text.tr(" ","_")) }.transform_values { |interests| interests.map{ |o| [ct(o.text), o.id]} },
+                    ),
+                    { prompt: t(:add_an_interest) },
+                    { class: "select2", style: "width: 100%", onchange: "this.form.submit();" }) %>
+  <% end %>
+<% end %>
 <% if @interests.present? %>
   <% @interests.each do |interest_category, interests| %>
     <span class="interest interest-category <%= interest_category %> noselect"><%= t(interest_category) %></span>

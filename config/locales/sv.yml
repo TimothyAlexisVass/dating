@@ -203,6 +203,36 @@ sv:
   only_sober_male: nyktra
   only_sober_female: nyktra
   add_a_book: Lägg till en bok som du har läst
+  add_an_interest: Lägg till ett intresse
+
+  truth_and_spirituality: Sanning och andlighet
+  health_and_wellness: Hälsa och välbefinnande
+  rhythm_and_dancing: Rytmik och dans
+  community_service: Samhällstjänst
+  education_and_improvement: Utbildning och förbättring
+  music_and_the_arts: Musik och konst
+  food_and_cooking: Mat och matlagning
+  fitness_and_exercise: Fitness och motion
+  family_and_parenting: Familj och föräldraskap
+  history_and_culture: Historia och kultur
+  science_and_technology: Vetenskap och teknologi
+  travel_and_adventure: Resor och äventyr
+  writing_and_literature: Skrivande och litteratur
+  photography_and_video: Fotografi och video
+  outreach_and_evangelism: Uppsökande verksamhet och evangelisation
+  nature_and_outdoor_activities: Natur och utomhusaktiviteter
+  sports_and_recreation: Sport och rekreation
+  financial_planning_and_management: Ekonomisk planering och hantering
+  languages_and_linguistics: Språk och lingvistik
+  storytelling_and_performance: Berättande och framträdande
+  gardening_and_horticulture: Trädgårdsskötsel och trädgårdskonst
+  leadership_and_mentorship: Ledarskap och mentorskap
+  pet_care_and_animal_welfare: Djurskötsel och djurskydd
+  crafts_and_hobbies: Hantverk och hobby
+  ministry_and_missions: Prästtjänst och missionsarbete
+  sustainable_living_and_homesteading: Hållbart boende och självhushållning
+  bible_study_and_theology: Bibelstudier och teologi
+  natural_healing_and_therapies: Naturlig läkning och terapier
 
   prayer: bön
   meditation: meditation
