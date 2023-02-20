@@ -1,0 +1,13 @@
+<h2><%= t(:spiritual_gifts) %></h2>
+<% if @current_user==@user %>
+  <%= form_with model: [@current_user, UserSpiritualGift.new], local: false, data: { remote: true } do |form| %>
+    <%= form.collection_select(:spiritual_gift_id, SpiritualGift.where.not(id: @spiritual_gifts), :id, :text, { prompt: t(:add_a_spiritual_gift) }, { class: "select2", style: "width: 100%", onchange: "this.form.submit();" }) %>
+  <% end %>
+<% end %>
+<% if @spiritual_gifts.present? %>
+  <% @spiritual_gifts.each do |spiritual_gift| %>
+    <span class="interest"><%= spiritual_gift.text %></span>
+  <% end %>
+<% else %>
+  <%= @user.first_name %> <%= t(:no_spiritual_gifts) %>
+<% end %>

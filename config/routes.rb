@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   
     resources :user_books, only: [:create, :destroy]
     resources :user_interests, only: [:create, :destroy]
+    resources :user_spiritual_gifts, only: [:create, :destroy]
   end
 
   get '/location_search', to: 'location#search'

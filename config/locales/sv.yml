@@ -204,6 +204,9 @@ sv:
   only_sober_female: nyktra
   add_a_book: Lägg till en bok som du har läst
   add_an_interest: Lägg till ett intresse
+  spiritual_gifts: Andliga gåvor
+  add_a_spiritual_gift: Lägg till en andlig gåva
+  no_spiritual_gifts: har inte angett någon andlig gåva
 
   truth_and_spirituality: Sanning och andlighet
   health_and_wellness: Hälsa och välbefinnande
@@ -437,6 +440,29 @@ sv:
   art therapy: konstterapi
   bodywork: bodywork
   sound healing: ljudläkande
+
+  prophecy: profetia
+  service: tjänst
+  teaching: undervisning
+  exhortation: förmaning
+  giving: givande
+  leadership: ledarskap
+  mercy: barmhärtighet
+  wisdom: vishet
+  discernment: urskiljning
+  pastoring: pastor
+  word_of_wisdom: visdomsord
+  word_of_knowledge: kunskap
+  faith: tro
+  gift_of_healing: helandets gåva
+  miracles: mirakel
+  distinguishing_of_spirits: urskiljandet av andar
+  tongues: tungotal
+  interpretation_of_tongues: tolkning av tungotal
+  helps: hjälp
+  administration: administration
+  evangelism: evangelisation
+  encouragement: uppmuntran
 
   singular:
     male: man

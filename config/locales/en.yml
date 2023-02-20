@@ -207,6 +207,9 @@ en:
   only_sober_female: sober
   add_a_book: Add a book which you have read
   add_an_interest: Add an interest
+  spiritual_gifts: Spiritual gifts
+  add_a_spiritual_gift: Add a spiritual gift
+  no_spiritual_gifts: has not added any spiritual gifts
 
   truth_and_spirituality: Truth and Spirituality
   health_and_wellness: Health and Wellness
@@ -440,6 +443,29 @@ en:
   art therapy: art therapy
   bodywork: bodywork
   sound healing: sound healing
+
+  prophecy: prophecy
+  service: service
+  teaching: teaching
+  exhortation: exhortation
+  giving: giving
+  leadership: leadership
+  mercy: mercy
+  wisdom: wisdom
+  discernment: discernment
+  pastoring: pastoring
+  word_of_wisdom: word of wisdom
+  word_of_knowledge: word of knowledge
+  faith: faith
+  gift_of_healing: gift of healing
+  miracles: miracles
+  distinguishing_of_spirits: distinguishing of spirits
+  tongues: tongues
+  interpretation_of_tongues: interpretation of tongues
+  helps: helps
+  administration: administration
+  evangelism: evangelism
+  encouragement: encouragement
 
   singular:
     male: man

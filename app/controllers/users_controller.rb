@@ -70,6 +70,9 @@ class UsersController < ApplicationController
       @interests = @user.interests.includes(:interest_category).group_by{ |g| g.interest_category.text.tr(" ","_") }
                         .transform_values{ |v| v.map(&:text) }
     end
+    if @user.spiritual_gifts.present?
+      @spiritual_gifts = @user.spiritual_gifts
+    end
     if @user.books.present?
       @books = @user.books
     end

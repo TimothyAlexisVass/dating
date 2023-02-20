@@ -204,6 +204,10 @@ es:
   only_sober_male: sobrios
   only_sober_female: sobrias
   add_a_book: Añade un libro que hayas leído
+  add_an_interest: Agregar un interés
+  regalos_espirituales: Dones espirituales
+  add_a_spiritual_gift: Agrega un don espiritual
+  no_spiritual_gifts: no ha añadido ningún don espiritual
 
   truth_and_spirituality: Verdad y espiritualidad
   health_and_wellness: Salud y bienestar
@@ -437,6 +441,29 @@ es:
   art therapy: terapia artística
   bodywork: trabajo corporal
   sound healing: terapia del sonido
+
+  prophecy: profecía
+  service: servicio
+  teaching: enseñanza
+  exhortation: exhortación
+  giving: dar
+  leadership: liderazgo
+  mercy: misericordia
+  wisdom: sabiduría
+  discernment: discernimiento
+  pastoring: pastoreo
+  word_of_wisdom: palabra de sabiduría
+  word_of_knowledge: palabra de conocimiento
+  faith: fe
+  gift_of_healing: don de sanidad
+  miracles: milagros
+  distinguishing_of_spirits: discernimiento de espíritus
+  tongues: don de lenguas
+  interpretation_of_tongues: interpretación de lenguas
+  helps: ayudas
+  administration: administración
+  evangelism: evangelismo
+  encouragement: aliento
 
   singular:
     male: hombre
