@@ -1,6 +1,13 @@
-system("#{Rails.root}/populate_database")
+require "rake"
+Rake::Task['db:populate_books'].invoke
+Rake::Task['db:populate_callings'].invoke
+Rake::Task['db:populate_church_responsibilities'].invoke
+Rake::Task['db:populate_interest_categories_and_interests'].invoke
+Rake::Task['db:populate_languages'].invoke
+Rake::Task['db:populate_spiritual_gifts'].invoke
+Rake::Task['db:populate_work_sectors'].invoke
 
-users = [{
+User.create({
   username: "timvas",
   email: "test@example.com",
   password: "test123",
@@ -33,19 +40,29 @@ users = [{
   children_status: true,
   wants_children: "if_yah_wills_will_have_children",
   pets_status: false,
-  wants_pets: false
-}]
+  wants_pets: false,
+  smoke_status: "liberated",
+  sober_status: "liberated",
+  caffeine_status: "liberated",
+  drug_status: "liberated",
+  medical_status: "free_from_medications",
+  allergies_status: "free_from_allergies"
+})
 
 names = [%w[Adam Brian Charles David Ethan Frank George Henry Ivan John Kevin Liam Michael Nathan Oliver Peter Robert Samuel Thomas William], %w[Amanda Brittany Caroline Diana Elizabeth Fiona Grace Hannah Isabella Jennifer Katie Lauren Michelle Nicole Olivia Patricia Quinn Rachel Sarah Tracy]]
 surnames = %w[Smith Johnson Brown Davis Wilson Martinez Anderson Taylor Thomas Jackson White Harris Martin Thompson Garcia Martinez Robinson Clark Rodriguez Lopez Gonzalez]
 
+puts "Seeding users"
 (1..200).each do |i|
+  percent = (i.to_f / 200.0 * 100).to_i
+  bar = ("■" * (percent/5).to_i) + ("□" * (20 - (percent/5)).to_i)
+  print "\r#{bar} #{percent}%"
 
   gender = [0,1].sample
   start_date = Date.new(1970, 1, 1)
   end_date = Date.today - 18.years
   random_date = start_date + rand(end_date - start_date)
-  users << {
+  User.create({
     username: "user#{i.to_s}",
     email: "test#{i.to_s}@example.com",
     password: "test123",
@@ -77,12 +94,22 @@ surnames = %w[Smith Johnson Brown Davis Wilson Martinez Anderson Taylor Thomas J
     children_status: [true,false].sample,
     wants_children: User.wants_children_options.sample,
     pets_status: [true,false].sample,
-    wants_pets: [true,false].sample
-  }
+    wants_pets: [true,false].sample,
+    smoke_status: User.smoke_status_options.sample,
+    sober_status: User.sober_status_options.sample,
+    caffeine_status: User.caffeine_status_options.sample,
+    drug_status: User.drug_status_options.sample,
+    medical_status: User.medical_status_options.sample,
+    allergies_status: User.allergies_status_options.sample
+  })
 end
-User.create(users)
 
+puts "\nAdding books and interests to users"
 (1..201).each do |user_id|
+  percent = (user_id.to_f / 200.0 * 100).to_i
+  bar = ("■" * (percent/5).to_i) + ("□" * (20 - (percent/5)).to_i)
+  print "\r#{bar} #{percent}%"
+
   (1..1+rand(10)).each{
     begin
       UserBook.new(user_id: user_id, book_id: Book.order("RANDOM()").limit(1).first.id).save!
@@ -98,3 +125,4 @@ User.create(users)
     end
   }
 end
+puts "\nDone!"
