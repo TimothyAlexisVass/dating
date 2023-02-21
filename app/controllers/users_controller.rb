@@ -66,6 +66,9 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by(username: params[:username])
+    if @user.books.present?
+      @books = @user.books
+    end
     if @user.interests.present?
       @interests = @user.interests.includes(:interest_category).group_by{ |g| g.interest_category.text.tr(" ","_") }
                         .transform_values{ |v| v.map(&:text) }
@@ -73,8 +76,14 @@ class UsersController < ApplicationController
     if @user.spiritual_gifts.present?
       @spiritual_gifts = @user.spiritual_gifts
     end
-    if @user.books.present?
-      @books = @user.books
+    if @user.callings.present?
+      @callings = @user.callings
+    end
+    if @user.church_responsibilities.present?
+      @church_responsibilities = @user.church_responsibilities
+    end
+    if @user.languages.present?
+      @languages = @user.languages
     end
     if @user.images.present?
       @images = @user.images

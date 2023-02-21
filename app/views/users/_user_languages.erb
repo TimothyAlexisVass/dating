@@ -1,0 +1,13 @@
+<h2><%= t(:languages) %></h2>
+<% if @current_user==@user %>
+  <%= form_with model: [@current_user, UserLanguage.new], local: false, data: { remote: true } do |form| %>
+    <%= form.collection_select(:language_id, Language.where.not(id: @languages), :id, :text, { prompt: t(:add_a_language) }, { class: "select2", style: "width: 100%", onchange: "this.form.submit();" }) %>
+  <% end %>
+<% end %>
+<% if @languages.present? %>
+  <% @languages.each do |language| %>
+    <span class="interest"><%= language.text %></span>
+  <% end %>
+<% else %>
+  <%= @user.first_name %> <%= t(:no_languages) %>
+<% end %>
