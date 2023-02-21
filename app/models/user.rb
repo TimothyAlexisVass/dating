@@ -20,10 +20,6 @@ class User < ApplicationRecord
   has_many :languages, through: :user_languages
   has_many :user_books
   has_many :books, through: :user_books
-  has_many :user_ethnicities
-  has_many :ethnicities, through: :user_ethnicities
-  has_many :user_professions
-  has_many :professions, through: :user_professions
   has_many :user_callings
   has_many :callings, through: :user_callings
   has_many :user_church_responsibilities

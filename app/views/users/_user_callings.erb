@@ -1,0 +1,13 @@
+<h2><%= t(:callings) %></h2>
+<% if @current_user==@user %>
+  <%= form_with model: [@current_user, UserCalling.new], local: false, data: { remote: true } do |form| %>
+    <%= form.collection_select(:calling_id, Calling.where.not(id: @callings), :id, :text, { prompt: t(:add_a_calling) }, { class: "select2", style: "width: 100%", onchange: "this.form.submit();" }) %>
+  <% end %>
+<% end %>
+<% if @callings.present? %>
+  <% @callings.each do |calling| %>
+    <span class="interest"><%= calling.text %></span>
+  <% end %>
+<% else %>
+  <%= @user.first_name %> <%= t(:no_callings) %>
+<% end %>
