@@ -33,7 +33,7 @@ namespace :db do
       {code: "ce", text: "Chechen"},
       {code: "ny", text: "Chichewa, Chewa, Nyanja"},
       {code: "zh", text: "Chinese"},
-      {code: "cu", text: "Church Slavonic, Old Slavonic, Old Church Slavonic"},
+      {code: "cu", text: "Church Slavonic, Old Slavonic, Old Church Slavonic"},
       {code: "cv", text: "Chuvash"},
       {code: "kw", text: "Cornish"},
       {code: "co", text: "Corsican"},

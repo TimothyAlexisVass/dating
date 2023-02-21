@@ -15,11 +15,6 @@ class CreateJoinTables < ActiveRecord::Migration[7.0]
       t.references :language, null: false, foreign_key: true
       t.index [:user_id, :language_id], unique: true
     end
-    create_table :user_work_sectors do |t|
-      t.references :user, null: false, foreign_key: true
-      t.references :work_sector, null: false, foreign_key: true
-      t.index [:user_id, :work_sector_id], unique: true
-    end
     create_table :user_callings do |t|
       t.references :user, null: false, foreign_key: true
       t.references :calling, null: false, foreign_key: true
