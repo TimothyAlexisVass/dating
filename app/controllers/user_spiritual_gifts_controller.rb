@@ -2,13 +2,12 @@ class UserSpiritualGiftsController < ApplicationController
   before_action :set_user
 
   def create
-    @user_spiritual_gift = @user.user_spiritual_gifts.new(user_spiritual_gift_params)
-
-    if @user_spiritual_gift.save
-      redirect_to user_path(@user.username)
-    else
-      render :new
+    spiritual_gift_ids = user_spiritual_gift_params[:spiritual_gift_id]
+    spiritual_gift_ids.each do |spiritual_gift_id|
+      item = @user.user_spiritual_gifts.new(spiritual_gift_id: spiritual_gift_id)
+      item.save
     end
+    redirect_to user_path(@user.username)
   end
 
   private
@@ -18,6 +17,6 @@ class UserSpiritualGiftsController < ApplicationController
   end
 
   def user_spiritual_gift_params
-    params.require(:user_spiritual_gift).permit(:spiritual_gift_id)
+    params.require(:user_spiritual_gift).permit(spiritual_gift_id: [])
   end
 end

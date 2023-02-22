@@ -2,12 +2,12 @@ class UserInterestsController < ApplicationController
   before_action :set_user
 
   def create
-    @user_interest = @user.user_interests.new(user_interest_params)
+    item = @user.user_interests.new(user_interest_params)
 
-    if @user_interest.save
+    if item.save
       redirect_to user_path(@user.username)
     else
-      render :new
+      redirect_to user_path(@user.username), flash: { danger: item.errors.full_message }
     end
   end
 

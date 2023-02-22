@@ -2,12 +2,12 @@ class UserBooksController < ApplicationController
   before_action :set_user
 
   def create
-    @user_book = @user.user_books.new(user_book_params)
+    item = @user.user_books.new(user_book_params)
 
-    if @user_book.save
+    if item.save
       redirect_to user_path(@user.username)
     else
-      render :new
+      redirect_to user_path(@user.username), flash: { danger: item.errors.full_message }
     end
   end
 

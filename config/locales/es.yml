@@ -58,20 +58,22 @@ es:
   not_specified: No especificado
   marital_status: estado civil
   interests: intereses
+  add_an_interest: Añadir un interés
   no_interests: no ha especificado ningún interés.
   books_read: Libros de Ellen White que ha Leado
+  add_a_book: Añade un libro que hayas leído
   no_books_read: no ha especificado ningún libro leído
   languages: Idiomas
-  add_a_language: Añadir un idioma
+  add_a_language: Añadir idiomas
   no_languages: no ha especificado ningún idioma
   spiritual_gifts: Dones espirituales
-  add_a_spiritual_gift: Añadir un don espiritual
+  add_a_spiritual_gift: Añadir dones espirituales
   no_spiritual_gifts: no ha especificado ningún don espiritual
   callings: Vocaciones
-  add_a_calling: Añadir una vocación
+  add_a_calling: Añadir vocaciónes
   no_callings: no ha especificado ninguna vocación
   church_responsibilities: Responsabilidades de la iglesia
-  add_a_church_responsibility: Añadir una responsabilidad de la iglesia
+  add_a_church_responsibility: Añadir responsabilidades de la iglesia
   no_church_responsibilities: no ha especificado ninguna responsabilidad de la iglesia
   male: masculino
   female: femenino
@@ -215,11 +217,6 @@ es:
   only_drugfree_female: libres de drogas
   only_sober_male: sobrios
   only_sober_female: sobrias
-  add_a_book: Añade un libro que hayas leído
-  add_an_interest: Agregar un interés
-  regalos_espirituales: Dones espirituales
-  add_a_spiritual_gift: Agrega un don espiritual
-  no_spiritual_gifts: no ha añadido ningún don espiritual
 
   truth_and_spirituality: Verdad y espiritualidad
   health_and_wellness: Salud y bienestar

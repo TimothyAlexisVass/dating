@@ -1,7 +1,12 @@
-<h2><%= t(:languages) %></h2>
+<h2>
+  <%= t(:languages) %>
+  <% if @user == @current_user %>
+    <%= button_tag ct(:save), onclick: "$('#languages_form').submit()" %>
+  <% end %>
+</h2>
 <% if @current_user==@user %>
-  <%= form_with model: [@current_user, UserLanguage.new], local: false, data: { remote: true } do |form| %>
-    <%= form.collection_select(:language_id, Language.where.not(id: @languages), :id, :text, { prompt: t(:add_a_language) }, { class: "select2", style: "width: 100%", onchange: "this.form.submit();" }) %>
+  <%= form_with model: [@current_user, UserLanguage.new], id: "languages_form" do |form| %>
+    <%= form.collection_select(:language_id, Language.where.not(id: @languages), :id, :text, {}, { class: "select2", style: "width: 100%", multiple: true, "data-placeholder": t(:add_a_language) }) %>
   <% end %>
 <% end %>
 <% if @languages.present? %>
