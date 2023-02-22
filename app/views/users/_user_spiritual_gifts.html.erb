@@ -6,12 +6,12 @@
 </h2>
 <% if @current_user==@user %>
   <%= form_with model: [@current_user, UserSpiritualGift.new], id: "spiritual_gifts_form" do |form| %>
-    <%= form.collection_select(:spiritual_gift_id, SpiritualGift.where.not(id: @spiritual_gifts), :id, :text, {}, { class: "select2", style: "width: 100%", multiple: true, "data-placeholder": t(:add_a_spiritual_gift) }) %>
+    <%= form.collection_select(:spiritual_gift_id, SpiritualGift.where.not(id: @spiritual_gifts), :id, ->(item){ct(item.text)}, {}, { class: "select2", style: "width: 100%", multiple: true, "data-placeholder": t(:add_a_spiritual_gift) }) %>
   <% end %>
 <% end %>
 <% if @spiritual_gifts.present? %>
   <% @spiritual_gifts.each do |spiritual_gift| %>
-    <span class="interest"><%= spiritual_gift.text %></span>
+    <span class="interest"><%= ct  spiritual_gift.text %></span>
   <% end %>
 <% else %>
   <%= @user.first_name %> <%= t(:no_spiritual_gifts) %>

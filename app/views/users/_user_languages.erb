@@ -1,17 +1,17 @@
 <h2>
-  <%= t(:languages) %>
+  <%= ct(:languages) %>
   <% if @user == @current_user %>
     <%= button_tag ct(:save), onclick: "$('#languages_form').submit()" %>
   <% end %>
 </h2>
 <% if @current_user==@user %>
   <%= form_with model: [@current_user, UserLanguage.new], id: "languages_form" do |form| %>
-    <%= form.collection_select(:language_id, Language.where.not(id: @languages), :id, :text, {}, { class: "select2", style: "width: 100%", multiple: true, "data-placeholder": t(:add_a_language) }) %>
+    <%= form.collection_select(:language_id, Language.where.not(id: @languages), :id, ->(item){ct(item.code)}, {}, { class: "select2", style: "width: 100%", multiple: true, "data-placeholder": t(:add_a_language) }) %>
   <% end %>
 <% end %>
 <% if @languages.present? %>
   <% @languages.each do |language| %>
-    <span class="interest"><%= language.text %></span>
+    <span class="interest"><%= ct language.code %></span>
   <% end %>
 <% else %>
   <%= @user.first_name %> <%= t(:no_languages) %>

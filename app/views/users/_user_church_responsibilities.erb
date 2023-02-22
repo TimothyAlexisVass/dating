@@ -6,12 +6,12 @@
 </h2>
 <% if @current_user==@user %>
   <%= form_with model: [@current_user, UserChurchResponsibility.new], id: "church_responsibilities_form" do |form| %>
-    <%= form.collection_select(:church_responsibility_id, ChurchResponsibility.where.not(id: @church_responsibilities), :id, :text, {}, { class: "select2", style: "width: 100%", multiple: true, "data-placeholder": t(:add_a_church_responsibility) }) %>
+    <%= form.collection_select(:church_responsibility_id, ChurchResponsibility.where.not(id: @church_responsibilities), :id, ->(item){ct(item.text)}, {}, { class: "select2", style: "width: 100%", multiple: true, "data-placeholder": t(:add_a_church_responsibility) }) %>
   <% end %>
 <% end %>
 <% if @church_responsibilities.present? %>
   <% @church_responsibilities.each do |church_responsibility| %>
-    <span class="interest"><%= church_responsibility.text %></span>
+    <span class="interest"><%= ct  church_responsibility.text %></span>
   <% end %>
 <% else %>
   <%= @user.first_name %> <%= t(:no_church_responsibilities) %>
