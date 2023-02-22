@@ -2,13 +2,12 @@ class UserChurchResponsibilitiesController < ApplicationController
   before_action :set_user
 
   def create
-    @user_church_responsibility = @user.user_church_responsibilities.new(user_church_responsibility_params)
-
-    if @user_church_responsibility.save
-      redirect_to user_path(@user.username)
-    else
-      render :new
+    church_responsibility_ids = user_church_responsibility_params[:church_responsibility_id]
+    church_responsibility_ids.each do |church_responsibility_id|
+      item = @user.user_church_responsibilities.new(church_responsibility_id: church_responsibility_id)
+      item.save
     end
+    redirect_to user_path(@user.username)
   end
 
   private
@@ -18,6 +17,6 @@ class UserChurchResponsibilitiesController < ApplicationController
   end
 
   def user_church_responsibility_params
-    params.require(:user_church_responsibility).permit(:church_responsibility_id)
+    params.require(:user_church_responsibility).permit(church_responsibility_id: [])
   end
 end

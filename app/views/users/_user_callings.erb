@@ -1,7 +1,12 @@
-<h2><%= t(:callings) %></h2>
+<h2>
+  <%= t(:callings) %>
+  <% if @user == @current_user %>
+    <%= button_tag ct(:save), onclick: "$('#callings_form').submit()" %>
+  <% end %>
+</h2>
 <% if @current_user==@user %>
-  <%= form_with model: [@current_user, UserCalling.new], local: false, data: { remote: true } do |form| %>
-    <%= form.collection_select(:calling_id, Calling.where.not(id: @callings), :id, :text, { prompt: t(:add_a_calling) }, { class: "select2", style: "width: 100%", onchange: "this.form.submit();" }) %>
+  <%= form_with model: [@current_user, UserCalling.new], id: "callings_form" do |form| %>
+    <%= form.collection_select(:calling_id, Calling.where.not(id: @callings), :id, :text, {}, { class: "select2", style: "width: 100%", multiple: true, "data-placeholder": t(:add_a_calling) }) %>
   <% end %>
 <% end %>
 <% if @callings.present? %>

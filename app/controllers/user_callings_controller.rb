@@ -2,13 +2,12 @@ class UserCallingsController < ApplicationController
   before_action :set_user
 
   def create
-    @user_calling = @user.user_callings.new(user_calling_params)
-
-    if @user_calling.save
-      redirect_to user_path(@user.username)
-    else
-      render :new
+    calling_ids = user_calling_params[:calling_id]
+    calling_ids.each do |calling_id|
+      item = @user.user_callings.new(calling_id: calling_id)
+      item.save
     end
+    redirect_to user_path(@user.username)
   end
 
   private
@@ -18,6 +17,6 @@ class UserCallingsController < ApplicationController
   end
 
   def user_calling_params
-    params.require(:user_calling).permit(:calling_id)
+    params.require(:user_calling).permit(calling_id: [])
   end
 end
