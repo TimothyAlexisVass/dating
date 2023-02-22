@@ -61,6 +61,18 @@ en:
   no_interests: hasn't selected any interests
   books_read: Ellen White Books Read
   no_books_read: hasn't selected any read books
+  languages: Languages
+  add_a_language: Add a language
+  no_languages: hasn't selected any languages
+  spiritual_gifts: Spiritual gifts
+  add_a_spiritual_gift: Add a spiritual gift
+  no_spiritual_gifts: hasn't selected any spiritual gifts
+  callings: Calling
+  add_a_calling: Add a calling
+  no_callings: hasn't selected any callings
+  church_responsibilities: Church responsibilities
+  add_a_church_responsibility: Add a church responsibility
+  no_church_responsibilities: hasn't selected any church responsibilities
   male: male
   female: female
   age: age

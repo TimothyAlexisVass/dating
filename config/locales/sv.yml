@@ -43,6 +43,7 @@ sv:
   diet: diet
   exercise: träning
   tattoos: tatueringar
+  not_specified: Ej angett
   weight: vikt
   smoke_status: rökning
   sober_status: nykterhet
@@ -61,7 +62,18 @@ sv:
   no_interests: har inte angett några intressen
   books_read: Lästa Böcker av Ellen White
   no_books_read: har inte angett några lästa böcker
-  not_specified: Ej angett
+  languages: Språk
+  add_a_language: Lägg till ett språk
+  no_languages: har inte angett några språk
+  spiritual_gifts: Andliga gåvor
+  add_a_spiritual_gift: Lägg till ett andlig gåva
+  no_spiritual_gifts: har inte angett några andliga gåvor
+  callings: Kall
+  add_a_calling: Lägg till ett kall
+  no_callings: har inte angett några kall
+  church_responsibilities: Kyrkoansvar
+  add_a_church_responsibility: Lägg till ett kyrkoansvar
+  no_church_responsibilities: har inte angett några kyrkoansvar
   male: man
   female: kvinna
   age: ålder

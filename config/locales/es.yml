@@ -61,6 +61,18 @@ es:
   no_interests: no ha especificado ningún interés.
   books_read: Libros de Ellen White que ha Leado
   no_books_read: no ha especificado ningún libro leído
+  languages: Idiomas
+  add_a_language: Añadir un idioma
+  no_languages: no ha especificado ningún idioma
+  spiritual_gifts: Dones espirituales
+  add_a_spiritual_gift: Añadir un don espiritual
+  no_spiritual_gifts: no ha especificado ningún don espiritual
+  callings: Vocaciones
+  add_a_calling: Añadir una vocación
+  no_callings: no ha especificado ninguna vocación
+  church_responsibilities: Responsabilidades de la iglesia
+  add_a_church_responsibility: Añadir una responsabilidad de la iglesia
+  no_church_responsibilities: no ha especificado ninguna responsabilidad de la iglesia
   male: masculino
   female: femenino
   age: edad
