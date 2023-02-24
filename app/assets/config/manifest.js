@@ -2,6 +2,7 @@
 //= link_directory ../stylesheets .css
 //= link_tree ../../javascript .js
 //= link geocoder_congregation.js
+//= link infinite_scrolling.js
 //= link geocoder_location.js
 //= link user_ajax_update.js
 //= link password_toggle.js
