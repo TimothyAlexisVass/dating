@@ -1,0 +1,12 @@
+<h1>Conversations</h1>
+
+<ul>
+  <% @conversations.each do |conversation| %>
+    <li>
+      <%= link_to "#{conversation.users.first.first_name} and #{conversation.users.last.first_name}", conversation %>
+      <% if conversation.messages.any? %>
+        <small>(<%= conversation.messages.last.created_at.strftime('%b %d, %Y at %l:%M %p') %>)</small>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
