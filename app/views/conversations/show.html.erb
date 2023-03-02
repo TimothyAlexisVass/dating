@@ -1,0 +1,23 @@
+<h1>Conversation with <%= @conversation.users.where.not(id: @current_user.id).first.first_name %></h1>
+
+<ul>
+  <% @messages.each do |message| %>
+    <li>
+      <strong><%= message.user.first_name %>:</strong> <%= message.body %>
+
+      <%= link_to "Edit", edit_conversation_message_path(@conversation, message) %>
+      <%= link_to "Delete", conversation_message_path(@conversation, message), method: :delete, data: { confirm: "Are you sure?" } %>
+    </li>
+  <% end %>
+</ul>
+
+<%= form_with model: [@conversation, @message], local: true do |form| %>
+  <div>
+    <%= form.label :body %><br>
+    <%= form.text_area :body %>
+  </div>
+
+  <%= form.submit "Send message" %>
+<% end %>
+
+<%= link_to "Delete conversation", conversation_path(@conversation), method: :delete, data: { confirm: "Are you sure?" } %>
