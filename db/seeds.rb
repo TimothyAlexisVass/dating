@@ -5,7 +5,6 @@ Rake::Task['db:populate_church_responsibilities'].invoke
 Rake::Task['db:populate_interest_categories_and_interests'].invoke
 Rake::Task['db:populate_languages'].invoke
 Rake::Task['db:populate_spiritual_gifts'].invoke
-Rake::Task['db:populate_work_sectors'].invoke
 
 User.create({
   username: "timvas",

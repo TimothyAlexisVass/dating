@@ -9,5 +9,6 @@
     <%= javascript_include_tag "geocoder_location" %>
   <% else %>
     <%= "#{@user.first_name}," %>&nbsp;<span title='<%= t(:age) %>'><%= @user.age %> <%= "(#{@user.location})" if @user.location.present? %></span>
+    <%= button_to t(:conversation), conversations_path(recipient_id: @user.id) %>
   <% end %>
 </h1>

@@ -26,6 +26,9 @@ class User < ApplicationRecord
   has_many :church_responsibilities, through: :user_church_responsibilities
   has_many :user_spiritual_gifts
   has_many :spiritual_gifts, through: :user_spiritual_gifts
+  has_many :users_conversations
+  has_many :conversations, -> { distinct }, through: :users_conversations
+  has_many :messages
 
 
 
@@ -291,6 +294,15 @@ class User < ApplicationRecord
 
   def sign_out
     update(is_active: false)
+  end
+
+  def conversation_with(other_user)
+    user_ids = [self.id, other_user.id].sort
+    conversation_id = "#{user_ids.first}-#{user_ids.last}"
+    Conversation.find_or_create_by(id: conversation_id) do |conversation|
+      conversation.users << self
+      conversation.users << other_user
+    end
   end
 
   private

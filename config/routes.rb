@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  # Defines the root path route ("/")
   root 'sessions#new'
 
   get '/signin', to: 'sessions#signin'
@@ -7,6 +6,8 @@ Rails.application.routes.draw do
   delete '/signout', to: 'sessions#destroy'
 
   put '/set_session_locale' => 'application#set_session_locale'
+
+  get '/location_search', to: 'location#search'
 
   get '/users/:username', to: 'users#show'
   resources :users, only: [:index, :new, :create, :edit, :update] do
@@ -22,5 +23,7 @@ Rails.application.routes.draw do
     resources :user_languages, only: [:create, :destroy]
   end
 
-  get '/location_search', to: 'location#search'
+  resources :conversations, only: [:index, :show, :create, :destroy] do
+    resources :messages, only: [:create, :edit, :update, :destroy]
+  end
 end
