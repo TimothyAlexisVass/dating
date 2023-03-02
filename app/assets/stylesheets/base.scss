@@ -1,5 +1,11 @@
-body {
+html, body {
+  min-height: 100vh;
+}
+
+body, main {
   font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
   font-size: 16px;
   line-height: 1.5;
   background-color: #fafafa;
@@ -508,4 +514,54 @@ header.top-header, .user-form {
   min-width: 400px;
   width: min-content;
   height: 70vh;
+}
+
+.conversation {
+  padding: 10px;
+}
+
+.message {
+  position: relative;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 20px 0;
+  width: 80%;
+}
+
+.message-body {
+  white-space: pre-line;
+}
+
+.message-info {
+  font-size: 10px;
+  position: absolute;
+  top: -16px;
+}
+
+.message-mine {
+  background: var(--message-mine-background);
+  color: var(--message-mine-text);
+  margin-left: auto;
+  .message-info {
+    right: 10px;
+  }
+}
+
+.message-other {
+  background: var(--message-other-background);
+  color: var(--message-other-text);
+  margin-right: auto;
+  .message-info {
+    left: 10px;
+  }
+}
+
+.message-form {
+  textarea {
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    box-sizing: border-box;
+    width: 100%;
+    resize: none;
+  }
 }

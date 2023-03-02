@@ -1,23 +1,24 @@
-<h1>Conversation with <%= @conversation.users.where.not(id: @current_user.id).first.first_name %></h1>
+<div class="conversation flex f-d-c f-g-1">
+  <h1>Conversation with <%= @conversation.users.where.not(id: @current_user.id).first.first_name %></h1>
 
-<ul>
-  <% @messages.each do |message| %>
-    <li>
-      <strong><%= message.user.first_name %>:</strong> <%= message.body %>
-
-      <%= link_to "Edit", edit_conversation_message_path(@conversation, message) %>
-      <%= link_to "Delete", conversation_message_path(@conversation, message), method: :delete, data: { confirm: "Are you sure?" } %>
-    </li>
-  <% end %>
-</ul>
-
-<%= form_with model: [@conversation, @message], local: true do |form| %>
-  <div>
-    <%= form.label :body %><br>
-    <%= form.text_area :body %>
+  <div class="messages f-g-1">
+    <% @messages.each do |message| %>
+      <div class="message message-<%= @current_user==message.user ? 'mine' : 'other' %>">
+        <div class="message-info">
+          <% if @current_user==message.user and Time.now - message.created_at < 600 %>
+            <%= link_to "Edit", edit_conversation_message_path(@conversation, message) %>
+            <%= link_to "Delete", conversation_message_path(@conversation, message), method: :delete %>
+          <% end %>
+          <%= message.created_at %>
+        </div>
+        <div class="message-body"><%= message.body %></div>
+      </div>
+    <% end %>
   </div>
 
-  <%= form.submit "Send message" %>
-<% end %>
-
-<%= link_to "Delete conversation", conversation_path(@conversation), method: :delete, data: { confirm: "Are you sure?" } %>
+  <%= form_with model: [@conversation, @message], local: true, class: "message-form text-right" do |form| %>
+    <%= form.text_area :body, rows: 10 %>
+    <br>
+    <%= form.submit "Send message" %>
+  <% end %>
+</div>

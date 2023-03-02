@@ -2,5 +2,10 @@
   --deep-purple: #3c0c47;
   --light-purple: #d07be3;
 
+  --message-mine-background: #80c3ef;
+  --message-mine-text: #0a3049;
+  --message-other-background: #fcdb98;
+  --message-other-text: #573f0f;
+
   --shine-5px: 0 0 5px rgba(255, 255, 255, 0.4);
 }

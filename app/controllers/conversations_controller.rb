@@ -5,7 +5,7 @@ class ConversationsController < ApplicationController
 
   def show
     @conversation = Conversation.find(params[:id])
-    @messages = @conversation.messages
+    @messages = @conversation.messages.order(updated_at: :desc).includes(:user)
     @message = Message.new
   end
 

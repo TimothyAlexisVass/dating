@@ -10,6 +10,10 @@
         <i class="fa fa-<%= @current_user.searching_for %>" aria-hidden="true"></i>
         <%= ct(:search) %>
       <% end %>
+      <%= link_to conversations_path do %>
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <%= ct(:chat) %>
+      <% end %>
       <div class="dropdown">
         <span class="dropdown-toggle">
           <i class="fa fa-cog" aria-hidden="true"></i> <%= ct(:settings) %>

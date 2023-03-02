@@ -8,5 +8,6 @@
         <small>(<%= conversation.messages.last.created_at.strftime('%b %d, %Y at %l:%M %p') %>)</small>
       <% end %>
     </li>
+    <%= link_to "Delete conversation", conversation_path(conversation), method: :delete, data: { confirm: "Are you sure?" } %>
   <% end %>
 </ul>
