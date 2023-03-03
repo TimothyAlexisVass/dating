@@ -115,6 +115,10 @@ main, header {
   text-align: right;
 }
 
+.h-200 {
+  height: 200px;
+}
+
 .password-toggle-icon {
   position: absolute;
   right: 10px;
@@ -155,8 +159,8 @@ h1 input {
 }
 
 .user-form {
-  max-width: 500px;
-  margin: 0 auto;
+  width: 444px;
+  margin: 10px auto;
   padding: 20px 40px;
   background-color: var(--deep-purple);
   color: white;
@@ -327,7 +331,7 @@ header.top-header, .user-form {
   display: none;
 }
 .profile-image { background: rgb(164, 209, 209) }
-.user-profile, .user-index-profile {
+.user-profile, .user-index-profile, .conversations {
   h2 {
     padding: 5px 15px 5px 5px;
     color: white;

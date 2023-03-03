@@ -1,13 +1,20 @@
 <h1>Conversations</h1>
 
-<ul>
+<div class="conversations">
   <% @conversations.each do |conversation| %>
-    <li>
-      <%= link_to "#{conversation.users.first.first_name} and #{conversation.users.last.first_name}", conversation %>
-      <% if conversation.messages.any? %>
-        <small>(<%= conversation.messages.last.created_at.strftime('%b %d, %Y at %l:%M %p') %>)</small>
-      <% end %>
-    </li>
+  <% other_user = conversation.users.where.not(id: @current_user.id).first %>
+    <div>
+      <h2>
+        <%= link_to "#{other_user.first_name}", conversation %>
+      </h2>
+      <div class="flex">
+        <% profile_image = other_user.profile_image.present? ? other_user.profile_image : "#{other_user.gender}.svg" %>
+        <%= image_tag profile_image, class: "profile-image h-200" %>
+        <% if conversation.messages.any? %>
+          <small class="f-g-1 text-right">(<%= conversation.messages.last.created_at.strftime('%b %d, %Y at %l:%M %p') %>)</small>
+        <% end %>
+        </div>
+    </div>
     <%= link_to "Delete conversation", conversation_path(conversation), method: :delete, data: { confirm: "Are you sure?" } %>
   <% end %>
-</ul>
+</div>
