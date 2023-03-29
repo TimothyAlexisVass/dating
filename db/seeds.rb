@@ -6,48 +6,6 @@ Rake::Task['db:populate_interest_categories_and_interests'].invoke
 Rake::Task['db:populate_languages'].invoke
 Rake::Task['db:populate_spiritual_gifts'].invoke
 
-User.create({
-  username: "timvas",
-  email: "test@example.com",
-  password: "test123",
-  first_name: "Timothy",
-  last_name: "Vass",
-  gender: :male,
-  birth_date: "1982-02-13",
-  height: 189,
-  weight: 82,
-  eye_color: :mixed,
-  marital_status: :single,
-  body_type: :athletic,
-  tattoos: :tiny,
-  diet: :plant_based,
-  exercise: :daily,
-  age_range_lower: 18,
-  age_range_upper: 40,
-  distance_radius: 5.0,
-  limit_contact_to_age_range: true,
-  education: "some_college",
-  income_amount: 777777,
-  income_currency: "EUR",
-  economy_status: "some_savings",
-  work_status: "employed",
-  attendance_frequency: "every_sabbath",
-  tithing_status: "before_tax",
-  alms_status: "always_when_asked",
-  prayer_frequency: "multiple_times_daily",
-  number_of_times_read_bible: 5,
-  children_status: true,
-  wants_children: "if_yah_wills_will_have_children",
-  pets_status: false,
-  wants_pets: false,
-  smoke_status: "liberated",
-  sober_status: "liberated",
-  caffeine_status: "liberated",
-  drug_status: "liberated",
-  medical_status: "free_from_medications",
-  allergies_status: "free_from_allergies"
-})
-
 names = [%w[Adam Brian Charles David Ethan Frank George Henry Ivan John Kevin Liam Michael Nathan Oliver Peter Robert Samuel Thomas William], %w[Amanda Brittany Caroline Diana Elizabeth Fiona Grace Hannah Isabella Jennifer Katie Lauren Michelle Nicole Olivia Patricia Quinn Rachel Sarah Tracy]]
 surnames = %w[Smith Johnson Brown Davis Wilson Martinez Anderson Taylor Thomas Jackson White Harris Martin Thompson Garcia Martinez Robinson Clark Rodriguez Lopez Gonzalez]
 
@@ -104,7 +62,7 @@ puts "Seeding users"
 end
 
 puts "\nAdding books and interests to users"
-(1..201).each do |user_id|
+(1..200).each do |user_id|
   percent = (user_id.to_f / 200.0 * 100).to_i
   bar = ("■" * (percent/5).to_i) + ("□" * (20 - (percent/5)).to_i)
   print "\r#{bar} #{percent}%"
