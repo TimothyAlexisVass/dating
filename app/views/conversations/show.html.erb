@@ -2,18 +2,7 @@
   <h1>Conversation with <%= @conversation.users.where.not(id: @current_user.id).first.first_name %></h1>
 
   <div class="messages f-g-1">
-    <% @messages.each do |message| %>
-      <div class="message message-<%= @current_user==message.user ? 'mine' : 'other' %>">
-        <div class="message-info">
-          <% if @current_user==message.user and Time.now - message.created_at < 600 %>
-            <%= link_to "Edit", edit_conversation_message_path(@conversation, message) %>
-            <%= link_to "Delete", conversation_message_path(@conversation, message), method: :delete %>
-          <% end %>
-          <%= message.created_at %>
-        </div>
-        <div class="message-body"><%= message.body %></div>
-      </div>
-    <% end %>
+    <%= render @messages %>
   </div>
 
   <%= form_with model: [@conversation, @message], local: true, class: "message-form text-right" do |form| %>
