@@ -27,6 +27,9 @@ class ConversationsController < ApplicationController
     @conversation = Conversation.find(params[:id])
     @conversation.destroy
 
+    @users_conversation = UsersConversation.where(conversation_id: params[:id])
+    @users_conversation.destroy_all
+
     redirect_to conversations_path
   end
 end
