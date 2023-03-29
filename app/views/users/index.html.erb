@@ -4,6 +4,7 @@
   <%= @current_user.age_range_lower %>
   <%= t(:to) %>
   <%= @current_user.age_range_upper %>
+  <button onclick="$('#overlay').css({opacity:1,top:0})">Filter</button>
 </h1>
 <%= render 'user_search_filters' %>
 <div id="my-posts">

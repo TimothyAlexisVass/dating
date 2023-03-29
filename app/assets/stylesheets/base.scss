@@ -12,6 +12,21 @@ body, main {
   margin: 0;
 }
 
+button {
+  background: var(--deep-purple);
+  color: white;
+  width: min-content;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 10px;
+  transition: all .5s;
+  cursor: pointer;
+  &:hover {
+    color: var(--light-purple);
+    text-shadow: var(--shine-5px)
+  }
+}
+
 a {
   text-decoration: none;
 }
@@ -305,15 +320,14 @@ header.top-header, .user-form {
   a, span {
     color: white;
     transition: all .5s;
-  }
-
-  a:hover, span:hover {
-    color: var(--light-purple);
-    text-shadow: var(--shine-5px)
+    &:hover {
+      color: var(--light-purple);
+      text-shadow: var(--shine-5px)
+    }
   }
 
   nav {
-    span, a {
+    a, span {
       font-size: 18px;
       margin: 0 3px;
     }
