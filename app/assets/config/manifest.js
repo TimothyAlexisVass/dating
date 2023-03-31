@@ -8,4 +8,5 @@
 //= link password_toggle.js
 //= link dropdown_menu.js
 //= link jquery-ui.css
+//= link select2.js
 //= link jquery.js
